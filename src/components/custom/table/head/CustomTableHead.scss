@@ -1,0 +1,23 @@
+.custom-table-header {
+  background-color: #44588a;
+  .custom-table-cell {
+    color: #ffffff;
+    padding: 18px 3px 16px 15px;
+    .filter-textbox {
+      background-color: #ffffff;
+      border: none;
+      outline: none !important;
+      box-shadow: none;
+      width: fit-content;
+
+      .MuiInputBase-root {
+        .MuiInputBase-input {
+          outline: none;
+          :focus {
+            outline: none;
+          }
+        }
+      }
+    }
+  }
+}

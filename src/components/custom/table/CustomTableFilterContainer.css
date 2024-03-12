@@ -1,0 +1,4 @@
+.customTableFilterContainer {
+    display: flex;
+    flex-wrap: wrap;
+}

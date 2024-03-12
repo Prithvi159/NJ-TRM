@@ -1,0 +1,11 @@
+.custom-radio-btn-grp {
+    gap: 24px;
+}
+
+.custom-button {
+    border-color: #ADB5BD !important;
+    border-radius: 8px !important;
+    color: #5F7B81 !important ;
+    padding: 12px 26px 12px 26px !important;
+
+}

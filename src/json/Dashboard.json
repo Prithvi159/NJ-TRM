@@ -1,0 +1,58 @@
+{
+  "headNavbar": {
+    "railDashboardNavbar": {
+      "railNavLinks": [
+        {
+          "to": "/dashboard/rail/polled-data/data-browse",
+          "text": "Polled Data"
+        },
+        { "to": "/dashboard/rail/daily-audit", "text": "Daily Audit" },
+        { "to": "/dashboard/rail/on-board-sales", "text": "On Board Sales" },
+        {
+          "to": "/dashboard/rail/monthly-processing",
+          "text": "Monthly Processing"
+        },
+        { "to": "/dashboard/rail/reports", "text": "Reports" },
+        { "to": "/dashboard/rail/maintenance", "text": "Maintenance" }
+      ]
+    },
+    "accountMenu": {
+      "options": [
+        {
+          "label": "My Profile",
+          "link": "/profile"
+        },
+        {
+          "label": "Logout",
+          "link": "/logout"
+        }
+      ]
+    }
+  },
+  "leftNavbar": {
+    "railLeftNavbar": {
+      "railLeftNavLinks": [
+        {
+          "label": "Data Browse",
+          "icon": "DataUsage",
+          "to": "polled-data/data-browse"
+        },
+        {
+          "label": "Transmission Tracking",
+          "icon": "TrackChanges",
+          "to": "polled-data/transmission-tracking"
+        },
+        {
+          "label": "Error Processing",
+          "icon": "Error",
+          "to": "polled-data/error-processing"
+        },
+        {
+          "label": "Summary File Browse",
+          "icon": "Folder",
+          "to": "polled-data/summary-file-browse"
+        }
+      ]
+    }
+  }
+}

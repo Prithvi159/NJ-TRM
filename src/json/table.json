@@ -1,0 +1,281 @@
+{
+  "table": {
+    "columnHeaders": [
+      {
+        "accessorKey": "name",
+        "numeric": false,
+        "disablePadding": true,
+        "label": "NAME",
+        "isSortable": true,
+        "type": "text",
+        "filterVariant": "text",
+        "defaultSortBy": true,
+        "validations": [
+          {
+            "type": "maxLength",
+            "length": "50",
+            "message": "Invalid Input."
+          },
+          {
+            "type": "empty",
+            "message": "Invalid Input."
+          }
+        ]
+      },
+      {
+        "accessorKey": "username",
+        "numeric": false,
+        "disablePadding": false,
+        "label": "USERNAME",
+        "isSortable": true,
+        "type": "text",
+        "filterVariant": "text",
+        "validations": [
+          {
+            "type": "maxLength",
+            "length": "50",
+            "message": "Invalid Input."
+          },
+          {
+            "type": "empty",
+            "message": "Invalid Input."
+          }
+        ]
+      },
+      {
+        "accessorKey": "email",
+        "numeric": false,
+        "disablePadding": false,
+        "label": "EMAIL",
+        "isSortable": true,
+        "type": "text",
+        "filterVariant": "text",
+        "validations": [
+          {
+            "type": "maxLength",
+            "length": "50",
+            "message": "Invalid Input."
+          },
+          {
+            "type": "empty",
+            "message": "Invalid Input."
+          },
+          {
+            "type": "email",
+            "message": "Please enter a valid email address"
+          }
+        ]
+      },
+      {
+        "accessorKey": "date",
+        "numeric": false,
+        "disablePadding": false,
+        "label": "DATE",
+        "isSortable": true,
+        "type": "date",
+        "filterVariant": "text",
+        "validations": [
+          {
+            "type": "empty",
+            "message": "Invalid Input."
+          }
+        ]
+      },
+      {
+        "accessorKey": "amount",
+        "numeric": true,
+        "disablePadding": false,
+        "label": "AMT SPENT",
+        "isSortable": true,
+        "type": "number",
+        "filterVariant": "text",
+        "isDollarSymbolRequired": true,
+        "validations": [
+          {
+            "type": "maxLength",
+            "length": "50",
+            "message": "Invalid Input."
+          },
+          {
+            "type": "empty",
+            "message": "Invalid Input."
+          }
+        ]
+      },
+      {
+        "accessorKey": "actions",
+        "isActionsEnabled": true,
+        "numeric": false,
+        "disablePadding": false,
+        "label": "ACTIONS",
+        "isSortable": false,
+        "filterVariant": null,
+        "type": null,
+        "actionsList": [
+          "EDIT",
+          "DELETE"
+        ]
+      }
+    ],
+    "rows": [
+      {
+        "id": 1,
+        "name": "Chelsey Detrich",
+        "username": "Chelsey",
+        "email": "Sincere123@gmail.com",
+        "address": {
+          "street": "Kulas Light",
+          "suite": "Apt. 556",
+          "city": "Gwenborough",
+          "zipcode": "92998-3874"
+        },
+        "phone": "1-770-736-8031",
+        "amount": "123.45",
+        "date": "01/15/2022"
+      },
+      {
+        "id": 2,
+        "name": "rao vivek",
+        "username": "vivek",
+        "email": "vivek@barrelfuel.com",
+        "address": {
+          "street": "Victor Plains",
+          "suite": "Suite 879",
+          "city": "Wisokyburgh",
+          "zipcode": "90566-7771"
+        },
+        "phone": "010-692-6593",
+        "amount": "456.78",
+        "date": "03/22/2022"
+      },
+      {
+        "id": 3,
+        "name": "Clementine Bauch",
+        "username": "Samanth",
+        "email": "Nathan@yesenia.net",
+        "address": {
+          "street": "Douglas Extension",
+          "suite": "Suite 847",
+          "city": "McKenziehaven",
+          "zipcode": "59590-4157"
+        },
+        "phone": "1-463-123-4447",
+        "amount": "789.10",
+        "date": "07/11/2022"
+      },
+      {
+        "id": 4,
+        "name": "Patricia Lebsack",
+        "username": "Karianne",
+        "email": "prithviraj.chandra@conduent.com",
+        "address": {
+          "street": "Hoeger Mall",
+          "suite": "Apt. 692",
+          "city": "South Elvis",
+          "zipcode": "53919-4257"
+        },
+        "phone": "493-170-9623",
+        "amount": "321.65",
+        "date": "09/05/2022"
+      },
+      {
+        "id": 5,
+        "name": "Chelsey Dietrich",
+        "username": "Kamren",
+        "email": "Lucio.Hettinger@gmail.com",
+        "address": {
+          "street": "Skiles Walks",
+          "suite": "Suite 351",
+          "city": "Roscoeview",
+          "zipcode": "33263"
+        },
+        "phone": "(254)954-1289",
+        "amount": "987.65",
+        "date": "11/30/2022"
+      },
+      {
+        "id": 6,
+        "name": "Mrs. Dennis Schulist",
+        "username": "Leopoldo_Corkery",
+        "email": "Karley_Dach@jasper.info",
+        "address": {
+          "street": "Norberto Crossing",
+          "suite": "Apt. 950",
+          "city": "South Christy",
+          "zipcode": "23505-1337"
+        },
+        "phone": "1-477-935-8478",
+        "amount": "543.21",
+        "date": "02/14/2022"
+      },
+      {
+        "id": 7,
+        "name": "Kurtis Weissnat",
+        "username": "Elwyn.Skiles",
+        "email": "Telly.Hoeger@billy.biz",
+        "address": {
+          "street": "Rex Trail",
+          "suite": "Suite 280",
+          "city": "Howemouth",
+          "zipcode": "58804-1099"
+        },
+        "phone": "210.067.6132",
+        "amount": "876.54",
+        "date": "06/18/2022"
+      },
+      {
+        "id": 8,
+        "name": "Nicholas Runolfsdottir V",
+        "username": "Maxime_Nienow",
+        "email": "Sherwod@rosamond.com",
+        "address": {
+          "street": "Ellsworth Summit",
+          "suite": "Suite 729",
+          "city": "Aliyaview",
+          "zipcode": "45169"
+        },
+        "phone": "586.493.6943",
+        "amount": "234.56",
+        "date": "08/09/2022"
+      },
+      {
+        "id": 9,
+        "name": "Glenna Reichert",
+        "username": "Delphine",
+        "email": "Chaim_McDermott@dana.io",
+        "address": {
+          "street": "Dayna Park",
+          "suite": "Suite 449",
+          "city": "Bartholomebury",
+          "zipcode": "76495-3109"
+        },
+        "phone": "(775)976-6794",
+        "amount": "789.12",
+        "date": "10/24/2022"
+      },
+      {
+        "id": 10,
+        "name": "Clementina DuBuque",
+        "username": "Moriah.Stanton",
+        "email": "Rey.Padberg@karina.biz",
+        "address": {
+          "street": "Kattie Turnpike",
+          "suite": "Suite 198",
+          "city": "Lebsackbury",
+          "zipcode": "31428-2261"
+        },
+        "phone": "024-648-3804",
+        "amount": "113.11",
+        "date": "05/07/2022"
+      }
+    ],
+    "pagination": {
+      "rowsPerPageLabel": "Rows per page",
+      "rowsPerPageOptions": [
+        5,
+        10,
+        25
+      ]
+    }
+  }
+}

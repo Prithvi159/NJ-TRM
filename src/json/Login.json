@@ -1,0 +1,21 @@
+{
+  "fields": [
+    {
+      "name": "email",
+      "label": "Email",
+      "type": "email",
+      "inputType": "text",
+      "required": true,
+      "validations": [
+        {
+          "type": "required",
+          "message": "Email is required"
+        },
+        {
+          "type": "email",
+          "message": "Please enter a valid email address"
+        }
+      ]
+    }
+  ]
+}
