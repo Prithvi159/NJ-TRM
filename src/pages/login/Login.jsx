@@ -1,16 +1,18 @@
-// Import necessary modules
 import { Button, Checkbox, FormControlLabel, TextField } from "@mui/material";
 import React, { useState } from "react";
-import "./login.scss";
+import "./Login.scss";
 import Logo from "../../assets/images/NJTransitLogo.png";
 import LoginPageJson from "../../json/Login.json";
 import { validateField } from "../../utils/validation";
 import { useDispatch, useSelector } from "react-redux";
 import { useNavigate } from "react-router-dom";
-import { signInFailure, signInStart, signInSuccess } from "../../redux/user/userSlice";
+import {
+  signInFailure,
+  signInStart,
+  signInSuccess,
+} from "../../redux/user/userSlice";
 
 const Login = () => {
-
   const dispatch = useDispatch();
   const navigate = useNavigate();
 
@@ -19,11 +21,8 @@ const Login = () => {
 
   const { loading, error: errorMessage } = useSelector((state) => state.user);
 
-
-  const handleInputChange = (field, e) => {
-    const value = e.target.value;
+  const handleInputChange = (field, value) => {
     const validationError = validateField(field.validations, value);
-  
     setFormData((prevData) => ({
       ...prevData,
       [field.name]: value,
@@ -33,12 +32,14 @@ const Login = () => {
       [field.name]: validationError,
     }));
   };
-  
 
   const validateForm = () => {
     const errors = {};
     LoginPageJson.fields.forEach((field) => {
-      const validationError = validateField(field?.validations, formData[field.name]);
+      const validationError = validateField(
+        field?.validations,
+        formData[field.name]
+      );
       if (validationError) {
         errors[field.name] = validationError;
       }
@@ -58,15 +59,13 @@ const Login = () => {
                 value={field.name}
                 color="primary"
                 checked={formData[field.name] || false}
-                onChange={() =>
-                  handleInputChange(field, { target: { value: !formData[field.name] } })
-                }
+                onChange={() => handleInputChange(field, !formData[field.name])}
               />
             }
             label={field.label}
           />
         );
-  
+
       case "email":
       case "password":
         return (
@@ -79,15 +78,14 @@ const Login = () => {
             label={field.label}
             type={field.type}
             value={formData[field.name] || ""}
-            onChange={(e) => handleInputChange(field, e)}
+            onChange={(e) => handleInputChange(field, e.target.value)}
           />
         );
-  
+
       default:
         return null;
     }
   };
-  
 
   const handleLogin = async (e) => {
     e.preventDefault();
@@ -95,9 +93,9 @@ const Login = () => {
     if (isValid) {
       try {
         dispatch(signInStart());
-        const res = await fetch('/njtransit/nodebackend/auth/signin', {
-          method: 'POST',
-          headers: { 'Content-Type': 'application/json' },
+        const res = await fetch("/njtransit/nodebackend/auth/signin", {
+          method: "POST",
+          headers: { "Content-Type": "application/json" },
           body: JSON.stringify(formData),
         });
         const data = await res.json();
@@ -105,14 +103,26 @@ const Login = () => {
           dispatch(signInFailure(data.message));
         } else {
           dispatch(signInSuccess(data));
-          navigate('/dashboard');
+          navigate("/dashboard");
         }
       } catch (error) {
         dispatch(signInFailure(error.message));
       }
     }
-
   };
+
+  const renderButton = (button, index) => (
+    <Button
+      key={index}
+      type={button.type}
+      fullWidth
+      variant={button.variant}
+      color={button.color}
+      sx={{ mt: 3, mb: 2 }}
+    >
+      {button.text}
+    </Button>
+  );
 
   return (
     <div className="background-image">
@@ -126,14 +136,7 @@ const Login = () => {
           <form onSubmit={handleLogin} noValidate>
             {LoginPageJson.fields.map(renderField)}
             <p className="additional-text">{LoginPageJson.additionalText}</p>
-            <Button
-              type="submit"
-              fullWidth
-              variant="contained"
-              sx={{ mt: 3, mb: 2 }}
-            >
-              Login
-            </Button>
+            {LoginPageJson.buttons.map(renderButton)}
           </form>
         </div>
       </div>
