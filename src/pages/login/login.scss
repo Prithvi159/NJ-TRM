@@ -1,37 +1,38 @@
-.login-container {
-  display: block;
-  height: 100vh;
-  overflow: hidden;
-}
-
-.login-content {
-  padding: 50px;
-  width: 400px;
-  background-color: white;
-  margin: 30px 55px 30px 0px;
-  
-}
-
-.login-content form {
-  display: flex;
-  flex-direction: column;
-  position: relative;
-  gap: 16px;
-}
-
-.login-content .login-options {
-    margin-top: -49px;
-    align-self: flex-end;
-}
 .background-image {
-    display: flex;
-    justify-content: flex-end;
-    align-items: center;
-    height: 100vh;    
-    background-attachment: fixed !important;
-    background: url('../../assets/images/NjBackground.png') center/cover no-repeat;
-}
+  display: flex;
+  justify-content: flex-end;
+  align-items: center;
+  height: 100vh;
+  background: url("../../assets/images/NjBackground.png") center/cover no-repeat;
+  background-attachment: fixed !important;
 
-.login-form-header{
-    text-align: center;
+  .login-container {
+    display: block;
+    height: 100vh;
+    overflow: hidden;
+
+    .login-content {
+      padding: 50px;
+      width: 400px;
+      background-color: white;
+      margin: 30px 55px 30px 0px;
+      text-align: center;
+
+      form {
+        display: flex;
+        flex-direction: column;
+        position: relative;
+        gap: 16px;
+
+        .login-options {
+          margin-top: -49px;
+          align-self: flex-end;
+        }
+      }
+    }
+
+    .login-form-header {
+      text-align: center;
+    }
+  }
 }
