@@ -1,4 +1,6 @@
 {
+  "heading": "Welcome to NJ Transit",
+  "subHeading": "Use Ad login to sign-in",
   "fields": [
     {
       "name": "email",
@@ -16,6 +18,15 @@
           "message": "Please enter a valid email address"
         }
       ]
+    }
+  ],
+  "additionalText": "Use your Organization AD to Sign in to the system",
+  "buttons": [
+    {
+      "text": "Login",
+      "variant": "contained",
+      "color": "primary",
+      "type": "submit"
     }
   ]
 }

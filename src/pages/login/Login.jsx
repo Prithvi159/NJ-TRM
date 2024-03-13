@@ -121,10 +121,11 @@ const Login = () => {
           <div className="login-form-header">
             <img src={Logo} alt="Centered Image" />
           </div>
-          <h2>Welcome to NJ Transit</h2>
-          <h3>Use Ad login to sign-in</h3>
+          <h2>{LoginPageJson.heading}</h2>
+          <h3>{LoginPageJson.subHeading}</h3>
           <form onSubmit={handleLogin} noValidate>
             {LoginPageJson.fields.map(renderField)}
+            <p className="additional-text">{LoginPageJson.additionalText}</p>
             <Button
               type="submit"
               fullWidth
