@@ -5,7 +5,7 @@ import "./RailDashboard.scss"
 import Breadcrumb from "../../custom/breadcrumb/Breadcrumb";
 import { EXCLUDE_LINKS } from "../../../utils/constants/commonConstants";
 
-export function RailDashboard() {
+export default function RailDashboard() {
   return (
     <div className="railDashboard">
       <LeftNavbarDrawer />
