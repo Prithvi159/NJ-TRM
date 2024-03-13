@@ -2,6 +2,7 @@ import React from "react";
 import { NavLink, useLocation } from "react-router-dom";
 import { Breadcrumbs, Typography } from "@mui/material";
 import NavigateNextIcon from "@mui/icons-material/NavigateNext";
+import { toTitleCase } from "../../../utils/globalMethods";
 
 const breadcrumbSpecialRoutes = {
   'polled-data': 'data-browse',
@@ -32,13 +33,13 @@ export default function Breadcrumb (props){
         return (
           <div key={pathname}>
             {isLast ? (
-              <Typography color="textPrimary">{pathname}</Typography>
+              <Typography color="textPrimary">{toTitleCase(pathname)}</Typography>
             ) : (
               <NavLink
                 color="inherit"
                 to={routeTo}
               >
-                {pathname}
+                {toTitleCase(pathname)}
               </NavLink>
             )}
           </div>
