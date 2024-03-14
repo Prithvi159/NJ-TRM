@@ -1,4 +1,7 @@
+@import "../src/assets/styles/constants.scss";
 .app-global {
   margin: auto;
-  font-family: "Open Sans" !important;
+  font-family: $font-family;
+  height: $height-full;
+  width: $width-full;
 }
