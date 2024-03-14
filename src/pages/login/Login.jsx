@@ -2,7 +2,7 @@ import { Button, Checkbox, FormControlLabel, TextField } from "@mui/material";
 import React, { useState } from "react";
 import "./Login.scss";
 import Logo from "../../assets/images/NJTransitLogo.png";
-import LoginPageJson from "../../json/Login.json";
+import LoginPageJson from "../../json/enLogin.json";
 import { validateField } from "../../utils/validation";
 import { useDispatch, useSelector } from "react-redux";
 import { useNavigate } from "react-router-dom";
@@ -20,6 +20,7 @@ const Login = () => {
   const [formErrors, setFormErrors] = useState({});
 
   const { loading, error: errorMessage } = useSelector((state) => state.user);
+  const backimage = LoginPageJson.content.login.content.headline.iconDetails
 
   const handleInputChange = (field, value) => {
     const validationError = validateField(field.validations, value);
@@ -35,7 +36,7 @@ const Login = () => {
 
   const validateForm = () => {
     const errors = {};
-    LoginPageJson.fields.forEach((field) => {
+    LoginPageJson.content.login.content.userLoginDetails.forEach((field) => {
       const validationError = validateField(
         field?.validations,
         formData[field.name]
@@ -49,7 +50,7 @@ const Login = () => {
   };
 
   const renderField = (field) => {
-    switch (field.type) {
+    switch (field.dataType) {
       case "checkbox":
         return (
           <FormControlLabel
@@ -67,16 +68,16 @@ const Login = () => {
         );
 
       case "email":
-      case "password":
+      case "email":
         return (
           <TextField
             key={field.name}
-            required={field.required}
+            required={field.isRequired}
             error={Boolean(formErrors[field.name])}
             helperText={formErrors[field.name]}
             id={`outlined-${field.name}`}
-            label={field.label}
-            type={field.type}
+            label={field.fieldLabel}
+            type={field.fieldType}
             value={formData[field.name] || ""}
             onChange={(e) => handleInputChange(field, e.target.value)}
           />
@@ -129,14 +130,14 @@ const Login = () => {
       <div className="login-container">
         <div className="login-content">
           <div className="login-form-header">
-            <img src={Logo} alt="Centered Image" />
+            <img src={backimage.url} alt={backimage.altText} />
           </div>
-          <h2>{LoginPageJson.heading}</h2>
-          <h3>{LoginPageJson.subHeading}</h3>
+          <div className="text-flex"><div  className="text-flex1">{LoginPageJson.content.login.content.headline.welcom}</div><div className="text-flex">{LoginPageJson.content.login.content.headline.text}</div></div>
+          <div className="sign-in-text">{LoginPageJson.content.login.content.headline.text1}</div>
           <form onSubmit={handleLogin} noValidate>
-            {LoginPageJson.fields.map(renderField)}
-            <p className="additional-text">{LoginPageJson.additionalText}</p>
-            {LoginPageJson.buttons.map(renderButton)}
+            {LoginPageJson.content.login.content.userLoginDetails.map(renderField)}
+            <p className="additional-text">{LoginPageJson.content.login.content.headline.additionalText}</p>
+            {LoginPageJson.content.login.content.primaryButton.map(renderButton)}
           </form>
         </div>
       </div>
