@@ -1,4 +1,4 @@
-import "./App.css";
+import "./App.scss";
 import { RouterProvider } from "react-router-dom";
 import { AppRouter } from "./routes/AppRoute";
 
