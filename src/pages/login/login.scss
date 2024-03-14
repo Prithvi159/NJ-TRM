@@ -1,3 +1,4 @@
+@import "../src/assets/styles/constants.scss";
 .background-image {
   display: flex;
   justify-content: flex-end;
@@ -10,12 +11,37 @@
     display: block;
     height: 100vh;
     overflow: hidden;
-
+    display: contents;
+    height: $height-full;
+    width: $width-full;
     .login-content {
-      padding: 50px;
-      width: 400px;
+      padding: 40px;
       background-color: white;
-      margin: 30px 55px 30px 0px;
+      width: calc(100% - 70%);
+      margin-right: 7%;
+      .text-flex{
+        display: flex;
+        align-items: baseline;
+        .text-flex1 {
+          color: $welcom-colour;
+          font-weight: $font-weight-600;
+          font-size: $h2-font-size;
+          }
+          .text-flex{
+          color: $transit-colour;
+          font-weight: $font-weight-600;
+          padding-left:5px;
+          font-size: $font-size-24
+          }
+
+      }
+      .sign-in-text{
+        font-size: $font-size-18;
+        font-weight: $font-weight-bold;
+        padding-top: 25px;
+        padding-bottom: 25px;
+
+      }
 
       .login-form-header {
         text-align: center;
@@ -26,6 +52,15 @@
         flex-direction: column;
         position: relative;
         gap: 16px;
+        div:first-child{
+          div{
+          border-radius: 0;
+          }
+        }
+        button{
+          margin: 0;
+          background-color: $login-colour;
+        }
 
         .login-options {
           margin-top: -49px;
@@ -33,6 +68,9 @@
         }
         .additional-text {
           margin: 0px 0px 20px 0px;
+          font-size: $font-size-10;
+          color: $additional-text;
+          font-weight: $font-weight-600;
         }
       }
     }

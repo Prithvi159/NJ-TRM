@@ -1,0 +1,71 @@
+{
+    "stateId":"GA",
+    "languageId":"en",
+    "screenName":"Login",
+    "pageId":"95",
+    "pageName":"Login page",
+    "content":{
+       "login":{
+          "content":{
+             "id":"171",
+             "headline":{
+                "iconDetails":{
+                   "url":"/src/assets/images/NJTransitLogo.png",
+                   "altText":"Signin"
+                },
+                 "welcom":"Welcom to",
+                "text":"NJ Transit",
+                "text1":"Sign-in",
+                "additionalText": "Use your Organization AD to Sign in to the system"
+             },
+             "userLoginDetails":[
+                {
+                   "fieldType":"text",
+                   "dataType":"email",
+                   "fieldLabel":"Email",
+                   "validations":[
+                      {
+                         "type":"required",
+                         "validationRule":"Email is required",
+                         "message":"Email is required"
+                      },
+                      {
+                        "type":"email",
+                        "validationRule":"Please enter a valid email address",
+                        "message":"Please enter a valid email address"
+                     }
+                   ],
+                   "placeHolder":"",
+                   "maxLength":"50",
+                   "minLength":"",
+                   "minValue":"",
+                   "maxValue":"",
+                   "prefix":"",
+                   "suffix":"",
+                   "name":"email",
+                   "isRequired":1,
+                   "options":[
+                      
+                   ],
+                   "hint":"",
+                   "textAlign":"left",
+                   "defaultValue":"",
+                   "href":""
+                }
+             ],
+             "primaryButton":[
+                {
+                   "id":"3961",
+                   "href":"#",
+                   "name":"loginButton",
+                   "text":"LOGIN",
+                   "target":"",
+                   "variant": "contained",
+                   "color": "primary",
+                   "type": "submit"
+                }
+             ]
+          }
+       }
+    }
+ }
