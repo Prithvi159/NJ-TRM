@@ -111,10 +111,7 @@
         "isSortable": false,
         "filterVariant": null,
         "type": null,
-        "actionsList": [
-          "EDIT",
-          "DELETE"
-        ]
+        "actionsList": ["EDIT", "DELETE"]
       }
     ],
     "rows": [
@@ -269,13 +266,26 @@
         "date": "05/07/2022"
       }
     ],
+    "modals": {
+      "deleteUser": {
+        "bodyText": "Are you sure you want to delete the record?",
+        "buttons": [
+          {
+            "label": "CANCEL",
+            "color": "secondary",
+            "action": "cancel"
+          },
+          {
+            "label": "YES",
+            "color": "danger",
+            "action": "delete"
+          }
+        ]
+      }
+    },
     "pagination": {
       "rowsPerPageLabel": "Rows per page",
-      "rowsPerPageOptions": [
-        5,
-        10,
-        25
-      ]
+      "rowsPerPageOptions": [5, 10, 25]
     }
   }
 }

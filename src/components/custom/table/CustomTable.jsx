@@ -21,6 +21,7 @@ import CustomTablePdfExporter from "./pdfExporter/CustomTablePdfExporter";
 import EnhancedTableHead from "./head/CustomTableHead";
 import { useUpdateUserTableData } from "../../../utils/TanstackQuery/tableHelper";
 import { CustomTableBody } from "./body/CustomTableBody";
+import AlertModal from "../modal/alertModal/AlertModal";
 
 function descendingComparator(a, b, orderBy) {
   if (b[orderBy] < a[orderBy]) {
@@ -130,7 +131,7 @@ const getInitialOrderBy = (columnHeaders) => {
 };
 
 export default function CustomTable(props) {
-  const { rows, columnHeaders, pagination, displaySelectRowsCheckBox, isRowExpandable } = props;
+    const { rows, columnHeaders, pagination, displaySelectRowsCheckBox, isRowExpandable, modals } = props;
 
   // Determine the maximum rows per page option based on the maximum value in rowsPerPageOptions
   const maxRowsPerPageOption = pagination && Math.max(...pagination?.rowsPerPageOptions);
@@ -145,9 +146,10 @@ export default function CustomTable(props) {
   const [printMode, setPrintMode] = useState(false);
   const [expandedRow, setExpandedRow] = useState(null);
 
-  //Edit Modal States
+  //Modal States
   const [rowDataForEdit, setRowDataForEdit] = useState(null);
   const [openEditModal, setOpenEditModal] = useState(false);
+  const [openDeleteModal, setOpenDeleteModal] = useState(false);
 
   //custom RQ Hooks
   const { mutate } = useUpdateUserTableData();
@@ -224,7 +226,8 @@ export default function CustomTable(props) {
   };
 
   const handleDelete = (id) => {
-    //Delete logic
+    setOpenDeleteModal(true)
+    //Delete logic contd...
   };
 
   const handleSaveEditedRowData = (editedRowData) => {
@@ -243,6 +246,15 @@ export default function CustomTable(props) {
         columns={columnHeaders}
       />
     );
+  };
+  const renderDeleteModal = () => {
+    return (
+      <AlertModal
+        modalData={modals.deleteUser}
+        onSecondaryButtonClick={() => {setOpenDeleteModal(false)}}
+        onPrimaryButtonClick={() => {}}
+      />
+    )  
   };
 
   const handleFilterChange = (filterValues) => {
@@ -353,6 +365,7 @@ export default function CustomTable(props) {
       </Paper>
       {renderPdfExporter()}
       {openEditModal && renderEditModal()}
+      {openDeleteModal && renderDeleteModal()}
     </Box>
   );
 }
