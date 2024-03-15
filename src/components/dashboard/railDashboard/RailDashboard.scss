@@ -10,8 +10,11 @@
       .MuiBox-root{
         width: 96%;
         margin-left: 2.4%;
-        margin-top: 1%;
         .MuiPaper-root{
+          .MuiToolbar-root{
+            margin-top: 7%;
+
+          }
           .custom-pagination-controls{
             margin-left: -2%;
             margin-top: 0;
