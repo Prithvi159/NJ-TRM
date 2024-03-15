@@ -2,7 +2,7 @@ import React from 'react'
 
 function TransmissionTracking() {
   return (
-    <div>TransmissionTracking</div>
+    <div className='transmission-page'>TransmissionTracking</div>
   )
 }
 

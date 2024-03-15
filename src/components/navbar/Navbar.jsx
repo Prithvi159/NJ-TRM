@@ -1,6 +1,6 @@
 import React from "react";
 import { Link, NavLink, useLocation } from "react-router-dom";
-import NJT_Logo from "../../assets/images/NJTransitLogo.png";
+import NJT_Logo from "../../assets/images/Logo1.png";
 import "./Navbar.scss";
 import { AccountMenu } from "./accountMenu/AccountMenu";
 
