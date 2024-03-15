@@ -1,5 +1,8 @@
+@import "../src/assets/styles/constants.scss";
 .footer-content {
     display: flex;
     justify-content: center;
     align-items: center;
+    color: $footer-colour;
+    font-size: $font-size-10;
 }

@@ -92,23 +92,24 @@ const Login = () => {
     e.preventDefault();
     const isValid = validateForm();
     if (isValid) {
-      try {
-        dispatch(signInStart());
-        const res = await fetch("/njtransit/nodebackend/auth/signin", {
-          method: "POST",
-          headers: { "Content-Type": "application/json" },
-          body: JSON.stringify(formData),
-        });
-        const data = await res.json();
-        if (data.statusCode !== "200") {
-          dispatch(signInFailure(data.message));
-        } else {
-          dispatch(signInSuccess(data));
-          navigate("/dashboard");
-        }
-      } catch (error) {
-        dispatch(signInFailure(error.message));
-      }
+      // try {
+      //   dispatch(signInStart());
+      //   const res = await fetch("/njtransit/nodebackend/auth/signin", {
+      //     method: "POST",
+      //     headers: { "Content-Type": "application/json" },
+      //     body: JSON.stringify(formData),
+      //   });
+      //   const data = await res.json();
+      //   if (data.statusCode !== "200") {
+      //     dispatch(signInFailure(data.message));
+      //   } else {
+      //     dispatch(signInSuccess(data));
+      //     // navigate("/dashboard");
+      //   }
+      // } catch (error) {
+      //   dispatch(signInFailure(error.message));
+      // }
+      navigate("/dashboard");
     }
   };
 

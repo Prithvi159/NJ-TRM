@@ -1,5 +1,43 @@
+@import "../src/assets/styles/constants.scss";
 .dashboard-content {
-    padding-top: 90px;
+    .button-align{
+        margin-top: 20%;
+        position: absolute;
+        display: flex;
+        column-gap: 60%;
+        margin-left: 35%;
+        .bus-align,.train-align{
+            display: grid;
+            border: 1px solid $border-clr;
+            padding: 40%;
+            background-color: $white-clr;
+            img{
+                margin-left: 10%;
+            }
+            a{
+                padding-top: 40px;
+                .display-icon{
+                    display: inline-flex;
+                     column-gap: 5px;
+                }
+            }
+            button{
+                color: $rail-clr;
+                font-size: $font-size-16;
+                font-weight: $font-weight-600;
+                background-color: $white-clr;
+                border: none;
+                cursor: pointer;
+            }
+        }
+        .bus-align{
+            img{
+                margin-left: 0 ;
+            }
+
+        }
+
+    }
 }
 .footer-container{
     bottom: 0;
