@@ -13,6 +13,11 @@ const Navbar = (props) => {
   const railDashboardNavLinks = headNavbarData?.railDashboardNavbar?.railNavLinks
 
   return (
+    
+    <div className="display">
+      {isRailDashboard && 
+      <div className="text-align">RAIL REVENUE ACCOUNTING SYSTEM</div>
+    }
     <div className="navbar">
       <div className="logo-container">
         <Link to="/dashboard">
@@ -27,10 +32,11 @@ const Navbar = (props) => {
             </NavLink>
             ))}
         </div>
-      }
+}
       <div className="avatar-container">
         <AccountMenu accountMenuJson={headNavbarData?.accountMenu} />
       </div>
+    </div>
     </div>
   );
 };
