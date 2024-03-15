@@ -3,6 +3,7 @@ import { NavLink, useLocation } from "react-router-dom";
 import { Breadcrumbs, Typography } from "@mui/material";
 import NavigateNextIcon from "@mui/icons-material/NavigateNext";
 import { toTitleCase } from "../../../utils/globalMethods";
+import './Breadcrumb.scss'
 
 const breadcrumbSpecialRoutes = {
   'polled-data': 'data-browse',
@@ -38,6 +39,7 @@ export default function Breadcrumb (props){
               <NavLink
                 color="inherit"
                 to={routeTo}
+                className="breadcrumb-link"
               >
                 {toTitleCase(pathname)}
               </NavLink>
@@ -50,8 +52,9 @@ export default function Breadcrumb (props){
 
   return (
     <Breadcrumbs
-      separator={<NavigateNextIcon fontSize="small" />}
+      separator={<NavigateNextIcon fontSize="small" className="navbar-nextIcon"/>}
       aria-label="breadcrumb"
+      className="breadcrumb-container"
     >
       {renderBreadcrumbItems()}
     </Breadcrumbs>
