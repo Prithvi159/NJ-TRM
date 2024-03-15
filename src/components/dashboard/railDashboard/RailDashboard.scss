@@ -2,8 +2,13 @@
     margin-left: 200px;
   padding-top: 60px; 
   .transmission-page{
+    margin-top: 15%;
+    margin-left: 10%;
 
 
+  }
+  .MuiTypography-root{
+    margin-top: 2%;
   }
   div{
     div{
@@ -12,7 +17,7 @@
         margin-left: 2.4%;
         .MuiPaper-root{
           .MuiToolbar-root{
-            margin-top: 7%;
+            margin-top: 10%;
 
           }
           .custom-pagination-controls{
@@ -26,7 +31,7 @@
 
           }
           .MuiTableContainer-root{
-            height: 52vh;
+            height: 47vh;
             table{
               .MuiTableHead-root {
                 position: sticky;
