@@ -40,6 +40,7 @@ export function DataBrowse() {
           rows={userTableData?.data?.rows}
           columnHeaders={userTableData?.data?.columnHeaders}
           pagination={userTableData?.data?.pagination}
+          modals={userTableData?.data?.modals}
           displaySelectRowsCheckBox={false}
           isRowExpandable={true}
         />
