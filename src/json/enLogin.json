@@ -22,7 +22,7 @@
                 {
                    "fieldType":"text",
                    "dataType":"email",
-                   "fieldLabel":"Email",
+                   "fieldLabel":"Email Address",
                    "validations":[
                       {
                          "type":"required",
@@ -43,7 +43,7 @@
                    "prefix":"",
                    "suffix":"",
                    "name":"email",
-                   "isRequired":1,
+                   "isRequired":true,
                    "options":[
                       
                    ],
