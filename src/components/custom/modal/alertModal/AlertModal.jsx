@@ -3,13 +3,13 @@ import './AlertModal.scss';
 
 export default function AlertModal(props) {
   const { modalData, onSecondaryButtonClick, onPrimaryButtonClick } = props;
-  const { bodyText, buttons } = modalData;
+  const { bodyText, buttons, iconDetails } = modalData;
 
   return (
     <div className="alert-modal-container">
       <div className="alert-modal">
         <div className="alert-header">
-          {/* <FontAwesomeIcon icon={faExclamationCircle} size="2x" /> */}
+          {iconDetails && <img src={iconDetails?.url} alt={iconDetails?.altText} />}
         </div>
         <div className="alert-body">
           <h2>{bodyText.title}</h2>
