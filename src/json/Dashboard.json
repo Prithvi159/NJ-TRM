@@ -24,7 +24,7 @@
         },
         {
           "label": "Logout",
-          "link": "/logout"
+          "link": "/login"
         }
       ]
     }
