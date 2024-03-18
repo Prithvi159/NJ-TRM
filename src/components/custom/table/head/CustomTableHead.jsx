@@ -10,6 +10,7 @@ import {
 } from "@mui/material";
 import { visuallyHidden } from "@mui/utils";
 import "./CustomTableHead.scss";
+import TIME_Logo from "../../../../assets/images/Group 6726.png";
 
 function FilterTextField({ accessorKey, onChange }) {
   return (
@@ -32,6 +33,7 @@ function SortableHeaderCell(props) {
   } = props;
 
   return (
+    
     <TableCell
       align={headCell.numeric ? "right" : "left"}
       padding={headCell.disablePadding ? "none" : "normal"}
@@ -41,8 +43,10 @@ function SortableHeaderCell(props) {
       {headCell.accessorKey === "actions" ? (
         <span>{headCell.label}</span>
       ) : (
+        
         <div style={{ display: "flex", flexDirection: "column" }}>
           <div style={{ display: "flex", alignItems: "center" }}>
+          <div className="position"><img src ={TIME_Logo}/></div>
             <span>{headCell.label}</span>
             {headCell.isSortable && (
               <TableSortLabel
@@ -50,7 +54,7 @@ function SortableHeaderCell(props) {
                 direction={orderBy === headCell.accessorKey ? order : "asc"}
                 onClick={createSortHandler(headCell.accessorKey)}
               >
-                <Box component="span" sx={visuallyHidden}>
+                <Box component="span" sx={visuallyHidden}style={{ color:"red"}}>
                   {order === "desc" ? "sorted descending" : "sorted ascending"}
                 </Box>
               </TableSortLabel>

@@ -1,3 +1,4 @@
+@import "../src/assets/styles/constants.scss";
 .railDashboard{
   margin-left: 17%;
   padding-top: 85px;
@@ -9,6 +10,8 @@
   }
   .MuiTypography-root{
     margin-top: 2%;
+    padding: 8px;
+    font-size: $font-size-14;
     &.MuiBreadcrumbs-root {
       margin-top: 27px;
       left: 17%;
@@ -50,7 +53,14 @@
                 .MuiTableRow-root{
                   .MuiTableCell-root {
                     white-space: nowrap;
+                    font-size: $font-size-12;
+                    text-align: center;
+                    border-bottom: 0;
+                    border-left: 0.1px solid $border-left;
                   }
+                }
+                .MuiTableRow-root:nth-child(even){
+                  background-color: $table-back-clr;
                 }
               }
             }

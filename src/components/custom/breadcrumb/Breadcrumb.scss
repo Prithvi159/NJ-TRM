@@ -1,3 +1,4 @@
+@import "../src/assets/styles/constants.scss";
 .navbar-nextIcon {
     color: #E83E8C;
 }
@@ -22,5 +23,6 @@
   }
   .breadcrumb-link:last-child {
     text-decoration: none !important;
+    font-size: $font-size-14;
   }
   
