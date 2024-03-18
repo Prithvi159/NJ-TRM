@@ -146,7 +146,7 @@
           },
           {
             "uniqueKey": "dutyEnd",
-            "label": "Duty Etart"
+            "label": "Duty End"
           }
         ]
       },
@@ -211,6 +211,18 @@
           {
             "uniqueKey": "closeDownMethod",
             "label": "Close Down Method"
+          }
+        ],
+        "buttons": [
+          {
+            "label": "Duty Summary Statistics",
+            "action": "summary",
+            "className": "summary-btn"
+          },
+          {
+            "label": "Close",
+            "action": "close",
+            "className": "close-btn"
           }
         ]
       }

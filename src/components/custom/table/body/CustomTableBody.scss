@@ -1,16 +1,16 @@
 .custom-table-row {
-  &.expandable {
+  &.expandable,
+  &.expanded {
     cursor: pointer;
 
     &:hover {
       background-color: #f5f5f5;
     }
   }
-  &.expanded {
-    cursor: pointer;
 
-    &:hover {
-      background-color: #f5f5f5;
+  &.expanded {
+    .MuiTableRow-root.expanded-row-detail-panel-container {
+      background-color: #e8f2fc !important;
     }
   }
 }

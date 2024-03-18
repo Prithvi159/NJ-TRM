@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useEffect } from "react";
 import { useQuery } from "@tanstack/react-query";
 import axios from "axios";
 import CustomTable from "../../../../custom/table/CustomTable";
@@ -27,13 +27,17 @@ export function DataBrowse() {
     error,
     refetch,
   } = useUserTableData();
+
+  useEffect(() => {
+    refetch();
+  }, []);
   
 
   console.log("data", userTableData?.data);
 
   return (
     <div>
-      {isFetching ? (
+      {isPending ? (
         <h2>Loading...</h2>
       ) : (
         <CustomTable
@@ -42,7 +46,8 @@ export function DataBrowse() {
           pagination={userTableData?.data?.pagination}
           modals={userTableData?.data?.modals}
           displaySelectRowsCheckBox={false}
-          isRowExpandable={true}
+          isRowExpandable={userTableData?.data?.isExpandable}
+          expandedRowDetailPanelJson={userTableData?.data?.expandedRowDetailPanel}
         />
       )}
     </div>

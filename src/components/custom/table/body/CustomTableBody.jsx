@@ -2,6 +2,7 @@ import React from "react";
 import { Box, Checkbox, TableCell, TableRow } from "@mui/material";
 import { CustomTableBodyCell } from "./CustomTableBodyCell";
 import './CustomTableBody.scss'
+import RowDetailsPanel from "./RowDetailsPanel";
 
 export function CustomTableBody(props) {
   const {
@@ -11,19 +12,17 @@ export function CustomTableBody(props) {
     columnHeaders,
     handleRowClick,
     expandedRow,
-    dense,
     displaySelectRowsCheckBox,
-    rowsPerPage,
     handleEdit, handleDelete,
-    isRowExpandable
+    isRowExpandable,
+    expandedRowDetailPanelJson
   } = props;
-
-  const emptyRows = Math.max(0, rowsPerPage - visibleRows.length);
+  
   const colSpan = columnHeaders.length + (displaySelectRowsCheckBox ? 1 : 0);
 
   return (
     <>
-      {visibleRows?.map((row, index) => (
+      {visibleRows?.length && visibleRows?.map((row, index) => (
         <React.Fragment key={row.id}>
           <TableRow
             hover
@@ -56,24 +55,16 @@ export function CustomTableBody(props) {
           </TableRow>
           {/*expanded row*/}
           {isRowExpandable && expandedRow === row.id && (
-            <TableRow>
+            <TableRow className="expanded-row-detail-panel-container">
               <TableCell colSpan={colSpan}>
                 {/*additional details*/}
-                <Box p={3}>Additional details - {row.name}</Box>
+                <RowDetailsPanel data={row?.additionalUserDetails} 
+                  expandedRowDetailPanelJson={expandedRowDetailPanelJson}/>
               </TableCell>
             </TableRow>
           )}
         </React.Fragment>
       ))}
-      {emptyRows > 0 && (
-        <TableRow
-          style={{
-            height: (dense ? 33 : 53) * emptyRows,
-          }}
-        >
-          <TableCell colSpan={columnHeaders.length + 1} />
-        </TableRow>
-      )}
     </>
   );
 }
