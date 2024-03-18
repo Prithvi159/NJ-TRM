@@ -1,6 +1,6 @@
 .railDashboard{
-    margin-left: 200px;
-  padding-top: 60px; 
+  margin-left: 17%;
+  padding-top: 85px;
   .transmission-page{
     margin-top: 15%;
     margin-left: 10%;
@@ -11,8 +11,8 @@
     margin-top: 2%;
     &.MuiBreadcrumbs-root {
       margin-top: 27px;
-      left: 201px;
-      padding-top: 18px;
+      left: 17%;
+      // padding-top: 18px;
     }
   }
   div{
@@ -23,6 +23,8 @@
         .MuiPaper-root{
           .MuiToolbar-root{
             margin-top: 10%;
+            display: flex;
+            flex-flow: row-reverse;
 
           }
           .custom-pagination-controls{
@@ -36,7 +38,7 @@
 
           }
           .MuiTableContainer-root{
-            height: 47vh;
+            height: 43vh;
             table{
               .MuiTableHead-root {
                 position: sticky;
