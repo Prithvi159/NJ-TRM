@@ -16,6 +16,7 @@
         { "to": "/dashboard/rail/maintenance", "text": "Maintenance" }
       ]
     },
+    "railDashboardNavbartext":"RAIL REVENUE ACCOUNTING SYSTEM",
     "accountMenu": {
       "options": [
         {
@@ -35,22 +36,26 @@
         {
           "label": "Data Browse",
           "icon": "DataUsage",
-          "to": "polled-data/data-browse"
+          "to": "polled-data/data-browse",
+          "imagePath":"/src/assets/images/Group 7424.png"
         },
         {
           "label": "Transmission Tracking",
           "icon": "TrackChanges",
-          "to": "polled-data/transmission-tracking"
+          "to": "polled-data/transmission-tracking",
+          "imagePath":"/src/assets/images/Group 7422.png"
         },
         {
           "label": "Error Processing",
           "icon": "Error",
-          "to": "polled-data/error-processing"
+          "to": "polled-data/error-processing",
+          "imagePath":"/src/assets/images/Group 7423.png"
         },
         {
           "label": "Summary File Browse",
           "icon": "Folder",
-          "to": "polled-data/summary-file-browse"
+          "to": "polled-data/summary-file-browse",
+          "imagePath":"/src/assets/images/Group 7421.png"
         }
       ]
     }
