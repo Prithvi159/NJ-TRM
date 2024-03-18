@@ -13,6 +13,8 @@ import { Dashboard } from "../components/dashboard/Dashboard";
 import { DataBrowse } from "../components/dashboard/railDashboard/polledData/dataBrowse/DataBrowse";
 import TransmissionTracking from "../components/dashboard/railDashboard/polledData/transmissionTracking/TransmissionTracking";
 import { lazy } from "react";
+import ErrorProcessing from "../components/dashboard/railDashboard/polledData/errorProcessing/ErrorProcessing";
+import SummaryFileBrowse from "../components/dashboard/railDashboard/polledData/summaryFileBrowse/SummaryFileBrowse";
 
 const RailDashboard = lazy(() =>
   import("../components/dashboard/railDashboard/RailDashboard")
@@ -29,10 +31,9 @@ export const AppRouter = createBrowserRouter(
           <Route path="rail" element={<RailDashboard />}>
             <Route path="polled-data" element={<PolledData />}>
               <Route index path="data-browse" element={<DataBrowse />} />
-              <Route
-                path="transmission-tracking"
-                element={<TransmissionTracking />}
-              />
+              <Route path="transmission-tracking" element={<TransmissionTracking />} />
+              <Route path="error-processing" element={<ErrorProcessing />} />
+              <Route path="summary-file-browse" element={<SummaryFileBrowse />} />
             </Route>
           </Route>
         </Route>
