@@ -51,6 +51,7 @@
       text-decoration: none;
       color: #ADB5BD;
       position: relative;
+      font-size: $font-size-12;
 
       &.active {
         color: #FFFFFF;
@@ -58,11 +59,13 @@
         &:before {
           content: "";
           position: absolute;
-          top: -19px;
+          top: -23px;
           left: 0;
           width: 100%;
-          height: 5px;
-          background-color: #ff7f00;
+          height: 6px;
+          background-color: $yellow-clr;
+          border-bottom-left-radius: 6px;
+          border-bottom-right-radius: 6px;
         }
       }
     }
