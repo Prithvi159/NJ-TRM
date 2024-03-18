@@ -9,6 +9,11 @@
   }
   .MuiTypography-root{
     margin-top: 2%;
+    &.MuiBreadcrumbs-root {
+      margin-top: 27px;
+      left: 201px;
+      padding-top: 18px;
+    }
   }
   div{
     div{
