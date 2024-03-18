@@ -2,7 +2,7 @@
 .left-navbar {
   position: fixed;
   left: 0;
-  top: 15.3%;
+  top: 111px;
   bottom: 0;
   width: 200px;
   background-color: #f0f0f0;
@@ -21,6 +21,9 @@
       text-decoration: none;
       transition: background-color 0.3s;
       border-bottom: 1px solid $border-clr;
+      .icon {
+        display: flex;
+    }
     }
     .menu-item:first-child{
       color: red;
@@ -43,13 +46,7 @@
     }
 
     .arrow {
-      border: solid black;
-      border-width: 0 2px 2px 0;
-      display: inline-block;
-      padding: 3px;
-      transform: rotate(-45deg);
       margin-left: auto;
-      margin-right: 10px;
     }
   }
 }
