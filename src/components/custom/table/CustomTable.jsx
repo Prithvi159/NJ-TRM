@@ -11,7 +11,6 @@ import {
   Typography,
 } from "@mui/material";
 import DeleteIcon from "@mui/icons-material/Delete";
-import FilterListIcon from "@mui/icons-material/FilterList";
 import { alpha } from "@mui/system";
 import CustomPagination from "../CustomPagination";
 import "./CustomTable.scss";
@@ -107,11 +106,6 @@ function EnhancedTableToolbar(props) {
           </Tooltip>
         ) : (
           <div>
-            <Tooltip title="Filter list">
-              <IconButton>
-                <FilterListIcon />
-              </IconButton>
-            </Tooltip>
             <Tooltip title="Print">
               <IconButton aria-label="print" onClick={() => onPrint(true)}>
                 <PrintIcon />
@@ -131,7 +125,8 @@ const getInitialOrderBy = (columnHeaders) => {
 };
 
 export default function CustomTable(props) {
-    const { rows, columnHeaders, pagination, displaySelectRowsCheckBox, isRowExpandable, modals } = props;
+    const { rows, columnHeaders, pagination, displaySelectRowsCheckBox, isRowExpandable, modals, 
+      expandedRowDetailPanelJson } = props;
 
   // Determine the maximum rows per page option based on the maximum value in rowsPerPageOptions
   const maxRowsPerPageOption = pagination && Math.max(...pagination?.rowsPerPageOptions);
@@ -307,11 +302,10 @@ export default function CustomTable(props) {
         handleRowClick={handleRowClick}
         expandedRow={expandedRow}
         isRowExpandable={isRowExpandable}
-        dense={dense}
         displaySelectRowsCheckBox={displaySelectRowsCheckBox}
-        rowsPerPage={rowsPerPage}
         handleEdit={handleEdit}
         handleDelete={handleDelete}
+        expandedRowDetailPanelJson={isRowExpandable ? expandedRowDetailPanelJson : null}
       />
     )
   }
