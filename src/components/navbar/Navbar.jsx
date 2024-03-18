@@ -15,12 +15,20 @@ const Navbar = (props) => {
   const railDashboardNavLinks = headNavbarData?.railDashboardNavbar?.railNavLinks
   const railDashboardNavbartext = headNavbarData?.railDashboardNavbartext
 
+  const handleClick = () => {
+    navigate("/dashboard");
+  };
+  
+
   return (
     
     <div className="display">
       {isRailDashboard && 
       <div className="flex-center">
-      <div><img src={HOME_Logo} className="logo" /></div>
+      <div> 
+        <Link to="/dashboard">
+          <img  className="logo" src={HOME_Logo}/>
+        </Link></div>
       <div className="text-align">{railDashboardNavbartext}</div>
       <div className="date-formate"><img src={TIME_Logo} className="logo" /></div>
       </div>

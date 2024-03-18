@@ -2,7 +2,7 @@
 .left-navbar {
   position: fixed;
   left: 0;
-  top: 111px;
+  top: 112px;
   bottom: 0;
   width: 17%;
   background-color: #f0f0f0;
@@ -17,12 +17,14 @@
       display: flex;
       align-items: center;
       padding: 15px;
+      padding-left: 0;
       color: black;
       text-decoration: none;
       transition: background-color 0.3s;
       border-bottom: 1px solid $border-clr;
       .icon {
         display: flex;
+        padding-left: 15px;
     }
     }
     .menu-item:first-child{
@@ -35,12 +37,19 @@
 
     .active {
       background-color: #ddd;
-      border-left: 3px solid red;
+
+      &::before{
+        content: '';
+        border-left: 3px solid $border-side;       
+        width: 4px;
+        height: 25px;
+      }
     }
     .title {
       margin-left: 10px;
       color: $nav-clr;
-      font-size: 14px;
+      font-size: 12px;
+      margin-top: 3px;
       font-weight: $font-weight-500;
       white-space: nowrap;
     }
