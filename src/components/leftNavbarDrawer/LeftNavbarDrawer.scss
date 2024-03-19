@@ -2,9 +2,9 @@
 .left-navbar {
   position: fixed;
   left: 0;
-  top: 112px;
+  top: 17.6vh;
   bottom: 0;
-  width: 17%;
+  width: 17vw;
   background-color: #f0f0f0;
   border-right: 2px solid #d1d9e1;
   display: flex;
@@ -48,7 +48,7 @@
     .title {
       margin-left: 10px;
       color: $nav-clr;
-      font-size: 12px;
+      font-size: $font-size-12;
       margin-top: 3px;
       font-weight: $font-weight-500;
       white-space: nowrap;
@@ -56,6 +56,9 @@
 
     .arrow {
       margin-left: auto;
+      img{
+        vertical-align: super;
+      }
     }
   }
 }

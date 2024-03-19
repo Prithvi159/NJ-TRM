@@ -25,7 +25,7 @@ const Navbar = (props) => {
     <div className="display">
       {isRailDashboard && 
       <div className="flex-center">
-      <div> 
+      <div className="logo-home" > 
         <Link to="/dashboard">
           <img  className="logo" src={HOME_Logo}/>
         </Link></div>
