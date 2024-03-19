@@ -1,19 +1,17 @@
 @import "../src/assets/styles/constants.scss";
 .railDashboard{
-  margin-left: 17%;
-  padding-top: 85px;
+  margin-left: 17vw;
+  padding-top: 17.9vh;
+  width: 83vw;
+  height: 82vh;
   .transmission-page{
     margin-top: 15%;
     margin-left: 10%;
   }
   .MuiTypography-root{
-    margin-top: 2%;
     padding: 8px;
     font-size: $font-size-14;
     &.MuiBreadcrumbs-root {
-      margin-top: 27px;
-      left: 17%;
-      // padding-top: 18px;
     }
   }
   div{
@@ -23,9 +21,10 @@
         margin-left: 2.4%;
         .MuiPaper-root{
           .MuiToolbar-root{
-            margin-top: 10%;
+            margin-top: 11vh;
             display: flex;
             flex-flow: row-reverse;
+            padding: 0;
 
           }
           .custom-pagination-controls{
