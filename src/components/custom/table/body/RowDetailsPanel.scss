@@ -18,9 +18,12 @@
     .body {
       display: flex;
 
+      .vertical-line {
+        border-left: 1px solid #ccc;
+      }
+
       .body-column {
         flex: 1;
-        border-right: 1px solid #ccc;
       }
 
       .data-row {
@@ -55,10 +58,5 @@
         gap: 10px;
       }
     }
-  }
-
-  .vertical-line {
-    border-left: 1px solid #ccc;
-    //   height: 100%;
   }
 }

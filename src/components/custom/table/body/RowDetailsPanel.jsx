@@ -3,7 +3,10 @@ import "./RowDetailsPanel.scss";
 
 import React from "react";
 
-export default function RowDetailsPanel({ data, expandedRowDetailPanelJson }) {
+export default function RowDetailsPanel(props) {
+
+    const { data, expandedRowDetailPanelJson } = props
+
   const chunkArray = (arr, size) => {
     const chunks = [];
     for (let i = 0; i < arr.length; i += size) {
@@ -24,8 +27,6 @@ export default function RowDetailsPanel({ data, expandedRowDetailPanelJson }) {
     numRows
   );
 
-  console.log("dynamicDataChunks", dynamicDataChunks.length)
-
   return (
     <div className="expanded-row-details-panel">
       <div className="top-right">
@@ -41,6 +42,7 @@ export default function RowDetailsPanel({ data, expandedRowDetailPanelJson }) {
       <div className="row-details-panel-body-footer-container">
       <div className="body">
         {dynamicDataChunks?.length && dynamicDataChunks.map((chunk, index) => (
+        <>
           <div key={index} className="body-column">
             {chunk.map((detail) => (
               <div key={detail.uniqueKey} className="data-row">
@@ -48,8 +50,9 @@ export default function RowDetailsPanel({ data, expandedRowDetailPanelJson }) {
                 <div className="data-value">{data[detail.uniqueKey]}</div>
               </div>
             ))}
-            {(index !== (dynamicDataChunks?.length - 1)) && <div className="vertical-line"></div>}
           </div>
+          {(index !== (dynamicDataChunks?.length - 1)) && <div className="vertical-line"></div>}
+        </>
         ))}
       </div>
       <div className="footer">
