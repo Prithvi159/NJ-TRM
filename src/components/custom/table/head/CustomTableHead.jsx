@@ -40,7 +40,7 @@ function SortableHeaderCell(props) {
       sortDirection={orderBy === headCell.accessorKey ? order : false}
       className="custom-table-cell"
     >
-      {headCell.accessorKey === "actions" ? (
+      {(!headCell.isSearchable) ? (
         <span>{headCell.label}</span>
       ) : (
         

@@ -8,6 +8,7 @@
         "disablePadding": true,
         "label": "STATION",
         "isSortable": true,
+        "isSearchable": true,
         "type": "text",
         "filterVariant": "text",
         "defaultSortBy": true,
@@ -29,6 +30,7 @@
         "disablePadding": false,
         "label": "DATE",
         "isSortable": true,
+        "isSearchable": true,
         "type": "date",
         "filterVariant": "text",
         "validations": [
@@ -44,6 +46,7 @@
         "disablePadding": true,
         "label": "AGENT",
         "isSortable": true,
+        "isSearchable": true,
         "type": "text",
         "filterVariant": "text",
         "defaultSortBy": true,
@@ -65,6 +68,7 @@
         "disablePadding": true,
         "label": "MACHINE",
         "isSortable": true,
+        "isSearchable": true,
         "type": "text",
         "filterVariant": "text",
         "defaultSortBy": true,
@@ -86,6 +90,7 @@
         "disablePadding": true,
         "label": "TIME",
         "isSortable": true,
+        "isSearchable": true,
         "type": "text",
         "filterVariant": "text",
         "defaultSortBy": true,
@@ -107,6 +112,7 @@
         "disablePadding": false,
         "label": "CASH/CHECKS",
         "isSortable": true,
+        "isSearchable": true,
         "type": "number",
         "filterVariant": "text",
         "isDollarSymbolRequired": true,
@@ -123,12 +129,41 @@
         ]
       },
       {
+        "accessorKey": "exception",
+        "isActionsEnabled": true,
+        "numeric": false,
+        "disablePadding": false,
+        "label": "EXP",
+        "isSortable": false,
+        "isSearchable": false,
+        "filterVariant": null,
+        "type": null,
+        "actionsList": [
+          "DELETE"
+        ]
+      },
+      {
+        "accessorKey": "adjustments",
+        "isActionsEnabled": true,
+        "numeric": false,
+        "disablePadding": false,
+        "label": "ADJ",
+        "isSortable": false,
+        "isSearchable": false,
+        "filterVariant": null,
+        "type": null,
+        "actionsList": [
+          "DELETE"
+        ]
+      },
+      {
         "accessorKey": "actions",
         "isActionsEnabled": true,
         "numeric": false,
         "disablePadding": false,
         "label": "ACTIONS",
         "isSortable": false,
+        "isSearchable": false,
         "filterVariant": null,
         "type": null,
         "actionsList": [
