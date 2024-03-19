@@ -139,7 +139,7 @@
         "filterVariant": null,
         "type": null,
         "actionsList": [
-          "DELETE"
+          "POPOVER"
         ]
       },
       {
@@ -153,7 +153,7 @@
         "filterVariant": null,
         "type": null,
         "actionsList": [
-          "DELETE"
+          "POPOVER"
         ]
       },
       {
@@ -186,7 +186,7 @@
         ]
       },
       "expandedRowDetailPanelBody": {
-        "userTransportDetails": [
+        "rowDetailPanelBodyTable": [
           {
             "uniqueKey": "employeeNumber",
             "label": "Employee Number"
@@ -238,7 +238,7 @@
         ]
       },
       "expandedRowDetailPanelFooter": {
-        "userClosingDetails": [
+        "rowDetailPanelFooterTable": [
           {
             "uniqueKey": "closingWorkingFund",
             "label": "Closing Working Fund"
@@ -246,6 +246,14 @@
           {
             "uniqueKey": "closeDownMethod",
             "label": "Close Down Method"
+          },
+          {
+            "uniqueKey": "currAdjNbr",
+            "label": "Curr Adj Nbr"
+          },
+          {
+            "uniqueKey": "adjusted",
+            "label": "Adjusted"
           }
         ],
         "buttons": [
@@ -289,6 +297,8 @@
           "closingAgentNumber": "0000",
           "printer2LastTicketNumber": "000",
           "closingWorkingFund": "$0.00",
+          "currAdjNbr": "1",
+          "adjusted": "1",
           "closeDownMethod": "00000000",
           "CARD ERROR EMP NO": "",
           "PRINTERZ LAST TIX NO": "0000"

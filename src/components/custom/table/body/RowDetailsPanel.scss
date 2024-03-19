@@ -51,6 +51,29 @@
         flex: 1;
         background-color: #f5f9fd;
         padding-right: 10px;
+
+        .footer-block {
+          padding-right: 20px;
+          display: flex;
+          flex: 1;
+          gap: 20px;
+          flex-wrap: wrap;
+
+          .footer-row {
+            display: flex;
+            align-items: center;
+            margin-bottom: 10px;
+
+            .footer-label {
+              font-weight: bold;
+              min-width: 150px;
+            }
+
+            .footer-value {
+              margin-left: 10px;
+            }
+          }
+        }
       }
 
       .footer-right {
