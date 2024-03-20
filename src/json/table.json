@@ -162,7 +162,15 @@
         "isSearchable": false,
         "filterVariant": null,
         "type": null,
-        "actionsList": ["POPOVER"]
+        "actionsList": [
+          {
+            "actionType": "POPOVER",
+            "tooltip": {
+              "text": "Exception"
+            },
+            "label": "X"
+          }
+        ]
       },
       {
         "accessorKey": "adjustments",
@@ -174,7 +182,15 @@
         "isSearchable": false,
         "filterVariant": null,
         "type": null,
-        "actionsList": ["POPOVER"]
+        "actionsList": [
+          {
+            "label": "A",
+            "actionType": "POPOVER",
+            "tooltip": {
+              "text": "Adjustments"
+            }
+          }
+        ]
       },
       {
         "accessorKey": "actions",
@@ -186,7 +202,28 @@
         "isSearchable": false,
         "filterVariant": null,
         "type": null,
-        "actionsList": ["TRANSACTION", "DELETE"]
+        "actionsList": [
+          {
+            "actionType": "TRANSACTION",
+            "tooltip": {
+              "text": "Transaction"
+            },
+            "iconDetails": {
+              "url": "/src/assets/icons/Transaction.svg",
+              "altText": "Transaction"
+            }
+          },
+          {
+            "actionType": "DELETE",
+            "tooltip": {
+              "text": "Delete"
+            },
+            "iconDetails": {
+              "url": "/src/assets/icons/Delete.svg",
+              "altText": "Delete"
+            }
+          }
+        ]
       }
     ],
     "expandedRowDetailPanel": {

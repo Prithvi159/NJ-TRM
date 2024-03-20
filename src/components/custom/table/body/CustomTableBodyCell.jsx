@@ -1,10 +1,6 @@
 import React from "react";
-import { IconButton, TableCell } from "@mui/material";
-import EditIcon from "../../../../assets/icons/EditIcon";
-import DeleteIcon from "../../../../assets/icons/DeleteIcon.jsx";
-import "../CustomTable.scss";
+import { IconButton, TableCell, Tooltip } from "@mui/material";
 import PopoverButton from "../../controls/PopoverButton/PopoverButton";
-import TransactionIcon from "../../../../assets/icons/Transaction.jsx";
 
 const TableCellContent = (props) => {
   const { headCell, value } = props;
@@ -15,88 +11,85 @@ const TableCellContent = (props) => {
   return value;
 };
 
-const ActionButtons = (props) => {
-  const { actionsList, row, handleEdit, handleDelete, actionButtonsJson } = props;
-
+const ActionButton = ({ icon, tooltip, onClick }) => {
   return (
-    <>
-      {actionsList.map((action, index) => {
-        switch (action) {
-          case "EDIT":
-            return (
-              <IconButton
-                key={`${row.id}-edit-${index}`}
-                onClick={(event) => {
-                  event.stopPropagation();
-                  handleEdit(row);
-                }}
-              >
-                <EditIcon />
-              </IconButton>
-            );
-          case "DELETE":
-            return (
-              <IconButton
-                key={`${row.id}-delete-${index}`}
-                onClick={(event) => {
-                  event.stopPropagation();
-                  handleDelete(row.id);
-                }}
-              >
-                <DeleteIcon />
-              </IconButton>
-            );
-          case "TRANSACTION":
-            return (
-              <IconButton
-                key={`${row.id}-delete-${index}`}
-                onClick={(event) => {
-                  event.stopPropagation();
-                  // handleDelete(row.id);
-                }}
-              >
-                <TransactionIcon/>
-              </IconButton>
-            )
-          case "POPOVER":
-            return (
-              <PopoverButton
-                popoverJson={actionButtonsJson}
-              />
-            )
-          default:
-            return null;
-        }
-      })}
+    <Tooltip title={tooltip?.text}>
+      {icon && (
+        <IconButton onClick={onClick}>
+          <img src={icon?.url} class="logo" alt={icon?.altText} />
+        </IconButton>
+      )}
+    </Tooltip>
+  );
+};
+
+const ActionButtons = ({ actions, row, handleActionClick }) => {
+  return (
+<>
+      {actions.map((action, index) => (
+        action?.actionType === 'POPOVER' ? (
+          <PopoverButton
+            key={`${row.id}-${action?.actionType}-${index}`}
+            label={action?.label}
+            tooltipText={action?.tooltip?.text}
+            onClick={(event) => {
+              event.stopPropagation();
+              handleActionClick(action?.actionType, row);
+            }}
+          />
+        ) : (
+          <ActionButton
+            key={`${row.id}-${action.actionType}-${index}`}
+            icon={action.iconDetails}
+            tooltip={action.tooltip}
+            onClick={(event) => {
+              event.stopPropagation();
+              handleActionClick(action?.actionType, row);
+            }}
+          />
+        )
+      ))}
     </>
   );
 };
 
-export function CustomTableBodyCell(props) {
-  const { headCell, row, handleEdit, handleDelete } = props;
+export default function CustomTableBodyCell({
+  headCell,
+  row,
+  handleEdit,
+  handleDelete,
+}) {
+  const handleActionClick = (action, row) => {
+    switch (action) {
+      case "EDIT":
+        handleEdit(row);
+        break;
+      case "DELETE":
+        handleDelete(row.id);
+        break;
+      default:
+        break;
+    }
+  };
 
   return (
-    <>
-      <TableCell
-        align={headCell.numeric ? "right" : "left"}
-        padding="none"
-        className="custom-table-cell-body"
-      >
-        {headCell.isActionsEnabled ? (
-          <ActionButtons
-            actionsList={headCell.actionsList}
-            row={row}
-            actionButtonsJson={headCell}
-            handleEdit={handleEdit}
-            handleDelete={handleDelete}
-          />
-        ) : (
-          <TableCellContent
-            headCell={headCell}
-            value={row[headCell?.accessorKey]}
-          />
-        )}
-      </TableCell>
-    </>
+    <TableCell
+      align={headCell.numeric ? "right" : "left"}
+      padding="none"
+      className="custom-table-cell-body"
+    >
+      {headCell.isActionsEnabled ? (
+        <ActionButtons
+          actions={headCell?.actionsList}
+          row={row}
+          handleActionClick={handleActionClick}
+        />
+      ) : (
+        <TableCellContent
+          headCell={headCell}
+          value={row[headCell?.accessorKey]}
+        />
+      )}
+    </TableCell>
   );
 }

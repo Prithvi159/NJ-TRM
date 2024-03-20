@@ -124,7 +124,6 @@ function EnhancedTableToolbar(props) {
               aria-label={button?.tooltip?.text}
               onClick={() => handleActionClick(button?.action)}
             >
-              {/* {button?.iconDetails?.url} */}
               {button?.iconDetails && <img src={button?.iconDetails?.url} alt={button?.iconDetails?.altText} />}
             </IconButton>
           </Tooltip>
