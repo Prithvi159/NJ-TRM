@@ -15,13 +15,11 @@ import { alpha } from "@mui/system";
 import CustomPagination from "../CustomPagination";
 import "./CustomTable.scss";
 import TableRowEditModal from "../modal/EditModal";
-import PrintIcon from "@mui/icons-material/Print";
 import CustomTablePdfExporter from "./pdfExporter/CustomTablePdfExporter";
 import EnhancedTableHead from "./head/CustomTableHead";
 import { useUpdateUserTableData } from "../../../utils/TanstackQuery/tableHelper";
 import { CustomTableBody } from "./body/CustomTableBody";
 import AlertModal from "../modal/alertModal/AlertModal";
-
 function descendingComparator(a, b, orderBy) {
   if (b[orderBy] < a[orderBy]) {
     return -1;
@@ -71,7 +69,21 @@ function stableSort(array, comparator) {
 }
 
 function EnhancedTableToolbar(props) {
-  const { numSelected, onPrint } = props;
+  const { actionButtons, numSelected, onPrint } = props;
+  console.log("actionButtons",actionButtons)
+
+  const handleActionClick = (action) => {
+    switch (action) {
+      case "print":
+        onPrint(true);
+        break;
+      case "exportCSV":
+        // Implement export as CSV functionality
+        break;
+      default:
+        break;
+    }
+  };
 
   return (
     <Toolbar
@@ -98,23 +110,28 @@ function EnhancedTableToolbar(props) {
         </Typography>
       )}
       <div>
-        {numSelected > 0 ? (
-          <Tooltip title="Delete">
-            <IconButton>
-              <DeleteIcon />
+      {numSelected > 0 ? (
+        <Tooltip title="Delete">
+          <IconButton>
+            <DeleteIcon />
+          </IconButton>
+        </Tooltip>
+        ) : (
+        <>
+        {actionButtons?.length && actionButtons.map((button, index) => (
+          <Tooltip key={index} title={button?.tooltip?.text}>
+            <IconButton
+              aria-label={button?.tooltip?.text}
+              onClick={() => handleActionClick(button?.action)}
+            >
+              {/* {button?.iconDetails?.url} */}
+              {button?.iconDetails && <img src={button?.iconDetails?.url} alt={button?.iconDetails?.altText} />}
             </IconButton>
           </Tooltip>
-        ) : (
-          <div>
-            <Tooltip title="Print">
-              <IconButton aria-label="print" onClick={() => onPrint(true)}>
-                <PrintIcon />
-              </IconButton>
-            </Tooltip>
-          </div>
+        ))}
+        </>
         )}
       </div>
-
     </Toolbar>
   );
 }
@@ -125,7 +142,7 @@ const getInitialOrderBy = (columnHeaders) => {
 };
 
 export default function CustomTable(props) {
-    const { rows, columnHeaders, pagination, displaySelectRowsCheckBox, isRowExpandable, modals, 
+    const { rows, columnHeaders, toolBar, pagination, displaySelectRowsCheckBox, isRowExpandable, modals, 
       expandedRowDetailPanelJson } = props;
 
   // Determine the maximum rows per page option based on the maximum value in rowsPerPageOptions
@@ -324,6 +341,7 @@ export default function CustomTable(props) {
         <EnhancedTableToolbar
           numSelected={selected.length}
           onPrint={handlePrint}
+          actionButtons={toolBar?.actionButtons}
         />
         <TableContainer>
           <Table

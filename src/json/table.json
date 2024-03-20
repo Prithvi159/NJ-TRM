@@ -1,6 +1,30 @@
 {
   "table": {
     "isExpandable": true,
+    "toolBar": {
+      "actionButtons": [
+        {
+          "action": "print",
+          "tooltip": {
+            "text": "Print"
+          },
+          "iconDetails": {
+            "url": "/src/assets/icons/PDF.svg",
+            "altText": "PrintPDF"
+          }
+        },
+        {
+          "action": "exportCSV",
+          "tooltip": {
+            "text": "CSV"
+          },
+          "iconDetails": {
+            "url": "/src/assets/icons/CSV.svg",
+            "altText": "PrintCSV"
+          }
+        }
+      ]
+    },
     "columnHeaders": [
       {
         "accessorKey": "stationCode",
@@ -138,9 +162,7 @@
         "isSearchable": false,
         "filterVariant": null,
         "type": null,
-        "actionsList": [
-          "POPOVER"
-        ]
+        "actionsList": ["POPOVER"]
       },
       {
         "accessorKey": "adjustments",
@@ -152,9 +174,7 @@
         "isSearchable": false,
         "filterVariant": null,
         "type": null,
-        "actionsList": [
-          "POPOVER"
-        ]
+        "actionsList": ["POPOVER"]
       },
       {
         "accessorKey": "actions",
@@ -166,10 +186,7 @@
         "isSearchable": false,
         "filterVariant": null,
         "type": null,
-        "actionsList": [
-          "EDIT",
-          "DELETE"
-        ]
+        "actionsList": ["TRANSACTION", "DELETE"]
       }
     ],
     "expandedRowDetailPanel": {
@@ -268,6 +285,81 @@
             "className": "close-btn"
           }
         ]
+      }
+    },
+    "popoverButtons": {
+      "exceptionPopover": {
+        "type": "EXCEPTION",
+        "exceptionPopoverHeader": {
+          "userDetails": [
+            {
+              "label": "BY USER",
+              "uniqueKey": "byUser"
+            }
+          ],
+          "timeDetails": [
+            {
+              "uniqueKey": "dutyStart",
+              "label": "Duty Start"
+            },
+            {
+              "uniqueKey": "dutyEnd",
+              "label": "Duty End"
+            }
+          ]
+        },
+        "exceptionPopoverBody": {
+          "rowDetailPanelBodyTable": [
+            {
+              "uniqueKey": "employeeNumber",
+              "label": "Employee Number"
+            },
+            {
+              "uniqueKey": "securityLevel",
+              "label": "Security Level"
+            },
+            {
+              "uniqueKey": "workingFund",
+              "label": "Working Fund"
+            },
+            {
+              "uniqueKey": "ticketMachineNumber",
+              "label": "Ticket Machine Number"
+            },
+            {
+              "uniqueKey": "printer2TicketSeriesNumber",
+              "label": "Printer 2 Ticket Series Number"
+            },
+            {
+              "uniqueKey": "closingEmployeeNumber",
+              "label": "Closing Employee Number"
+            },
+            {
+              "uniqueKey": "printer1TicketSeriesNumber",
+              "label": "Printer 1 Ticket Series Number"
+            },
+            {
+              "uniqueKey": "closingSecurityLevel",
+              "label": "Closing Security Level"
+            },
+            {
+              "uniqueKey": "closingAgentNumber",
+              "label": "Closing Agent Number"
+            },
+            {
+              "uniqueKey": "printer1LastTicketNumber",
+              "label": "Printer 1 Last Ticket Number"
+            },
+            {
+              "uniqueKey": "cardErrorEmployeeNumber",
+              "label": "Card Error Employee Number"
+            },
+            {
+              "uniqueKey": "printer2LastTicketNumber",
+              "label": "Printer 2 Last Ticket Number"
+            }
+          ]
+        }
       }
     },
     "rows": [
@@ -607,11 +699,7 @@
     },
     "pagination": {
       "rowsPerPageLabel": "Rows per page",
-      "rowsPerPageOptions": [
-        5,
-        10,
-        25
-      ]
+      "rowsPerPageOptions": [5, 10, 25]
     }
   }
 }

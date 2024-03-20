@@ -1,8 +1,10 @@
 import React from "react";
 import { IconButton, TableCell } from "@mui/material";
 import EditIcon from "../../../../assets/icons/EditIcon";
-import TrashIcon from "../../../../assets/icons/TrashIcon";
+import DeleteIcon from "../../../../assets/icons/DeleteIcon.jsx";
 import "../CustomTable.scss";
+import PopoverButton from "../../controls/PopoverButton/PopoverButton";
+import TransactionIcon from "../../../../assets/icons/Transaction.jsx";
 
 const TableCellContent = (props) => {
   const { headCell, value } = props;
@@ -14,7 +16,7 @@ const TableCellContent = (props) => {
 };
 
 const ActionButtons = (props) => {
-  const { actionsList, row, handleEdit, handleDelete } = props;
+  const { actionsList, row, handleEdit, handleDelete, actionButtonsJson } = props;
 
   return (
     <>
@@ -41,9 +43,27 @@ const ActionButtons = (props) => {
                   handleDelete(row.id);
                 }}
               >
-                <TrashIcon />
+                <DeleteIcon />
               </IconButton>
             );
+          case "TRANSACTION":
+            return (
+              <IconButton
+                key={`${row.id}-delete-${index}`}
+                onClick={(event) => {
+                  event.stopPropagation();
+                  // handleDelete(row.id);
+                }}
+              >
+                <TransactionIcon/>
+              </IconButton>
+            )
+          case "POPOVER":
+            return (
+              <PopoverButton
+                popoverJson={actionButtonsJson}
+              />
+            )
           default:
             return null;
         }
@@ -66,6 +86,7 @@ export function CustomTableBodyCell(props) {
           <ActionButtons
             actionsList={headCell.actionsList}
             row={row}
+            actionButtonsJson={headCell}
             handleEdit={handleEdit}
             handleDelete={handleDelete}
           />
