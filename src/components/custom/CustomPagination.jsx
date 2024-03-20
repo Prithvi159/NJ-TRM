@@ -33,7 +33,8 @@ const CustomPagination = (props) => {
   return (
     <Box className="custom-pagination-container">
       <Box className="custom-pagination-controls">
-        <Typography variant="body2">Entries</Typography>
+        <Typography variant="body2" className="pagination-text">Show</Typography>
+        
         <Select
           value={rowsPerPage}
           onChange={handleChangeRowsPerPage}
@@ -51,6 +52,7 @@ const CustomPagination = (props) => {
             </MenuItem>
           ))}
         </Select>
+        <Typography variant="body2" className="pagination-text">Entriess</Typography>
       </Box>
       <Pagination
         count={numPages}
