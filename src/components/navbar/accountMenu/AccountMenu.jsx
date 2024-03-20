@@ -7,11 +7,11 @@ import MenuItem from "@mui/material/MenuItem";
 export function AccountMenu() {
   const [anchorEl, setAnchorEl] = useState(null);
 
-  const handleClick = (event) => {
+  const handleOpenMenu = (event) => {
     setAnchorEl(event.currentTarget);
   };
 
-  const handleClose = () => {
+  const handleCloseMenu = () => {
     setAnchorEl(null);
   };
 
@@ -20,28 +20,34 @@ export function AccountMenu() {
       <Avatar
         alt="User Avatar"
         src="/path/to/avatar.jpg"
-        onClick={handleClick}
+       onMouseEnter={handleOpenMenu}
+       onMouseLeave={handleCloseMenu}
+       sx={{cursor: "pointer"}}
+
       />
       <Menu
         id="menu-appbar"
         anchorEl={anchorEl}
         anchorOrigin={{
-          vertical: "bottom",
+          vertical: "top",
           horizontal: "right",
         }}
         keepMounted
         transformOrigin={{
-          vertical: "top",
+          vertical: "bottom",
           horizontal: "right",
         }}
         open={Boolean(anchorEl)}
-        onClose={handleClose}
+        onClose={handleCloseMenu}
+        onMouseEnter={handleOpenMenu}
+        onMouseLeave={ handleCloseMenu}
+        sx={{marginTop: "5%", marginLeft:"-2%"}}
       >
-        <MenuItem onClick={handleClose}>
-          <NavLink to="/profile">My Profile</NavLink>
+        <MenuItem className="avatar">
+          <NavLink to="/profile" className="profile">My Profile</NavLink>
         </MenuItem>
-        <MenuItem onClick={handleClose}>
-          <NavLink to="/login">Logout</NavLink>
+        <MenuItem>
+          <NavLink to="/login" className="profile">Logout</NavLink>
         </MenuItem>
       </Menu>
     </>

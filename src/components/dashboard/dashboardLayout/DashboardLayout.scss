@@ -1,4 +1,5 @@
 @import "../src/assets/styles/constants.scss";
+
 .dashboard-content {
     width: 100vw;
     height: 100vh;
@@ -9,110 +10,208 @@
         align-items: center;
         height: 100vh;
         width: 100vw;
-        }
-        .section-container {
-        margin: 0 10px;
-        flex: 1;
-        max-width: 10vw;
-        background-color: $white-clr;
-        padding: 20px;
-        height: 26vh;
-        border: 1px solid #C7D7FF;
-        cursor: pointer;
-        }
-        .train-align, .bus-align {
-        display: flex;
-        align-items: center;
-        flex-direction: column;
-        a{
-            text-decoration: none;
-        }
-        }
-        .box-container {
-        display: flex;
-        flex-direction: column;
-        align-items: center;
-        justify-content: center;
-        height: 26vh;
-        width: 10vw;
-        }
-        .icon-container {
-        width: 110px;
-        height: 70px;
-        display: flex;
-        height: 110px;
-        justify-content: center;
-        align-items: center;
-        background-color: #EFF3FF;
-        border-radius: 50%;
-        }
-        .bus-align .icon-container{
-            background-color: #E3F2EF;
-        }
-        .logo {
-        width: 49px;
-        height: 56px;
-        transition: background-color 0.3s, filter 0.3s;
-        }
-        .display-icon {
-        display: flex;
-        flex-direction: row;
-        align-items: center;
-        margin-top: 31px;
-        button{
-        background-color: $white-clr;
-        border: none;
-        color: $rail-clr;
-        cursor: pointer;
-        text-decoration: none;
-        }
-        }
-        .arrow {
-        width: 15px;
-        height: 15px;
-        }
-        .section-container:hover{
-            border: 1px solid #1A2B57;
-            border-radius: 5px;
-            box-shadow: 3px 3px 3px -5px #1A2B57; 
-        }
-        .section-container:hover .logo {
-        filter: brightness(0) invert(1);
-        }
-        .section-container:hover .icon-container {
-            background-color:#10214B;
-            opacity: 0.7;
-            
-        }
-        .section-container:hover .bus-align .icon-container{
-            background-color: #2CA87F;
-            opacity: 0.7;
-        } 
-        .section-container:hover .display-icon{
-            box-shadow: 0px 10px 10px -5px #C7D7FF;         
-        }
 
-        .section-container:hover button {
-            background-color:#10214B;
-            color: white;
-            padding: 8px;   
-            opacity: 0.9;         
+        .section-container {
+            margin: 0 10px;
+            flex: 1;
+            max-width: 10vw;
+            background-color: $white-clr;
+            padding: 20px;
+            height: 26vh;
+            border: 1px solid #C7D7FF;
+            cursor: pointer;
+
+            .train-align,
+            .bus-align {
+                display: flex;
+                align-items: center;
+                flex-direction: column;
+
+                a {
+                    text-decoration: none;
+                }
+            }
+
+            .box-container {
+                display: flex;
+                flex-direction: column;
+                align-items: center;
+                justify-content: center;
+                height: 26vh;
+                width: 10vw;
+            }
+
+            .icon-container {
+                width: 110px;
+                height: 70px;
+                display: flex;
+                height: 110px;
+                justify-content: center;
+                align-items: center;
+                background-color: #EFF3FF;
+                border-radius: 50%;
+                @media screen and (min-width: $media-1600) {
+                    height: 120px;
+                    width: 120px;
+                }
+
+                @media screen and (min-width: $media-2000) {
+                    height: 160px;
+                    width: 160px;
+                }
+
+                @media screen and (min-width: $media-2800) {
+                    height: 200px;
+                    width: 200px;
+
+                }
+
+                @media screen and (min-width: $media-3400) {
+                    height: 240px;
+                    width: 240px;
+
+                }
+
+                @media screen and (min-width: $media-4000) {
+                    height: 280px;
+                    width: 280px;
+
+                }
+            }
+
+            .bus-align .icon-container {
+                background-color: #E3F2EF;
+            }
+
+            .logo {
+                width: 49px;
+                height: 56px;
+                transition: background-color 0.3s, filter 0.3s;
+            }
+
+            .display-icon {
+                display: flex;
+                flex-direction: row;
+                align-items: center;
+                margin-top: 31px;
+                @media screen and (min-width: $media-1600) {
+                    margin-top: 41px;
+
+                }
+
+                @media screen and (min-width: $media-2000) {
+                    margin-top: 71px;
+                }
+
+                @media screen and (min-width: $media-2800) {
+                    margin-top: 101px;
+                }
+
+                @media screen and (min-width: $media-3400) {
+                    margin-top: 131px;
+                }
+
+                @media screen and (min-width: $media-4000) {
+                    margin-top: 110px;
+                }
+
+                button {
+                    background-color: $white-clr;
+                    border: none;
+                    color: $rail-clr;
+                    font-size: $font-size-16;
+                    cursor: pointer;
+                    text-decoration: none;
+                    @media screen and (min-width: $media-1600) {
+                        font-size: $font-size-18;
+
+                    }
+
+                    @media screen and (min-width: $media-2000) {
+                        font-size: $font-size-26;
+                    }
+
+                    @media screen and (min-width: $media-2800) {
+                        font-size: $font-size-34;
+                    }
+
+                    @media screen and (min-width: $media-3400) {
+                        font-size: $font-size-42;
+                    }
+
+                    @media screen and (min-width: $media-4000) {
+                        font-size: $font-size-50;
+                    }
+                }
+            }
+
+            .arrow {
+                width: 18px;
+                height: 18px;
+                @media screen and (min-width: $media-1600) {
+                    width: 21px;
+                    height: 21px;
+                }
+
+                @media screen and (min-width: $media-2000) {
+                    width: 30px;
+                    height: 30px;
+                }
+
+            }
+
+            &:hover {
+                border: 1px solid #1A2B57;
+                border-radius: 5px;
+                box-shadow: 3px 3px 3px -5px #1A2B57;
+
+                .logo {
+                    filter: brightness(0) invert(1);
+                }
+
+                .icon-container {
+                    background-color: #10214B;
+                    opacity: 0.7;
+                }
+
+                .bus-align .icon-container {
+                    background-color: #2CA87F;
+                    opacity: 0.7;
+                }
+
+                .display-icon {
+                    box-shadow: 0px 10px 10px -5px #C7D7FF;
+
+                    button {
+                        background-color: #10214B;
+                        color: white;
+                        padding: 8px;
+                        opacity: 0.9;
+
+                    }
+
+                    .arrow {
+                        background-color: #10214B;
+                        color: white;
+                        padding: 8px;
+                        opacity: 0.9;
+                    }
+                }
+            }
         }
-        .section-container:hover .arrow {
-            background-color:#10214B;
-            color: white;
-            padding: 8px;
-            opacity: 0.9; 
-        } 
-        
+    }
+
+
 }
-.footer-container{
+
+.footer-container {
     bottom: 0;
     position: fixed;
     width: 100%;
     background-color: #E9ECF4;
-    padding: 6px;
-    .footer-content{
+    padding: 1vh;
+
+    .footer-content {
         height: 3vh;
 
     }

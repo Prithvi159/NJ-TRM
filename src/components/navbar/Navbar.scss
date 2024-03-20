@@ -20,16 +20,67 @@
       border: 1px solid red;
     }
     .logo-home:hover img{
-      width: 20px;
-      height: 15px;
+      width: 1.7vw;
+      height: 1.9vh;
       color: #1a2b57;
     }
+    .logo-home,img{
+      height: 3vh;
+      width: 1.5vw;
+    }      display: flex;
     .text-align{
       text-align: center;
       color: $header-clr;
       font-size: $font-size-14;
+      @media screen and (min-width: $media-1600){
+        font-size: $font-size-16;
+
+    }
+    @media screen and (min-width: $media-2000){
+      font-size: $font-size-24;
+    
+    }
+    @media screen and (min-width: $media-2800){
+      font-size: $font-size-30;
+    }
+    @media screen and (min-width: $media-3400){
+      font-size: $font-size-36;
+    
+    }
+    @media screen and (min-width: $media-4000){
+      font-size: $font-size-42;
+    
+    }
   
     }
+    .date-formate{
+      display: flex;
+      .time{
+        color: $border-clr;
+        font-size: $font-size-11;
+        padding-top: 0.4vh;
+        @media screen and (min-width: $media-1600){
+          font-size: $font-size-14;
+  
+      }
+      @media screen and (min-width: $media-2000){
+        font-size: $font-size-18;
+      
+      }
+      @media screen and (min-width: $media-2800){
+        font-size: $font-size-22;
+      }
+      @media screen and (min-width: $media-3400){
+        font-size: $font-size-25;
+      
+      }
+      @media screen and (min-width: $media-4000){
+        font-size: $font-size-28;
+      
+      }
+      }
+    }
+  
 
   }
 .navbar {
@@ -39,36 +90,82 @@
   background-color: #1a2b57;
   position: fixed;
   width: 100%;
-  height: 12vh;
+  height: 9vh;
   z-index: 2;
 
   .logo-container {
     padding-left: 30px;
+    .logo{
+      height: 5vh;
+    }
   }
   .avatar-container {
     padding-right: 30px;
     div{
       background-color: $logo-colour;
       color: $logo-letter-colur;
+      height: 6vh;
+      width: 2.9vw;
+      font-size: $font-size-16;
+      @media screen and (min-width: $media-1600){
+        font-size: $font-size-16;
+
     }
+    @media screen and (min-width: $media-2000){
+      font-size: $font-size-30;
+    
+    }
+    @media screen and (min-width: $media-2800){
+      font-size: $font-size-36;
+    }
+    @media screen and (min-width: $media-3400){
+      font-size: $font-size-42;
+    
+    }
+    @media screen and (min-width: $media-4000){
+      font-size: $font-size-48;
+    
+    }
+    }
+      
+    
   }
 
   .nav-links-container {
     display: flex;
-    height: 12vh;
+    height: 9vh;
     
 
     a {
-      padding: 10px;
+      padding: 1vw;
       text-decoration: none;
       color: #ADB5BD;
       position: relative;
-      font-size: $font-size-12;
-      padding-bottom: 4vh;
-      padding-top: 5vh;
+      padding-top: 3vh;
+      font-size: $font-size-13;
+    @media screen and (min-width: $media-1600){
+        font-size: $font-size-16;
+
+    }
+    @media screen and (min-width: $media-2000){
+      font-size: $font-size-24;
+    
+    }
+    @media screen and (min-width: $media-2800){
+      font-size: $font-size-30;
+    }
+    @media screen and (min-width: $media-3400){
+      font-size: $font-size-36;
+    
+    }
+    @media screen and (min-width: $media-4000){
+      font-size: $font-size-42;
+    
+    }
 
       &.active {
         color: #FFFFFF;
+        background-color: $active-clr;
 
         &:before {
           content: "";
@@ -76,7 +173,7 @@
           top: 0;
           left: 0;
           width: 100%;
-          height: 6px;
+          height: 0.8vh;
           background-color: $yellow-clr;
           border-bottom-left-radius: 6px;
           border-bottom-right-radius: 6px;
@@ -85,4 +182,35 @@
     }
   }
 }
+}
+a.profile{
+  text-decoration: none;
+  font-size: $font-size-13;
+  color: $border-colour;
+  @media screen and (min-width: $media-1600) {
+    font-size: $font-size-16;
+
+  }
+
+  @media screen and (min-width: $media-2000) {
+    font-size: $font-size-24;
+
+  }
+
+  @media screen and (min-width: $media-2800) {
+    font-size: $font-size-30;
+  }
+
+  @media screen and (min-width: $media-3400) {
+    font-size: $font-size-34;
+  }
+
+  @media screen and (min-width: $media-4000) {
+    font-size: $font-size-36;
+
+  }
+}
+.MuiPaper-root.MuiPaper-elevation.MuiPaper-rounded.MuiPaper-elevation8.MuiPopover-paper.MuiMenu-paper.MuiMenu-paper.css-3dzjca-MuiPaper-root-MuiPopover-paper-MuiMenu-paper {
+  height: 14vh;
+  width: 10vw;
 }

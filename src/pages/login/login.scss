@@ -1,4 +1,5 @@
 @import "../src/assets/styles/constants.scss";
+
 .background-image {
   display: flex;
   justify-content: flex-end;
@@ -17,29 +18,36 @@
     width: 100vw;
     justify-content: end;
     align-items: center;
+
     .login-content {
       padding: 50px;
       background-color: white;
       width: 80vw;
       max-width: 400px;
       margin-right: 7%;
-      .text-flex{
+
+      @media screen and (min-width: $media-1600) {}
+
+      .text-flex {
         display: flex;
         align-items: baseline;
+
         .text-flex1 {
           color: $welcom-colour;
           font-weight: $font-weight-600;
           font-size: $h2-font-size;
-          }
-          .text-flex{
+        }
+
+        .text-flex {
           color: $transit-colour;
           font-weight: $font-weight-600;
-          padding-left:5px;
+          padding-left: 5px;
           font-size: $font-size-24
-          }
+        }
 
       }
-      .sign-in-text{
+
+      .sign-in-text {
         font-size: $font-size-18;
         font-weight: $font-weight-bold;
         padding-top: 25px;
@@ -56,24 +64,41 @@
         flex-direction: column;
         position: relative;
         gap: 16px;
-        div:first-child{
-          div{
-          border-radius: 0;
-          
+
+        div:first-child {
+          div {
+            border-radius: 0;
+
           }
-          p{
+
+          p {
             margin-left: 0;
           }
         }
-        button{
+
+        button {
           margin: 0;
           background-color: $login-colour;
+
         }
 
+        .css-1mw31tb-MuiButtonBase-root-MuiButton-root.Mui-disabled {
+          color: #9E9E9E;
+        }
+
+        .css-1jy569b-MuiFormLabel-root-MuiInputLabel-root.Mui-focused {
+          color: $nav-clr;
+        }
+        
+        .MuiOutlinedInput-root.Mui-focused .MuiOutlinedInput-notchedOutline {
+          border-color: #4C4D4C;
+          border-width: 1px;
+         }
         .login-options {
           margin-top: -49px;
           align-self: flex-end;
         }
+
         .additional-text {
           margin: 0px 0px 20px 0px;
           font-size: $font-size-10;
