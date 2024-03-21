@@ -3,6 +3,7 @@ import { Link, NavLink, useLocation } from "react-router-dom";
 import NJT_Logo from "../../assets/images/Logo1.png";
 import HOME_Logo from "../../assets/images/house-solid.png";
 import TIME_Logo from "../../assets/images/Group 6816.png";
+import Image from "../../assets/images/Mask Group 13.png";
 import "./Navbar.scss";
 import { AccountMenu } from "./accountMenu/AccountMenu";
 
@@ -18,40 +19,47 @@ const Navbar = (props) => {
   const handleClick = () => {
     navigate("/dashboard");
   };
-  
+
 
   return (
-    
+
     <div className="display">
-      {isRailDashboard && 
-      <div className="flex-center">
-      <div className="logo-home" > 
-        <Link to="/dashboard">
-          <img  className="logo" src={HOME_Logo}/>
-        </Link></div>
-      <div className="text-align">{railDashboardNavbartext}</div>
-      <div className="date-formate"><img src={TIME_Logo} className="logo" /></div>
-      </div>
-    }
-    <div className="navbar">
-      <div className="logo-container">
-        <Link to="/dashboard">
-          <img src={NJT_Logo} className="logo" />
-        </Link>
-      </div>
-      {isRailDashboard && 
-        <div className="nav-links-container">
-            {railDashboardNavLinks?.length && railDashboardNavLinks.map((link, index) => (
-            <NavLink key={index} to={link.to} activeclassname="active">
-              {link.text}
-            </NavLink>
-            ))}
+      {isRailDashboard &&
+        <div className="flex-center">
+          <div className="logo-home" >
+            <Link to="/dashboard">
+              <img className="logo" src={HOME_Logo} />
+            </Link></div>
+          <div className="text-align">{railDashboardNavbartext}</div>
+          <div className="date-formate"><img src={TIME_Logo} className="logo" /><div className="time">20/03/2024</div></div>
         </div>
-}
-      <div className="avatar-container">
-        <AccountMenu accountMenuJson={headNavbarData?.accountMenu} />
+      }
+      <div className="navbar">
+        <div className="logo-container">
+          <Link to="/dashboard">
+            <img src={NJT_Logo} className="logo" />
+          </Link>
+        </div>
+        {isRailDashboard &&
+          <div className="nav-links-container">
+            {railDashboardNavLinks?.length && railDashboardNavLinks.map((link, index) => (
+              <NavLink key={index} to={link.to} activeclassname="active">
+                {link.text}
+              </NavLink>
+            ))}
+          </div>
+        }
+        <div className="avatar-container">
+          <AccountMenu isRailDashboard={isRailDashboard} accountMenuJson={headNavbarData?.accountMenu} />
+        </div>
       </div>
-    </div>
+      
+      { !isRailDashboard &&
+      <div className="back-image">
+        <img  className="image" src={Image}/>
+        </div>
+      } 
+      
     </div>
   );
 };

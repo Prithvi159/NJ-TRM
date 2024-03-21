@@ -5,6 +5,23 @@
     color: #ffffff;
     padding: 18px 3px 16px 15px;
     font-size: $font-size-12;
+    @media screen and (min-width: $media-1600){
+      font-size: $font-size-16;
+  
+    }
+    @media screen and (min-width: $media-2000){
+      font-size: $font-size-24;
+    }
+    @media screen and (min-width: $media-2800){
+      font-size: $font-size-26;
+    }
+    @media screen and (min-width: $media-3400){
+      font-size: $font-size-28;
+    }
+    @media screen and (min-width: $media-4000){
+      font-size: $font-size-30;
+    }
+
     div{
       position: relative;
       .MuiOutlinedInput-notchedOutline{
@@ -14,9 +31,26 @@
       .position{
         img{
           position: absolute;
-          top: 25px;
+          top: 3.6vh;
           left: 10px;
+          height: 2vh;
           z-index: 1;
+          @media screen and (min-width: $media-1600){
+            top: 3vh;
+        
+          }
+          @media screen and (min-width: $media-2000){
+            top: 2vh;
+          }
+          @media screen and (min-width: $media-2800){
+            top: 2vh;
+          }
+          @media screen and (min-width: $media-3400){
+            top: 2vh;
+          }
+          @media screen and (min-width: $media-4000){
+            top: 2vh;
+          }
         }
       }
     }
@@ -39,8 +73,11 @@
       .MuiInputBase-root {
         .MuiInputBase-input {
           outline: none;
+          height: 3vh;
+          background-color: $table-back-clr;
           :focus {
             outline: none;
+            z-index: 2;
           }
         }
       }

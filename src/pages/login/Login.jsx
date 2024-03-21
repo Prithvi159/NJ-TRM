@@ -1,5 +1,5 @@
 import { Button, Checkbox, FormControlLabel, TextField } from "@mui/material";
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 import "./Login.scss";
 import Logo from "../../assets/images/NJTransitLogo.png";
 import LoginPageJson from "../../json/enLogin.json";
@@ -18,9 +18,22 @@ const Login = () => {
 
   const [formData, setFormData] = useState({});
   const [formErrors, setFormErrors] = useState({});
+  const [enable, setEnable] = useState(true);
 
   const { loading, error: errorMessage } = useSelector((state) => state.user);
   const backimage = LoginPageJson.content.login.content.headline.iconDetails
+
+  // useEffect(() => {
+  //   const handleClickOutside = (event) => {
+  //     if(event.target.tagName!=="INPUT"){
+  //       setFormErrors("")
+  //     }
+  //   }
+  //   document.addEventListener("click",handleClickOutside );
+  //   return() =>{
+  //     document.addEventListener("click",handleClickOutside)
+  //   }
+  // })
 
   const handleInputChange = (field, value) => {
     const validationError = validateField(field.validations, value);
@@ -32,6 +45,7 @@ const Login = () => {
       ...prevErrors,
       [field.name]: validationError,
     }));
+    setEnable(value.trim()==='');
   };
 
   const validateForm = () => {
@@ -120,7 +134,8 @@ const Login = () => {
       fullWidth
       variant={button.variant}
       color={button.color}
-      sx={{ mt: 3, mb: 2 }}
+      sx={{ mt: 3, mb: 2, opacity: enable ? 0.5 :1,}}
+      disabled={enable}
     >
       {button.text}
     </Button>

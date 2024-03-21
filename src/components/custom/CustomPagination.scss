@@ -1,5 +1,6 @@
+@import "../src/assets/styles/constants.scss";
 .custom-pagination-container {
-  padding: 16px;
+  padding: 1.5vh;
   display: flex;
   justify-content: space-between;
   align-items: center;
@@ -9,8 +10,29 @@
     align-items: center;
   }
   .pagination-select {
-    min-width: 80px;
+    min-width: 4.5vw;
     margin-left: 8px;
-    height: 36px;
+    height: 5vh;
+    border-radius: 16%;
+    .MuiOutlinedInput-input{
+      font-size: $font-size-14;
+      @media screen and (min-width: $media-1600){
+        font-size: $font-size-18;
+    
+      }
+      @media screen and (min-width: $media-2000){
+        font-size: $font-size-28;
+      }
+      @media screen and (min-width: $media-2800){
+        font-size: $font-size-30;
+      }
+      @media screen and (min-width: $media-3400){
+        font-size: $font-size-32;
+      }
+      @media screen and (min-width: $media-4000){
+        font-size: $font-size-38;
+      }
+
+    }
   }
 }

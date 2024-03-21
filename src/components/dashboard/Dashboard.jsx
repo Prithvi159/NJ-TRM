@@ -7,6 +7,7 @@ import Path from "../../assets/images/Path 4358.png";
 
 export function Dashboard() {
   return (
+
     <div class="button-align">
     <div class="section-container">
       <div class="train-align">

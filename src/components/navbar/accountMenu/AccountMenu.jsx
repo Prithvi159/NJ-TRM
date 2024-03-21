@@ -3,15 +3,17 @@ import { Link, NavLink } from "react-router-dom";
 import Avatar from "@mui/material/Avatar";
 import Menu from "@mui/material/Menu";
 import MenuItem from "@mui/material/MenuItem";
+import Profile from "../../../assets/images/Profile.png";
+import Logout from "../../../assets/images/Logout.png";
 
-export function AccountMenu() {
+export function AccountMenu(props) {
   const [anchorEl, setAnchorEl] = useState(null);
 
-  const handleClick = (event) => {
+  const handleOpenMenu = (event) => {
     setAnchorEl(event.currentTarget);
   };
 
-  const handleClose = () => {
+  const handleCloseMenu = () => {
     setAnchorEl(null);
   };
 
@@ -20,28 +22,35 @@ export function AccountMenu() {
       <Avatar
         alt="User Avatar"
         src="/path/to/avatar.jpg"
-        onClick={handleClick}
+       onMouseEnter={handleOpenMenu}
+       onMouseLeave={handleCloseMenu}
+       sx={{cursor: "pointer"}}
+
       />
       <Menu
         id="menu-appbar"
         anchorEl={anchorEl}
         anchorOrigin={{
-          vertical: "bottom",
+          vertical: "top",
           horizontal: "right",
         }}
         keepMounted
         transformOrigin={{
-          vertical: "top",
+          vertical: "bottom",
           horizontal: "right",
         }}
         open={Boolean(anchorEl)}
-        onClose={handleClose}
+        onClose={handleCloseMenu}
+        onMouseEnter={handleOpenMenu}
+        onMouseLeave={handleCloseMenu}
+        sx={{ marginLeft:"-2%"}}
+        className={props.isRailDashboard?"rail":"dashboard"}
       >
-        <MenuItem onClick={handleClose}>
-          <NavLink to="/profile">My Profile</NavLink>
+        <MenuItem className="avatar">
+          <NavLink to="/profile" className="profile"><img src={Profile}/>My Profile</NavLink>
         </MenuItem>
-        <MenuItem onClick={handleClose}>
-          <NavLink to="/login">Logout</NavLink>
+        <MenuItem>
+          <NavLink to="/login" className="profile"><img src={Logout}/>Logout</NavLink>
         </MenuItem>
       </Menu>
     </>

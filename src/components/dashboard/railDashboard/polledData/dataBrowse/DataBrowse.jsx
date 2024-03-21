@@ -2,7 +2,7 @@ import React, { useEffect } from "react";
 import { useQuery } from "@tanstack/react-query";
 import axios from "axios";
 import CustomTable from "../../../../custom/table/CustomTable";
-import SearchContainer from "../../../../custom/searchContainer/SearchContainer";
+import {useNavigate } from 'react-router-dom';
 
 const fetchTableData = async () => {
   const response = await axios.get("http://localhost:4000/table");
@@ -28,13 +28,15 @@ export function DataBrowse() {
     error,
     refetch,
   } = useUserTableData();
-
+  const navigate = useNavigate();
   useEffect(() => {
     refetch();
   }, []);
   
-
-  console.log("data", userTableData?.data);
+const handleEdit = () =>{
+  navigate(`./transaction-details`)
+}
+  //console.log("data", userTableData?.data);
 
   return (
     <div>
@@ -52,7 +54,8 @@ export function DataBrowse() {
           displaySelectRowsCheckBox={false}
           isRowExpandable={userTableData?.data?.isExpandable}
           expandedRowDetailPanelJson={userTableData?.data?.expandedRowDetailPanel}
-        />        
+          handleEdit = {handleEdit}
+        />
         </>
       )}
     </div>
