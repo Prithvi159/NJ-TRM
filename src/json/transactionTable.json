@@ -657,6 +657,28 @@
         ]
       },
       {
+        "accessorKey": "creditCards",
+        "numeric": true,
+        "disablePadding": false,
+        "label": "CREDIT CARDS",
+        "isSortable": false,
+        "isSearchable": false,
+        "type": "number",
+        "filterVariant": "text",
+        "isDollarSymbolRequired": true,
+        "validations": [
+          {
+            "type": "maxLength",
+            "length": "50",
+            "message": "Invalid Input."
+          },
+          {
+            "type": "empty",
+            "message": "Invalid Input."
+          }
+        ]
+      },
+      {
         "accessorKey": "exception",
         "isActionsEnabled": true,
         "numeric": false,
@@ -685,11 +707,11 @@
         ]
       },
       {
-        "accessorKey": "actions",
+        "accessorKey": "action",
         "isActionsEnabled": true,
         "numeric": false,
         "disablePadding": false,
-        "label": "ACTIONS",
+        "label": "ACTION",
         "isSortable": false,
         "isSearchable": false,
         "filterVariant": null,
@@ -712,6 +734,7 @@
         "agent": "098",
         "machine": "109",
         "time": "12:09",
+        "creditCards": "263.45",
         "additionalUserDetails": {
           "dutyStart": "02/14/2024 | 00:00",
           "dutyEnd": "02/14/2024 | 23:59",

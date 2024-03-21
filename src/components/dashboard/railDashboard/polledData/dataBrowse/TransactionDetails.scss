@@ -1,8 +1,16 @@
 @import "../src/assets/styles/constants.scss";
+.njt-transaction2-table{
+    .css-1gplja-MuiTable-root{
+        border-collapse: unset !important;
+    }
+}
 .njt-custom-table{
     margin-top: 60px;
     .custom-table-header .custom-table-cell {
         text-align: center;
+    }
+    .css-1gplja-MuiTable-root{
+        border-collapse: unset !important;
     }
     .custom-table-header {
         background-color: #5B6B79;

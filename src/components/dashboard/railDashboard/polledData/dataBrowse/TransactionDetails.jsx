@@ -41,7 +41,7 @@ export function TransactionDetails() {
     <div>
       {false ? (
         <h2>Loading...</h2>
-      ) : ( <div><div className="njt-custom-table"><CustomTable
+      ) : ( <div className="njt-transaction-table"><div className="njt-custom-table"><CustomTable
                 rows={transactionJsonData?.browsColumnRow}
                 columnHeaders={transactionJsonData?.browsColumnHeaders}
                 pagination={null}
@@ -50,7 +50,7 @@ export function TransactionDetails() {
                 isRowExpandable={false}
                 expandedRowDetailPanelJson={null}
                 handleTableTool = {true}
-      /> </div><div><CustomTable
+      /> </div><div className="njt-transaction2-table"><CustomTable
           rows={transactionJsonData?.rows}
           columnHeaders={transactionJsonData?.columnHeaders}
           pagination={transactionJsonData?.pagination}
