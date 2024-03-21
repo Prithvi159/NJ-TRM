@@ -14,6 +14,7 @@ import {
 import { DatePicker, LocalizationProvider } from "@mui/x-date-pickers";
 import { AdapterDayjs } from '@mui/x-date-pickers/AdapterDayjs';
 import './Input.scss'
+import CalendarIcon from "../../../assets/icons/CalenderIcon";
 
 export function Input(props) {
   const { type, name, value, handleInputChange, options, handleDateChange } = props;
@@ -37,7 +38,7 @@ export function Input(props) {
 
       case "select":
         return (
-          <FormControl variant="outlined" fullWidth>
+          <FormControl variant="outlined" fullWidth className="custom-select">
             <InputLabel id={`${name}-label`}>{name}</InputLabel>
             <Select
               value={value || ""}
@@ -46,7 +47,7 @@ export function Input(props) {
               name={name}
               labelId={`${name}-label`}
               id={name}
-              className="custom-select"
+              
             >
               {options.map((option) => (
                 <MenuItem key={option.value} value={option.value}>
@@ -65,6 +66,7 @@ export function Input(props) {
                 value={value}
                 name={name}
                 onChange={(newValue) => handleDateChange(name, newValue)}
+                slots={{ openPickerIcon: CalendarIcon }}
                 slotProps={{
                   textField: {
                     error: false,
