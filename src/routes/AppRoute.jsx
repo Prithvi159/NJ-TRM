@@ -15,6 +15,7 @@ import TransmissionTracking from "../components/dashboard/railDashboard/polledDa
 import { lazy } from "react";
 import ErrorProcessing from "../components/dashboard/railDashboard/polledData/errorProcessing/ErrorProcessing";
 import SummaryFileBrowse from "../components/dashboard/railDashboard/polledData/summaryFileBrowse/SummaryFileBrowse";
+import OpenDutyEnquiry from "../components/dashboard/railDashboard/polledData/openDutyEnquiry/OpenDutyEnquiry";
 
 const RailDashboard = lazy(() =>
   import("../components/dashboard/railDashboard/RailDashboard")
@@ -34,6 +35,7 @@ export const AppRouter = createBrowserRouter(
               <Route path="transmission-tracking" element={<TransmissionTracking />} />
               <Route path="error-processing" element={<ErrorProcessing />} />
               <Route path="summary-file-browse" element={<SummaryFileBrowse />} />
+              <Route path="open-duty-enquiry" element={<OpenDutyEnquiry />} />
             </Route>
           </Route>
         </Route>

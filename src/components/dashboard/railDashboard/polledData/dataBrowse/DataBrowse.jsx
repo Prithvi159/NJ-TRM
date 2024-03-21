@@ -2,6 +2,7 @@ import React, { useEffect } from "react";
 import { useQuery } from "@tanstack/react-query";
 import axios from "axios";
 import CustomTable from "../../../../custom/table/CustomTable";
+import SearchContainer from "../../../../custom/searchContainer/SearchContainer";
 
 const fetchTableData = async () => {
   const response = await axios.get("http://localhost:4000/table");
@@ -40,15 +41,19 @@ export function DataBrowse() {
       {isPending ? (
         <h2>Loading...</h2>
       ) : (
+        <>
+        {/* <SearchContainer/> */}
         <CustomTable
           rows={userTableData?.data?.rows}
+          toolBar={userTableData?.data?.toolBar}
           columnHeaders={userTableData?.data?.columnHeaders}
           pagination={userTableData?.data?.pagination}
           modals={userTableData?.data?.modals}
           displaySelectRowsCheckBox={false}
           isRowExpandable={userTableData?.data?.isExpandable}
           expandedRowDetailPanelJson={userTableData?.data?.expandedRowDetailPanel}
-        />
+        />        
+        </>
       )}
     </div>
   );
