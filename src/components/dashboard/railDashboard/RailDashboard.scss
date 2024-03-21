@@ -1,16 +1,44 @@
 @import "../src/assets/styles/constants.scss";
 .railDashboard{
   margin-left: 17vw;
-  padding-top: 17.9vh;
+  padding-top: 14.6vh;
   width: 83vw;
   height: 82vh;
   .transmission-page{
     margin-top: 15%;
     margin-left: 10%;
   }
+  .pagination-text{
+    padding-right: 0 !important;
+    padding-left: 1.4vh !important;
+
+  }
   .MuiTypography-root{
-    padding: 8px;
+    padding: 1.4vh;
     font-size: $font-size-14;
+    font-weight: $font-weight-500;
+    
+  @media screen and (min-width: $media-1600){
+    font-size: $font-size-18;
+
+  }
+  @media screen and (min-width: $media-2000){
+    font-size: $font-size-28;
+  }
+  @media screen and (min-width: $media-2800){
+    font-size: $font-size-30;
+  }
+  @media screen and (min-width: $media-3400){
+    font-size: $font-size-32;
+  }
+  @media screen and (min-width: $media-4000){
+    font-size: $font-size-38;
+  }
+    padding-left: 0;
+    .MuiBreadcrumbs-ol{
+      padding-left: 4vh;
+
+    }
     &.MuiBreadcrumbs-root {
     }
   }
@@ -35,10 +63,16 @@
             padding: 0;
             width: 50%;
             margin-right: 40%;
+            li{
+              .css-1mb5p0g-MuiButtonBase-root-MuiPaginationItem-root.Mui-selected {
+                color: #fff;
+                background-color: $pagination-clr;
+            }
+            }
 
           }
           .MuiTableContainer-root{
-            height: 43vh;
+            height: 48vh;
             table{
               .MuiTableHead-root {
                 position: sticky;
@@ -50,10 +84,26 @@
                 .MuiTableRow-root{
                   .MuiTableCell-root {
                     white-space: nowrap;
-                    font-size: $font-size-12;
+                    font-size: $font-size-13;
                     text-align: center;
                     border-bottom: 0;
                     border-left: 0.1px solid $border-left;
+                    @media screen and (min-width: $media-1600){
+                      font-size: $font-size-15;
+                  
+                    }
+                    @media screen and (min-width: $media-2000){
+                      font-size: $font-size-18;
+                    }
+                    @media screen and (min-width: $media-2800){
+                      font-size: $font-size-20;
+                    }
+                    @media screen and (min-width: $media-3400){
+                      font-size: $font-size-24;
+                    }
+                    @media screen and (min-width: $media-4000){
+                      font-size: $font-size-26;
+                    }
                   }
                 }
                 .MuiTableRow-root:nth-child(even){

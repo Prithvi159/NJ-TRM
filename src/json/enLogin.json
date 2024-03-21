@@ -43,7 +43,6 @@
                    "prefix":"",
                    "suffix":"",
                    "name":"email",
-                   "isRequired":true,
                    "options":[
                       
                    ],
@@ -58,7 +57,7 @@
                    "id":"3961",
                    "href":"#",
                    "name":"loginButton",
-                   "text":"LOGIN",
+                   "text":"Login",
                    "target":"",
                    "variant": "contained",
                    "color": "primary",

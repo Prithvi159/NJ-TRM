@@ -30,7 +30,7 @@ const Navbar = (props) => {
           <img  className="logo" src={HOME_Logo}/>
         </Link></div>
       <div className="text-align">{railDashboardNavbartext}</div>
-      <div className="date-formate"><img src={TIME_Logo} className="logo" /></div>
+      <div className="date-formate"><img src={TIME_Logo} className="logo" /><div className="time">20/03/2024</div></div>
       </div>
     }
     <div className="navbar">

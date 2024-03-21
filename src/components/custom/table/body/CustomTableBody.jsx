@@ -1,8 +1,8 @@
 import React from "react";
 import { Box, Checkbox, TableCell, TableRow } from "@mui/material";
-import { CustomTableBodyCell } from "./CustomTableBodyCell";
 import './CustomTableBody.scss'
 import RowDetailsPanel from "./RowDetailsPanel";
+import CustomTableBodyCell from "./CustomTableBodyCell";
 
 export function CustomTableBody(props) {
   const {
