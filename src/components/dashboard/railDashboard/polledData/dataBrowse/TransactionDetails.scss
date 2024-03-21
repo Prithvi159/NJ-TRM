@@ -1,0 +1,13 @@
+@import "../src/assets/styles/constants.scss";
+.njt-custom-table{
+    margin-top: 60px;
+    .custom-table-header .custom-table-cell {
+        text-align: center;
+    }
+    .custom-table-header {
+        background-color: #5B6B79;
+    }
+     .MuiTableContainer-root{
+        height: 16vh !important
+    }
+}

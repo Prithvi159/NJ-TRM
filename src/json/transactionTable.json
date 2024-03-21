@@ -1,0 +1,739 @@
+{
+  "transactiontable": {
+    "isExpandable": true,
+    "columnHeaders": [
+      {
+        "accessorKey": "trainTime",
+        "numeric": true,
+        "disablePadding": true,
+        "label": "TRAIN TIME",
+        "isSortable": true,
+        "isSearchable": true,
+        "type": "text",
+        "filterVariant": "text",
+        "defaultSortBy": true,
+        "validations": [
+          {
+            "type": "maxLength",
+            "length": "50",
+            "message": "Invalid Input."
+          },
+          {
+            "type": "empty",
+            "message": "Invalid Input."
+          }
+        ]
+      },
+      {
+        "accessorKey": "ticketType",
+        "numeric": false,
+        "disablePadding": false,
+        "label": "TICKE TYPE",
+        "isSortable": true,
+        "isSearchable": true,
+        "type": "date",
+        "filterVariant": "text",
+        "validations": [
+          {
+            "type": "empty",
+            "message": "Invalid Input."
+          }
+        ]
+      },
+      {
+        "accessorKey": "class",
+        "numeric": false,
+        "disablePadding": true,
+        "label": "CLASS",
+        "isSortable": true,
+        "isSearchable": true,
+        "type": "text",
+        "filterVariant": "text",
+        "defaultSortBy": true,
+        "validations": [
+          {
+            "type": "maxLength",
+            "length": "50",
+            "message": "Invalid Input."
+          },
+          {
+            "type": "empty",
+            "message": "Invalid Input."
+          }
+        ]
+      },
+      {
+        "accessorKey": "origin",
+        "numeric": true,
+        "disablePadding": true,
+        "label": "ORIGIN",
+        "isSortable": true,
+        "isSearchable": true,
+        "type": "text",
+        "filterVariant": "text",
+        "defaultSortBy": true,
+        "validations": [
+          {
+            "type": "maxLength",
+            "length": "50",
+            "message": "Invalid Input."
+          },
+          {
+            "type": "empty",
+            "message": "Invalid Input."
+          }
+        ]
+      },
+      {
+        "accessorKey": "destination",
+        "numeric": true,
+        "disablePadding": true,
+        "label": "DESTINATION",
+        "isSortable": true,
+        "isSearchable": true,
+        "type": "text",
+        "filterVariant": "text",
+        "defaultSortBy": true,
+        "validations": [
+          {
+            "type": "maxLength",
+            "length": "50",
+            "message": "Invalid Input."
+          },
+          {
+            "type": "empty",
+            "message": "Invalid Input."
+          }
+        ]
+      },
+      {
+        "accessorKey": "serialNo",
+        "numeric": true,
+        "disablePadding": false,
+        "label": "SERIAL NO",
+        "isSortable": true,
+        "isSearchable": true,
+        "type": "number",
+        "filterVariant": "text",
+        "isDollarSymbolRequired": false,
+        "validations": [
+          {
+            "type": "maxLength",
+            "length": "50",
+            "message": "Invalid Input."
+          },
+          {
+            "type": "empty",
+            "message": "Invalid Input."
+          }
+        ]
+      },
+      {
+        "accessorKey": "paymentMethod",
+        "numeric": false,
+        "disablePadding": false,
+        "label": "PAYMENT METHOD",
+        "isSortable": true,
+        "isSearchable": true,
+        "type": "number",
+        "filterVariant": "text",
+        "isDollarSymbolRequired": false,
+        "validations": [
+          {
+            "type": "maxLength",
+            "length": "50",
+            "message": "Invalid Input."
+          },
+          {
+            "type": "empty",
+            "message": "Invalid Input."
+          }
+        ]
+      },
+      {
+        "accessorKey": "amount",
+        "numeric": true,
+        "disablePadding": false,
+        "label": "AMOUNT",
+        "isSortable": true,
+        "isSearchable": true,
+        "type": "number",
+        "filterVariant": "text",
+        "isDollarSymbolRequired": true,
+        "validations": [
+          {
+            "type": "maxLength",
+            "length": "50",
+            "message": "Invalid Input."
+          },
+          {
+            "type": "empty",
+            "message": "Invalid Input."
+          }
+        ]
+      },
+      {
+        "accessorKey": "adjustments",
+        "isActionsEnabled": true,
+        "numeric": false,
+        "disablePadding": false,
+        "label": "ADJ",
+        "isSortable": false,
+        "isSearchable": false,
+        "filterVariant": null,
+        "type": null,
+        "actionsList": [
+          "POPOVER"
+        ]
+      }
+    ],
+    "expandedRowDetailPanel": {
+      "expandedRowDetailPanelHeader": {
+        "stationDetails": [
+          {
+            "uniqueKey": "station",
+            "label": "STATION"
+          },
+          {
+            "uniqueKey": "agent",
+            "label": "AGENT"
+          }
+        ],
+        "timeDetails": [
+          {
+            "uniqueKey": "dutyStart",
+            "label": "Duty Start"
+          },
+          {
+            "uniqueKey": "dutyEnd",
+            "label": "Duty End"
+          }
+        ]
+      },
+      "expandedRowDetailPanelBody": {
+        "rowDetailPanelBodyTable": [
+          {
+            "uniqueKey": "originStation",
+            "label": "ORIGIN STATION"
+          },
+          {
+            "uniqueKey": "destinationStation",
+            "label": "DESTINATION STATION"
+          },
+          {
+            "uniqueKey": "paymentMethod",
+            "label": "PAYMENT METHOD"
+          },
+          {
+            "uniqueKey": "creditCardNo",
+            "label": "CREDIT CARD NUMBER"
+          },
+          {
+            "uniqueKey": "secondEFtNo",
+            "label": "SECOND EFT NUMBER"
+          },
+          {
+            "uniqueKey": "ticketSerialNo",
+            "label": "TICKET SERIAL NUMBER"
+          },
+          {
+            "uniqueKey": "REVENUE",
+            "label": "Printer 1 Ticket Series Number"
+          },
+          {
+            "uniqueKey": "paymentSplit",
+            "label": "PAYMENT SPLIT"
+          }
+          
+        ]
+      }
+    },
+    "rows": [
+      {
+        "id": 1,
+        "trainTime": "00:00",
+        "ticketType": "ROUND TRIP TICKET",
+        "class": "ADULT",
+        "origin": "000",
+        "destination": "110",
+        "serialNo": "7041",
+        "paymentMethod": "MULTI PAY",
+        "amount": "10.50",
+          "additionalUserDetails": {
+          "station": "02/14/2024 | 00:00",
+          "agent": "02/14/2024 | 23:59",
+		      "dutyStart": "02/14/2024 | 00:00",
+          "dutyEnd": "02/14/2024 | 23:59",
+          "originStation": "0000",
+          "destinationStation": "0",
+          "paymentMethod": "$0.00",
+          "creditCardNo": "0138",
+          "secondEFtNo": "000",
+          "ticketSerialNo": "000",
+          "REVENUE": "9032"
+          
+        }
+      },
+      {
+        "id": 2,
+        "trainTime": "00:00",
+        "ticketType": "ROUND TRIP TICKET",
+        "class": "ADULT",
+        "origin": "000",
+        "destination": "110",
+        "serialNo": "7041",
+        "paymentMethod": "MULTI PAY",
+        "amount": "10.50",
+          "additionalUserDetails": {
+          "station": "02/14/2024 | 00:00",
+          "agent": "02/14/2024 | 23:59",
+		      "dutyStart": "02/14/2024 | 00:00",
+          "dutyEnd": "02/14/2024 | 23:59",
+          "originStation": "0000",
+          "destinationStation": "0",
+          "paymentMethod": "$0.00",
+          "creditCardNo": "0138",
+          "secondEFtNo": "000",
+          "ticketSerialNo": "000",
+          "REVENUE": "9032"
+          
+        }
+      },
+      {
+        "id": 3,
+        "trainTime": "00:00",
+        "ticketType": "ROUND TRIP TICKET",
+        "class": "ADULT",
+        "origin": "000",
+        "destination": "110",
+        "serialNo": "7041",
+        "paymentMethod": "MULTI PAY",
+        "amount": "10.50",
+          "additionalUserDetails": {
+          "station": "02/14/2024 | 00:00",
+          "agent": "02/14/2024 | 23:59",
+		      "dutyStart": "02/14/2024 | 00:00",
+          "dutyEnd": "02/14/2024 | 23:59",
+          "originStation": "0000",
+          "destinationStation": "0",
+          "paymentMethod": "$0.00",
+          "creditCardNo": "0138",
+          "secondEFtNo": "000",
+          "ticketSerialNo": "000",
+          "REVENUE": "9032"
+          
+        }
+      },
+      {
+        "id": 4,
+        "trainTime": "00:00",
+        "ticketType": "ROUND TRIP TICKET",
+        "class": "ADULT",
+        "origin": "000",
+        "destination": "110",
+        "serialNo": "7041",
+        "paymentMethod": "MULTI PAY",
+        "amount": "10.50",
+          "additionalUserDetails": {
+          "station": "02/14/2024 | 00:00",
+          "agent": "02/14/2024 | 23:59",
+		      "dutyStart": "02/14/2024 | 00:00",
+          "dutyEnd": "02/14/2024 | 23:59",
+          "originStation": "0000",
+          "destinationStation": "0",
+          "paymentMethod": "$0.00",
+          "creditCardNo": "0138",
+          "secondEFtNo": "000",
+          "ticketSerialNo": "000",
+          "REVENUE": "9032"
+          
+        }
+      },
+      {
+        "id": 5,
+        "trainTime": "00:00",
+        "ticketType": "ROUND TRIP TICKET",
+        "class": "ADULT",
+        "origin": "000",
+        "destination": "110",
+        "serialNo": "7041",
+        "paymentMethod": "MULTI PAY",
+        "amount": "10.50",
+          "additionalUserDetails": {
+          "station": "02/14/2024 | 00:00",
+          "agent": "02/14/2024 | 23:59",
+		      "dutyStart": "02/14/2024 | 00:00",
+          "dutyEnd": "02/14/2024 | 23:59",
+          "originStation": "0000",
+          "destinationStation": "0",
+          "paymentMethod": "$0.00",
+          "creditCardNo": "0138",
+          "secondEFtNo": "000",
+          "ticketSerialNo": "000",
+          "REVENUE": "9032"
+          
+        }
+      },
+      {
+        "id": 6,
+        "trainTime": "00:00",
+        "ticketType": "ROUND TRIP TICKET",
+        "class": "ADULT",
+        "origin": "000",
+        "destination": "110",
+        "serialNo": "7041",
+        "paymentMethod": "MULTI PAY",
+        "amount": "10.50",
+          "additionalUserDetails": {
+          "station": "02/14/2024 | 00:00",
+          "agent": "02/14/2024 | 23:59",
+		      "dutyStart": "02/14/2024 | 00:00",
+          "dutyEnd": "02/14/2024 | 23:59",
+          "originStation": "0000",
+          "destinationStation": "0",
+          "paymentMethod": "$0.00",
+          "creditCardNo": "0138",
+          "secondEFtNo": "000",
+          "ticketSerialNo": "000",
+          "REVENUE": "9032"
+          
+        }
+      },
+      {
+        "id": 7,
+        "trainTime": "00:00",
+        "ticketType": "ROUND TRIP TICKET",
+        "class": "ADULT",
+        "origin": "000",
+        "destination": "110",
+        "serialNo": "7041",
+        "paymentMethod": "MULTI PAY",
+        "amount": "10.50",
+          "additionalUserDetails": {
+          "station": "02/14/2024 | 00:00",
+          "agent": "02/14/2024 | 23:59",
+		      "dutyStart": "02/14/2024 | 00:00",
+          "dutyEnd": "02/14/2024 | 23:59",
+          "originStation": "0000",
+          "destinationStation": "0",
+          "paymentMethod": "$0.00",
+          "creditCardNo": "0138",
+          "secondEFtNo": "000",
+          "ticketSerialNo": "000",
+          "REVENUE": "9032"
+          
+        }
+      },
+      {
+        "id": 8,
+        "trainTime": "00:00",
+        "ticketType": "ROUND TRIP TICKET",
+        "class": "ADULT",
+        "origin": "000",
+        "destination": "110",
+        "serialNo": "7041",
+        "paymentMethod": "MULTI PAY",
+        "amount": "10.50",
+          "additionalUserDetails": {
+          "station": "02/14/2024 | 00:00",
+          "agent": "02/14/2024 | 23:59",
+		      "dutyStart": "02/14/2024 | 00:00",
+          "dutyEnd": "02/14/2024 | 23:59",
+          "originStation": "0000",
+          "destinationStation": "0",
+          "paymentMethod": "$0.00",
+          "creditCardNo": "0138",
+          "secondEFtNo": "000",
+          "ticketSerialNo": "000",
+          "REVENUE": "9032"
+          
+        }
+      },
+      {
+        "id": 9,
+        "trainTime": "00:00",
+        "ticketType": "ROUND TRIP TICKET",
+        "class": "ADULT",
+        "origin": "000",
+        "destination": "110",
+        "serialNo": "7041",
+        "paymentMethod": "MULTI PAY",
+        "amount": "10.50",
+          "additionalUserDetails": {
+          "station": "02/14/2024 | 00:00",
+          "agent": "02/14/2024 | 23:59",
+		      "dutyStart": "02/14/2024 | 00:00",
+          "dutyEnd": "02/14/2024 | 23:59",
+          "originStation": "0000",
+          "destinationStation": "0",
+          "paymentMethod": "$0.00",
+          "creditCardNo": "0138",
+          "secondEFtNo": "000",
+          "ticketSerialNo": "000",
+          "REVENUE": "9032"
+          
+        }
+      },
+      {
+        "id": 10,
+        "trainTime": "00:00",
+        "ticketType": "ROUND TRIP TICKET",
+        "class": "ADULT",
+        "origin": "000",
+        "destination": "110",
+        "serialNo": "7041",
+        "paymentMethod": "MULTI PAY",
+        "amount": "10.50",
+          "additionalUserDetails": {
+          "station": "02/14/2024 | 00:00",
+          "agent": "02/14/2024 | 23:59",
+		      "dutyStart": "02/14/2024 | 00:00",
+          "dutyEnd": "02/14/2024 | 23:59",
+          "originStation": "0000",
+          "destinationStation": "0",
+          "paymentMethod": "$0.00",
+          "creditCardNo": "0138",
+          "secondEFtNo": "000",
+          "ticketSerialNo": "000",
+          "REVENUE": "9032"
+          
+        }
+      }
+    ],
+    "modals": {
+      "deleteUser": {
+        "bodyText": "Are you sure you want to delete the record?",
+        "iconDetails": {
+          "url": "/src/assets/icons/ModalDeleteIcon.svg",
+          "altText": "ModalDeleteIcon"
+        },
+        "buttons": [
+          {
+            "label": "CANCEL",
+            "color": "secondary",
+            "action": "cancel"
+          },
+          {
+            "label": "YES",
+            "color": "danger",
+            "action": "delete"
+          }
+        ]
+      }
+    },
+    "pagination": {
+      "rowsPerPageLabel": "Rows per page",
+      "rowsPerPageOptions": [
+        5,
+        10,
+        25
+      ]
+    },
+    "browsColumnHeaders": [
+      {
+        "accessorKey": "stationCode",
+        "numeric": true,
+        "disablePadding": true,
+        "label": "STATION",
+        "isSortable": false,
+        "isSearchable": false,
+        "type": "text",
+        "filterVariant": "text",
+        "defaultSortBy": false,
+        "validations": [
+          {
+            "type": "maxLength",
+            "length": "50",
+            "message": "Invalid Input."
+          },
+          {
+            "type": "empty",
+            "message": "Invalid Input."
+          }
+        ]
+      },
+      {
+        "accessorKey": "date",
+        "numeric": false,
+        "disablePadding": false,
+        "label": "DATE",
+        "isSortable": false,
+        "isSearchable": false,
+        "type": "date",
+        "filterVariant": "text",
+        "validations": [
+          {
+            "type": "empty",
+            "message": "Invalid Input."
+          }
+        ]
+      },
+      {
+        "accessorKey": "agent",
+        "numeric": true,
+        "disablePadding": true,
+        "label": "AGENT",
+        "isSortable": false,
+        "isSearchable": false,
+        "type": "text",
+        "filterVariant": "text",
+        "defaultSortBy": false,
+        "validations": [
+          {
+            "type": "maxLength",
+            "length": "50",
+            "message": "Invalid Input."
+          },
+          {
+            "type": "empty",
+            "message": "Invalid Input."
+          }
+        ]
+      },
+      {
+        "accessorKey": "machine",
+        "numeric": true,
+        "disablePadding": true,
+        "label": "MACHINE",
+        "isSortable": false,
+        "isSearchable": false,
+        "type": "text",
+        "filterVariant": "text",
+        "defaultSortBy": false,
+        "validations": [
+          {
+            "type": "maxLength",
+            "length": "50",
+            "message": "Invalid Input."
+          },
+          {
+            "type": "empty",
+            "message": "Invalid Input."
+          }
+        ]
+      },
+      {
+        "accessorKey": "time",
+        "numeric": true,
+        "disablePadding": true,
+        "label": "TIME",
+        "isSortable": false,
+        "isSearchable": false,
+        "type": "text",
+        "filterVariant": "text",
+        "defaultSortBy": false,
+        "validations": [
+          {
+            "type": "maxLength",
+            "length": "50",
+            "message": "Invalid Input."
+          },
+          {
+            "type": "empty",
+            "message": "Invalid Input."
+          }
+        ]
+      },
+      {
+        "accessorKey": "cashOrChecks",
+        "numeric": true,
+        "disablePadding": false,
+        "label": "CASH/CHECKS",
+        "isSortable": false,
+        "isSearchable": false,
+        "type": "number",
+        "filterVariant": "text",
+        "isDollarSymbolRequired": true,
+        "validations": [
+          {
+            "type": "maxLength",
+            "length": "50",
+            "message": "Invalid Input."
+          },
+          {
+            "type": "empty",
+            "message": "Invalid Input."
+          }
+        ]
+      },
+      {
+        "accessorKey": "exception",
+        "isActionsEnabled": true,
+        "numeric": false,
+        "disablePadding": false,
+        "label": "EXP",
+        "isSortable": false,
+        "isSearchable": false,
+        "filterVariant": null,
+        "type": null,
+        "actionsList": [
+          "POPOVER"
+        ]
+      },
+      {
+        "accessorKey": "adjustments",
+        "isActionsEnabled": true,
+        "numeric": false,
+        "disablePadding": false,
+        "label": "ADJ",
+        "isSortable": false,
+        "isSearchable": false,
+        "filterVariant": null,
+        "type": null,
+        "actionsList": [
+          "POPOVER"
+        ]
+      },
+      {
+        "accessorKey": "actions",
+        "isActionsEnabled": true,
+        "numeric": false,
+        "disablePadding": false,
+        "label": "ACTIONS",
+        "isSortable": false,
+        "isSearchable": false,
+        "filterVariant": null,
+        "type": null,
+        "actionsList": [
+          "DELETE"
+        ]
+      }
+    ],
+    "browsColumnRow":[
+      {
+        "id": 1,
+        "name": "Chelsey Detrich",
+        "username": "Chelsey",
+        "email": "Sincere123@gmail.com",
+        "phone": "1-770-736-8031",
+        "cashOrChecks": "123.45",
+        "date": "01/15/2022",
+        "stationCode": "123",
+        "agent": "098",
+        "machine": "109",
+        "time": "12:09",
+        "additionalUserDetails": {
+          "dutyStart": "02/14/2024 | 00:00",
+          "dutyEnd": "02/14/2024 | 23:59",
+          "employeeNumber": "0000",
+          "securityLevel": "0",
+          "workingFund": "$0.00",
+          "ticketMachineNumber": "0138",
+          "printer2TicketSeriesNumber": "000",
+          "closingEmployeeNumber": "000",
+          "printer1TicketSeriesNumber": "9032",
+          "closingSecurityLevel": "0000",
+          "closingAgentNumber": "0000",
+          "printer2LastTicketNumber": "000",
+          "closingWorkingFund": "$0.00",
+          "currAdjNbr": "1",
+          "adjusted": "1",
+          "closeDownMethod": "00000000",
+          "CARD ERROR EMP NO": "",
+          "PRINTERZ LAST TIX NO": "0000"
+        }
+      }
+    ]
+
+  }
+}

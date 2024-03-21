@@ -216,8 +216,9 @@ export default function CustomTable(props) {
   );
 
   const handleEdit = (row) => {
-    setRowDataForEdit(row);
-    setOpenEditModal(true);
+    props.handleEdit()
+    //setRowDataForEdit(row);
+    //setOpenEditModal(true);
   };
 
   const handleDelete = (id) => {
@@ -321,10 +322,10 @@ export default function CustomTable(props) {
   return (
     <Box sx={{ width: "100%" }}>
       <Paper sx={{ width: "100%", mb: 2 }}>
-        <EnhancedTableToolbar
+        {props.handleTableTool && props.handleTableTool?null: <EnhancedTableToolbar
           numSelected={selected.length}
           onPrint={handlePrint}
-        />
+        />}
         <TableContainer>
           <Table
             sx={{ minWidth: 750 }}
@@ -347,7 +348,7 @@ export default function CustomTable(props) {
             </TableBody>
           </Table>
         </TableContainer>
-        <CustomPagination
+        {pagination?<CustomPagination
           count={rows?.length}
           page={page}
           onChangePage={handleChangePage}
@@ -355,7 +356,7 @@ export default function CustomTable(props) {
           rowsPerPageOptions={pagination?.rowsPerPageOptions}
           onChangeRowsPerPage={handleChangeRowsPerPage}
           maxRowsPerPageOption={maxRowsPerPageOption}
-        />
+        />:null}
       </Paper>
       {renderPdfExporter()}
       {openEditModal && renderEditModal()}
