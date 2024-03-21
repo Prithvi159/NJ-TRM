@@ -40,11 +40,11 @@ const handleEdit = () =>{
   //console.log("data", userTableData?.data);
 
   return (
-    <div>
+    <div className="main-table-div">
       {isPending ? (
         <h2>Loading...</h2>
       ) : (
-        <>
+        <div className="main-table">
         <SearchContainer/>
         <CustomTable
           rows={userTableData?.data?.rows}
@@ -58,7 +58,7 @@ const handleEdit = () =>{
           handleEdit = {handleEdit}
         />
         
-        </>
+        </div>
       )}
     </div>
   );

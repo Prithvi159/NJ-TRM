@@ -4,6 +4,14 @@
   padding-top: 14.6vh;
   width: 83vw;
   height: 82vh;
+  .main-table-div{
+    display: contents;
+    .main-table{
+      display: contents;
+
+    }
+
+  }
   .transmission-page{
     margin-top: 15%;
     margin-left: 10%;
@@ -49,10 +57,11 @@
         margin-left: 2.4%;
         .MuiPaper-root{
           .MuiToolbar-root{
-            margin-top: 11vh;
+            margin-top: 1.8vh;
             display: flex;
             flex-flow: row-reverse;
             padding: 0;
+            margin-bottom: -1.5vh;
 
           }
           .custom-pagination-controls{
@@ -72,7 +81,16 @@
 
           }
           .MuiTableContainer-root{
-            height: 48vh;
+            height: 36vh;
+            padding-left: 1.3vh;
+            table{
+              width: 78.5vw;
+            }
+            &::-webkit-scrollbar {
+              height: 1px !important;
+              width: 1px !important;
+
+          }
             table{
               .MuiTableHead-root {
                 position: sticky;
@@ -88,6 +106,8 @@
                     text-align: center;
                     border-bottom: 0;
                     border-left: 0.1px solid $border-left;
+                    border-right: 0.1px solid $border-left;
+                    border-bottom: 0.1px solid $border-left;
                     @media screen and (min-width: $media-1600){
                       font-size: $font-size-15;
                   

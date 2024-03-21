@@ -1,10 +1,13 @@
+@import "../src/assets/styles/constants.scss";
 .search-container {
   display: flex;
   flex-wrap: wrap;
   align-items: center;
-  padding: 10px;
-  gap: 10px;
-  background-color: #fff;
+  padding: 1.5vh;
+  margin-top: 10vh;
+  background-color: $white-clr;
+  width: 78.4vw;
+  margin-left: 4vh;
 
   .input-field {
     flex: 1;
