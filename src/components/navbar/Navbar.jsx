@@ -53,11 +53,13 @@ const Navbar = (props) => {
           <AccountMenu isRailDashboard={isRailDashboard} accountMenuJson={headNavbarData?.accountMenu} />
         </div>
       </div>
-      <div className="back-image">
+      
       { !isRailDashboard &&
+      <div className="back-image">
         <img  className="image" src={Image}/>
+        </div>
       } 
-      </div>
+      
     </div>
   );
 };
