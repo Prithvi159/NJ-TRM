@@ -1,0 +1,45 @@
+{
+  "module": "polledData",
+  "subModule": "dataBrowse",
+  "searchContainer": {
+    "fields": [
+      {
+        "name": "sampleDate",
+        "label": "Sample Date",
+        "type": "date",
+        "id": "1.1",
+        "required": true
+      },
+      {
+        "name": "stationCode",
+        "label": "Station Code",
+        "type": "select",
+        "required": false,
+        "options": [
+          { "label": "Option 1", "value": "Option 1" },
+          { "label": "Option 2", "value": "Option 2" },
+          { "label": "Option 3", "value": "Option 3" }
+        ],
+        "id": "1.2"
+      },
+      {
+        "name": "agent",
+        "label": "Agent",
+        "type": "text",
+        "id": "1.3",
+        "required": false
+      },
+      {
+        "name": "excludeTVM",
+        "label": "Exclude TVM",
+        "type": "radio",
+        "required": false,
+        "options": [
+          { "label": "Yes", "value": "Yes" },
+          { "label": "No", "value": "No" }
+        ],
+        "id": "1.4"
+      }
+    ]
+  }
+}

@@ -1,0 +1,28 @@
+.search-container {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  padding: 10px;
+  gap: 10px;
+  background-color: #fff;
+
+  .input-field {
+    flex: 1;
+    min-width: 120px;
+
+    &:not(:last-child) {
+      margin-right: 10px;
+    }
+  }
+
+  .button-container {
+    display: flex;
+    justify-content: flex-end;
+    gap: 10px;
+  }
+
+  button {
+    padding: 10px 20px;
+    min-width: 100px;
+  }
+}

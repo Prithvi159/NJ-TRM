@@ -3,6 +3,7 @@ import { useQuery } from "@tanstack/react-query";
 import axios from "axios";
 import CustomTable from "../../../../custom/table/CustomTable";
 import {useNavigate } from 'react-router-dom';
+import SearchContainer from "../../../../custom/searchContainer/SearchContainer";
 
 const fetchTableData = async () => {
   const response = await axios.get("http://localhost:4000/table");
@@ -44,7 +45,7 @@ const handleEdit = () =>{
         <h2>Loading...</h2>
       ) : (
         <>
-        {/* <SearchContainer/> */}
+        <SearchContainer/>
         <CustomTable
           rows={userTableData?.data?.rows}
           toolBar={userTableData?.data?.toolBar}
@@ -56,6 +57,7 @@ const handleEdit = () =>{
           expandedRowDetailPanelJson={userTableData?.data?.expandedRowDetailPanel}
           handleEdit = {handleEdit}
         />
+        
         </>
       )}
     </div>

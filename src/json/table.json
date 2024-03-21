@@ -6,7 +6,7 @@
         {
           "action": "print",
           "tooltip": {
-            "text": "Print"
+            "text": "PDF"
           },
           "iconDetails": {
             "url": "/src/assets/icons/PDF.svg",
