@@ -12,13 +12,14 @@ import {
   FormLabel,
 } from "@mui/material";
 import { DatePicker, LocalizationProvider } from "@mui/x-date-pickers";
-import { AdapterDayjs } from '@mui/x-date-pickers/AdapterDayjs';
-import './Input.scss'
+import { AdapterDayjs } from "@mui/x-date-pickers/AdapterDayjs";
+import "./Input.scss";
 import CalendarIcon from "../../../assets/icons/CalenderIcon";
 
 export function Input(props) {
-  const { type, name, value, handleInputChange, options, handleDateChange } = props;
-
+  const { type, name, value, handleInputChange, options, handleDateChange, label} =
+    props;
+  console.log(name, value);
   const renderInput = () => {
     switch (type) {
       case "text":
@@ -27,7 +28,7 @@ export function Input(props) {
         return (
           <TextField
             type={type}
-            label={name}
+            label={label}
             name={name}
             value={value}
             onChange={handleInputChange}
@@ -39,15 +40,14 @@ export function Input(props) {
       case "select":
         return (
           <FormControl variant="outlined" fullWidth className="custom-select">
-            <InputLabel id={`${name}-label`}>{name}</InputLabel>
+            <InputLabel id={`${name}-label`}>{label}</InputLabel>
             <Select
               value={value || ""}
               onChange={handleInputChange}
-              label={name}
+              label={label}
               name={name}
               labelId={`${name}-label`}
               id={name}
-              
             >
               {options.map((option) => (
                 <MenuItem key={option.value} value={option.value}>
@@ -62,8 +62,8 @@ export function Input(props) {
         return (
           <LocalizationProvider dateAdapter={AdapterDayjs}>
               <DatePicker
-                label={name}
-                value={value}
+                label={label}
+                value={value || null}
                 name={name}
                 onChange={(newValue) => handleDateChange(name, newValue)}
                 slots={{ openPickerIcon: CalendarIcon }}
@@ -77,13 +77,20 @@ export function Input(props) {
         );
 
       case "checkbox":
-        return <Checkbox name={name} checked={value} onChange={handleInputChange} />;
+        return (
+          <Checkbox name={name} checked={value} onChange={handleInputChange} />
+        );
 
       case "radio":
         return (
           <FormControl>
             <FormLabel>{name}</FormLabel>
-            <RadioGroup row name={name} value={value || ""} onChange={handleInputChange}>
+            <RadioGroup
+              row
+              name={name}
+              value={value || ""}
+              onChange={handleInputChange}
+            >
               {options.map((option) => (
                 <FormControlLabel
                   key={option.value}

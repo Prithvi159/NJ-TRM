@@ -1,43 +1,62 @@
-.custom-textfield {
-  .MuiOutlinedInput-root {
-    fieldset {
-      border-color: #878d93;
-      border-radius: 0px !important;
-      border-width: 2px;
-    }
-    &:hover fieldset {
-      border-color: #4c4d4c;
-    }
-    &.Mui-focused fieldset {
-      border-color: #4c4d4c;
-    }
-  }
-}
+// .custom-textfield {
+//   .MuiOutlinedInput-root {
+//     fieldset {
+//       border-color: #878d93;
+//       border-radius: 0px !important;
+//       border-width: 2px;
+//     }
+//     &:hover fieldset {
+//       border-color: #4c4d4c;
+//     }
+//     &.Mui-focused fieldset {
+//       border-color: #4c4d4c;
+//     }
+//   }
+// }
 
-.custom-select {
-    .MuiOutlinedInput-root {
-      &.MuiOutlinedInput-root .MuiOutlinedInput-notchedOutline {
-        border-color: #878D93;
-        border-width: 2px;
-      }
-      &:hover .MuiOutlinedInput-notchedOutline {
-        // border-color: #4C4D4C;
-      }
-      &.Mui-focused .MuiOutlinedInput-notchedOutline {
-        border-color: #4C4D4C;
-        border-width: 2px;
-      }
-      &.Mui-outlined.Mui-focused .MuiOutlinedInput-notchedOutline {
-        border-color: #4C4D4C;
-        border-width: 2px;
-      }
-    }
-  }
+// .custom-select {
+//     .MuiOutlinedInput-root {
+//       &.MuiOutlinedInput-root .MuiOutlinedInput-notchedOutline {
+//         border-color: #878D93;
+//         border-width: 2px;
+//         border-radius: 0px !important;
+//       }
+//       &:hover .MuiOutlinedInput-notchedOutline {
+//         // border-color: #4C4D4C;
+//       }
+//       &.Mui-focused .MuiOutlinedInput-notchedOutline {
+//         border-color: #4C4D4C;
+//         border-width: 2px;
+//       }
+//       &.Mui-outlined.Mui-focused .MuiOutlinedInput-notchedOutline {
+//         border-color: #4C4D4C;
+//         border-width: 2px;
+//       }
+//     }
+//   }
   
-.custom-form-control {
-  border: 1px solid #4c4d4c !important;
-}
+//   .custom-date-picker {
+//     .MuiOutlinedInput-root {
+//       fieldset {
+//         border-radius: 0;
+//         border-color: #878D93; 
+//         border-width: 2px;
+//       }
+      
+//       &:hover fieldset {
+//         border-color: #878D93; 
+//       }
+//       &.Mui-focused fieldset {
+//         border-color: #878D93; 
+//       }
+//     }
+//   }
+  
 
-.custom-radio {
-  border: 1px solid #4c4d4c !important;
-}
+// .custom-form-control {
+//   border: 1px solid #4c4d4c !important;
+// }
+
+// .custom-radio {
+//   border: 1px solid #4c4d4c !important;
+// }
