@@ -19,7 +19,7 @@ import CalendarIcon from "../../../assets/icons/CalenderIcon";
 export function Input(props) {
   const { type, name, value, handleInputChange, options, handleDateChange, label} =
     props;
-  console.log(name, value);
+
   const renderInput = () => {
     switch (type) {
       case "text":
@@ -84,7 +84,7 @@ export function Input(props) {
       case "radio":
         return (
           <FormControl>
-            <FormLabel>{name}</FormLabel>
+            <FormLabel>{label}</FormLabel>
             <RadioGroup
               row
               name={name}
