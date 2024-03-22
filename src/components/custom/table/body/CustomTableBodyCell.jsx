@@ -1,6 +1,7 @@
 import React from "react";
 import { IconButton, TableCell, Tooltip } from "@mui/material";
 import PopoverButton from "../../controls/PopoverButton/PopoverButton";
+import './CustomTableBodyCell.scss'
 
 const TableCellContent = (props) => {
   const { headCell, value } = props;
@@ -53,14 +54,17 @@ const ActionButtons = ({ actions, row, handleActionClick }) => {
   );
 };
 
-export default function CustomTableBodyCell({
-  headCell,
-  row,
-  handleEdit,
-  handleDelete,
-  handleTransation,
-  handleException
-}) {
+export default function CustomTableBodyCell(props) {
+  const {
+    headCell,
+    row,
+    handleEdit,
+    handleDelete,
+    handleTransation,
+    handleException,
+    showIcon
+  } = props
+
   const handleActionClick = (action, row, text) => {
     console.log("action------66--------", action)
     switch (action) {
@@ -83,10 +87,10 @@ export default function CustomTableBodyCell({
   };
 
   return (
-    <TableCell
+    <TableCell 
       align={headCell.numeric ? "right" : "left"}
       padding="none"
-      className="custom-table-cell-body"
+      className={`custom-table-body-cell ${row?.isErrorDutyRecord ? 'error-record' : ''} ${row?.isManuallyAddedDutyRecord ? 'manually-added-record' : ''}`}
     >
       {headCell.isActionsEnabled ? (
         <ActionButtons
@@ -95,10 +99,13 @@ export default function CustomTableBodyCell({
           handleActionClick={handleActionClick}
         />
       ) : (
+        <>
+        {showIcon}
         <TableCellContent
           headCell={headCell}
           value={row[headCell?.accessorKey]}
         />
+        </>
       )}
     </TableCell>
   );

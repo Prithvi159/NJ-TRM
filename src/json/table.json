@@ -427,6 +427,7 @@
       },
       {
         "id": 2,
+        "isErrorDutyRecord": true,
         "name": "Rao Vivek",
         "username": "vivek",
         "email": "vivek@barrelfuel.com",
@@ -489,6 +490,7 @@
       },
       {
         "id": 4,
+        "isManuallyAddedDutyRecord": true,
         "name": "Patricia Lebsack",
         "username": "Karianne",
         "email": "prithviraj.chandra@conduent.com",

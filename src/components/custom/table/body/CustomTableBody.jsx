@@ -1,8 +1,10 @@
 import React from "react";
-import { Box, Checkbox, TableCell, TableRow } from "@mui/material";
+import {Checkbox, TableCell, TableRow } from "@mui/material";
 import './CustomTableBody.scss'
 import RowDetailsPanel from "./RowDetailsPanel";
 import CustomTableBodyCell from "./CustomTableBodyCell";
+import ErrorIcon from "../../../../assets/icons/ErrorIcon";
+import { ManuallyAddedIcon } from "../../../../assets/icons/ManuallyAddedIcon";
 
 export function CustomTableBody(props) {
   const {
@@ -22,6 +24,15 @@ export function CustomTableBody(props) {
   
   const colSpan = columnHeaders.length + (displaySelectRowsCheckBox ? 1 : 0);
 
+  function selectIconForRow(row) {
+    if (row?.isErrorDutyRecord) {
+      return <ErrorIcon style={{marginRight: 4 }} />;
+    } else if (row?.isManuallyAddedDutyRecord) {
+      return <ManuallyAddedIcon style={{marginRight: 4 }} />;
+    }
+    return null;
+  }
+  
   return (
     <>
       {visibleRows?.length && visibleRows?.map((row, index) => (
@@ -45,7 +56,7 @@ export function CustomTableBody(props) {
               </TableCell>
             )}
             {/*table cells for each column */}
-            {columnHeaders?.map((headCell) => (
+            {columnHeaders?.map((headCell, index) => (
                 <CustomTableBodyCell
                     key={headCell?.accessorKey}
                     headCell={headCell}
@@ -54,6 +65,7 @@ export function CustomTableBody(props) {
                     handleDelete={handleDelete}
                     handleTransation = {handleTransation}
                     handleException = {handleException}
+                    showIcon={index === 0 ? selectIconForRow(row) : null}
                 /> 
             ))}
           </TableRow>
