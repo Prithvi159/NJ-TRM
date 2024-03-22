@@ -1,8 +1,9 @@
+@import "../src/assets/styles/constants.scss";
 .custom-table-row {
   &.expandable,
   &.expanded {
     cursor: pointer;
-    background-color: #f3f7ff;
+    background-color: $rowpanel-clr;
 
     &:hover {
       background-color: #f5f5f5;
