@@ -7,7 +7,7 @@ import { formatDate } from "../../../utils/globalMethods";
 const searchFields = [
   {
     name: "Sample Date",
-    label: "Sample Date",
+    label: "Upload Date ",
     type: "date",
     id: "1.1",
     "required": true,
@@ -58,7 +58,7 @@ export default function SearchContainer() {
             const value = searchData[field.name];
             if (field.required) {
               if (field.type === 'date') {
-                return value instanceof Date || (typeof value === 'string' && value.trim() !== '');
+                return value instanceof Date || (typeof value === 'string' && Boolean(value.trim()));
               } else if (field.type === 'checkbox' || field.type === 'radio') {
                 return value != null;
               } else if (typeof value === 'string') {
@@ -98,6 +98,7 @@ export default function SearchContainer() {
                     <Input
                         type={field.type}
                         name={field.name}
+                        label={field.label}
                         value={searchData[field.name] || ''}
                         handleInputChange={handleInputChange}
                         handleDateChange={handleDateChange}
@@ -106,10 +107,10 @@ export default function SearchContainer() {
                 </div>
             ))}
             <div className="button-container">
-                <Button variant="contained" color="primary" onClick={handleSearch} disabled={!isSearchEnabled}>
+                <Button  className="search-button" onClick={handleSearch} disabled={!isSearchEnabled}>
                     Search
                 </Button>
-                <Button variant="contained" onClick={handleClear}>
+                <Button  className="clear-button " onClick={handleClear}>
                     Clear
                 </Button>
             </div>

@@ -15,5 +15,5 @@ export const chunkArray = (arr, size) => {
 
 
 export const formatDate = (date) => {
-  return dayjs(date).format('MM/DD/YYYY');
+  return date && dayjs(date).format('MM/DD/YYYY');
 };

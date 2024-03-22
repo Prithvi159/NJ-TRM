@@ -5,6 +5,8 @@
   padding: 10px;
   gap: 10px;
   background-color: #fff;
+  width: 95%;
+  margin: 78px 0px 0px 10px;
 
   .input-field {
     flex: 1;
@@ -19,6 +21,21 @@
     display: flex;
     justify-content: flex-end;
     gap: 10px;
+    height: 46px;
+    .search-button {
+      background-color: #1a2b57;
+      color: #ffffff;
+      border-radius: 0px;
+      &:disabled {
+        opacity: 0.5;
+      }
+    }
+    .clear-button {
+      background-color: #ffffff; 
+      color: #44588a; 
+      border-radius: 0px;
+      border: 1px solid #44588a;
+    }
   }
 
   button {
