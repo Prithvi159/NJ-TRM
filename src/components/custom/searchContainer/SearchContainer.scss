@@ -1,16 +1,76 @@
+@import "../src/assets/styles/constants.scss";
 .search-container {
   display: flex;
   flex-wrap: wrap;
   align-items: center;
-  padding: 10px;
-  gap: 10px;
-  background-color: #fff;
-  width: 95%;
-  margin: 78px 0px 0px 10px;
+  padding: 1.5vh;
+  margin-top: 10vh;
+  background-color: $white-clr;
+  width: 78.4vw;
+  margin-left: 4vh;
 
   .input-field {
     flex: 1;
     min-width: 120px;
+
+    .MuiFormControl-root{
+      width: 14vw !important;
+      .MuiFormGroup-root{
+        .MuiFormControlLabel-root{
+          .css-vqmohf-MuiButtonBase-root-MuiRadio-root.Mui-checked {
+            color: $border-side !important;
+          }
+        }
+
+      }
+      .MuiFormLabel-root{
+        font-size: 1vw !important;
+        top: -0.5vh !important;
+        @media screen and (min-width: $media-1600){
+          top: -0vh !important;
+      
+        }
+        @media screen and (min-width: $media-2000){
+          top: 1vh !important;
+        }
+        @media screen and (min-width: $media-2800){
+          top: 1vh !important;
+        }
+        @media screen and (min-width: $media-3400){
+          top: 1vh !important;
+        }
+        @media screen and (min-width: $media-4000){
+          top: 1vh !important;
+        }
+
+      }
+      .MuiInputBase-root{
+        height: 7vh !important;
+        border-radius: 0px !important;
+        fieldset {
+          border-color: #878D93;
+          border-width: 1px;
+        }
+        .css-vqmohf-MuiButtonBase-root-MuiRadio-root.Mui-checked {
+          color: #ac1c4d;
+      }
+        .MuiInputBase-input{
+          font-size: 0.9vw !important;
+
+        }
+        .MuiInputAdornment-root {
+          .MuiButtonBase-root{
+            .MuiSvgIcon-root{
+              width: 2vw !important;
+              height: 4vh !important;
+
+            }
+
+          }
+
+        }
+      }
+    }
 
     &:not(:last-child) {
       margin-right: 10px;
@@ -20,26 +80,17 @@
   .button-container {
     display: flex;
     justify-content: flex-end;
-    gap: 10px;
-    height: 46px;
-    .search-button {
-      background-color: #1a2b57;
-      color: #ffffff;
-      border-radius: 0px;
-      &:disabled {
-        opacity: 0.5;
-      }
+    gap: 2vh;
+    height: 7vh;
+    button{
+      border-radius: 0;
     }
-    .clear-button {
-      background-color: #ffffff; 
-      color: #44588a; 
-      border-radius: 0px;
-      border: 1px solid #44588a;
-    }
-  }
+    .css-sghohy-MuiButtonBase-root-MuiButton-root{
+      background-color: $rail-clr !important ;
 
-  button {
-    // padding: 10px 20px;
-    // min-width: 100px;
+    }
+    .css-sghohy-MuiButtonBase-root-MuiButton-root.Mui-disabled{
+      background-color: $border-colour !important;
+    }
   }
 }

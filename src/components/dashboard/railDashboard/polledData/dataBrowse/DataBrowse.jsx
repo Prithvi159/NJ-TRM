@@ -34,17 +34,21 @@ export function DataBrowse() {
     refetch();
   }, []);
   
-const handleEdit = () =>{
+const handleTransation = () =>{
   navigate(`./transaction-details`)
+}
+const handleException = () =>{
+  console.log("exception")
+  navigate(`./exception-details`)
 }
   //console.log("data", userTableData?.data);
 
   return (
-    <div>
+    <div className="main-table-div">
       {isPending ? (
         <h2>Loading...</h2>
       ) : (
-        <>
+        <div className="main-table">
         <SearchContainer/>
         <CustomTable
           rows={userTableData?.data?.rows}
@@ -55,10 +59,11 @@ const handleEdit = () =>{
           displaySelectRowsCheckBox={false}
           isRowExpandable={userTableData?.data?.isExpandable}
           expandedRowDetailPanelJson={userTableData?.data?.expandedRowDetailPanel}
-          handleEdit = {handleEdit}
+          handleTransation = {handleTransation}
+          handleException = {handleException}
         />
         
-        </>
+        </div>
       )}
     </div>
   );

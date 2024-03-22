@@ -1,17 +1,17 @@
 {
-  "transactiontable": {
-    "isExpandable": true,
+  "exceptiontable": {
+    "isExpandable": false,
     "columnHeaders": [
       {
-        "accessorKey": "trainTime",
+        "accessorKey": "exceptionType",
         "numeric": true,
         "disablePadding": true,
-        "label": "TRAIN TIME",
-        "isSortable": true,
-        "isSearchable": true,
+        "label": "EXCEPTION TYPE",
+        "isSortable": false,
+        "isSearchable": false,
         "type": "text",
         "filterVariant": "text",
-        "defaultSortBy": true,
+        "defaultSortBy": false,
         "validations": [
           {
             "type": "maxLength",
@@ -29,11 +29,33 @@
         "numeric": false,
         "disablePadding": false,
         "label": "TICKE TYPE",
-        "isSortable": true,
-        "isSearchable": true,
+        "isSortable": false,
+        "isSearchable": false,
         "type": "date",
         "filterVariant": "text",
         "validations": [
+          {
+            "type": "empty",
+            "message": "Invalid Input."
+          }
+        ]
+      },
+      {
+        "accessorKey": "trainTime",
+        "numeric": false,
+        "disablePadding": true,
+        "label": "TRAIN TIME",
+        "isSortable": false,
+        "isSearchable": false,
+        "type": "text",
+        "filterVariant": "text",
+        "defaultSortBy": false,
+        "validations": [
+          {
+            "type": "maxLength",
+            "length": "50",
+            "message": "Invalid Input."
+          },
           {
             "type": "empty",
             "message": "Invalid Input."
@@ -45,11 +67,11 @@
         "numeric": false,
         "disablePadding": true,
         "label": "CLASS",
-        "isSortable": true,
-        "isSearchable": true,
+        "isSortable": false,
+        "isSearchable": false,
         "type": "text",
         "filterVariant": "text",
-        "defaultSortBy": true,
+        "defaultSortBy": false,
         "validations": [
           {
             "type": "maxLength",
@@ -67,8 +89,8 @@
         "numeric": true,
         "disablePadding": true,
         "label": "ORIGIN",
-        "isSortable": true,
-        "isSearchable": true,
+        "isSortable": false,
+        "isSearchable": false,
         "type": "text",
         "filterVariant": "text",
         "defaultSortBy": true,
@@ -89,11 +111,11 @@
         "numeric": true,
         "disablePadding": true,
         "label": "DESTINATION",
-        "isSortable": true,
-        "isSearchable": true,
+        "isSortable": false,
+        "isSearchable": false,
         "type": "text",
         "filterVariant": "text",
-        "defaultSortBy": true,
+        "defaultSortBy": false,
         "validations": [
           {
             "type": "maxLength",
@@ -107,12 +129,12 @@
         ]
       },
       {
-        "accessorKey": "serialNo",
+        "accessorKey": "ticketNo",
         "numeric": true,
         "disablePadding": false,
-        "label": "SERIAL NO",
-        "isSortable": true,
-        "isSearchable": true,
+        "label": "TICKET NO",
+        "isSortable": false,
+        "isSearchable": false,
         "type": "number",
         "filterVariant": "text",
         "isDollarSymbolRequired": false,
@@ -128,35 +150,14 @@
           }
         ]
       },
+      
       {
-        "accessorKey": "paymentMethod",
-        "numeric": false,
-        "disablePadding": false,
-        "label": "PAYMENT METHOD",
-        "isSortable": true,
-        "isSearchable": true,
-        "type": "number",
-        "filterVariant": "text",
-        "isDollarSymbolRequired": false,
-        "validations": [
-          {
-            "type": "maxLength",
-            "length": "50",
-            "message": "Invalid Input."
-          },
-          {
-            "type": "empty",
-            "message": "Invalid Input."
-          }
-        ]
-      },
-      {
-        "accessorKey": "amount",
+        "accessorKey": "revenueAmount",
         "numeric": true,
         "disablePadding": false,
-        "label": "AMOUNT",
-        "isSortable": true,
-        "isSearchable": true,
+        "label": "REVENUE AMOUNT",
+        "isSortable": false,
+        "isSearchable": false,
         "type": "number",
         "filterVariant": "text",
         "isDollarSymbolRequired": true,
@@ -171,27 +172,8 @@
             "message": "Invalid Input."
           }
         ]
-      },
-      {
-        "accessorKey": "adjustments",
-        "isActionsEnabled": true,
-        "numeric": false,
-        "disablePadding": false,
-        "label": "ADJ",
-        "isSortable": true,
-        "isSearchable": false,
-        "filterVariant": true,
-        "type": null,
-        "actionsList": [
-          {
-            "label": "A",
-            "actionType": "POPOVER",
-            "tooltip": {
-              "text": "Adjustments"
-            }
-          }
-        ]
       }
+      
     ],
     "expandedRowDetailPanel": {
       "expandedRowDetailPanelHeader": {
@@ -257,253 +239,123 @@
     "rows": [
       {
         "id": 1,
-        "trainTime": "00:00",
+        "exceptionType": "*SPL*MATCHED SPOILED TICKET",
         "ticketType": "ROUND TRIP TICKET",
+        "trainTime":"12:36",
         "class": "ADULT",
         "origin": "000",
         "destination": "110",
-        "serialNo": "7041",
-        "paymentMethod": "MULTI PAY",
-        "amount": "10.50",
-          "additionalUserDetails": {
-          "station": "02/14/2024 | 00:00",
-          "agent": "02/14/2024 | 23:59",
-		      "dutyStart": "02/14/2024 | 00:00",
-          "dutyEnd": "02/14/2024 | 23:59",
-          "originStation": "0000",
-          "destinationStation": "0",
-          "paymentMethod": "$0.00",
-          "creditCardNo": "0138",
-          "secondEFtNo": "000",
-          "ticketSerialNo": "000",
-          "REVENUE": "9032"
-          
-        }
+        "ticketNo": "7041",
+        "revenueAmount": "10.50"
+         
       },
       {
-        "id": 2,
-        "trainTime": "00:00",
+        "id": 1,
+        "exceptionType": "*SPL*MATCHED SPOILED TICKET",
         "ticketType": "ROUND TRIP TICKET",
+        "trainTime":"12:36",
         "class": "ADULT",
         "origin": "000",
         "destination": "110",
-        "serialNo": "7041",
-        "paymentMethod": "MULTI PAY",
-        "amount": "10.50",
-          "additionalUserDetails": {
-          "station": "02/14/2024 | 00:00",
-          "agent": "02/14/2024 | 23:59",
-		      "dutyStart": "02/14/2024 | 00:00",
-          "dutyEnd": "02/14/2024 | 23:59",
-          "originStation": "0000",
-          "destinationStation": "0",
-          "paymentMethod": "$0.00",
-          "creditCardNo": "0138",
-          "secondEFtNo": "000",
-          "ticketSerialNo": "000",
-          "REVENUE": "9032"
-          
-        }
+        "ticketNo": "7041",
+        "revenueAmount": "10.50"
+         
       },
       {
-        "id": 3,
-        "trainTime": "00:00",
+        "id": 1,
+        "exceptionType": "*SPL*MATCHED SPOILED TICKET",
         "ticketType": "ROUND TRIP TICKET",
+        "trainTime":"12:36",
         "class": "ADULT",
         "origin": "000",
         "destination": "110",
-        "serialNo": "7041",
-        "paymentMethod": "MULTI PAY",
-        "amount": "10.50",
-          "additionalUserDetails": {
-          "station": "02/14/2024 | 00:00",
-          "agent": "02/14/2024 | 23:59",
-		      "dutyStart": "02/14/2024 | 00:00",
-          "dutyEnd": "02/14/2024 | 23:59",
-          "originStation": "0000",
-          "destinationStation": "0",
-          "paymentMethod": "$0.00",
-          "creditCardNo": "0138",
-          "secondEFtNo": "000",
-          "ticketSerialNo": "000",
-          "REVENUE": "9032"
-          
-        }
+        "ticketNo": "7041",
+        "revenueAmount": "10.50"
+         
       },
       {
-        "id": 4,
-        "trainTime": "00:00",
+        "id": 1,
+        "exceptionType": "*SPL*MATCHED SPOILED TICKET",
         "ticketType": "ROUND TRIP TICKET",
+        "trainTime":"12:36",
         "class": "ADULT",
         "origin": "000",
         "destination": "110",
-        "serialNo": "7041",
-        "paymentMethod": "MULTI PAY",
-        "amount": "10.50",
-          "additionalUserDetails": {
-          "station": "02/14/2024 | 00:00",
-          "agent": "02/14/2024 | 23:59",
-		      "dutyStart": "02/14/2024 | 00:00",
-          "dutyEnd": "02/14/2024 | 23:59",
-          "originStation": "0000",
-          "destinationStation": "0",
-          "paymentMethod": "$0.00",
-          "creditCardNo": "0138",
-          "secondEFtNo": "000",
-          "ticketSerialNo": "000",
-          "REVENUE": "9032"
-          
-        }
+        "ticketNo": "7041",
+        "revenueAmount": "10.50"
+         
       },
       {
-        "id": 5,
-        "trainTime": "00:00",
+        "id": 1,
+        "exceptionType": "*SPL*MATCHED SPOILED TICKET",
         "ticketType": "ROUND TRIP TICKET",
+        "trainTime":"12:36",
         "class": "ADULT",
         "origin": "000",
         "destination": "110",
-        "serialNo": "7041",
-        "paymentMethod": "MULTI PAY",
-        "amount": "10.50",
-          "additionalUserDetails": {
-          "station": "02/14/2024 | 00:00",
-          "agent": "02/14/2024 | 23:59",
-		      "dutyStart": "02/14/2024 | 00:00",
-          "dutyEnd": "02/14/2024 | 23:59",
-          "originStation": "0000",
-          "destinationStation": "0",
-          "paymentMethod": "$0.00",
-          "creditCardNo": "0138",
-          "secondEFtNo": "000",
-          "ticketSerialNo": "000",
-          "REVENUE": "9032"
-          
-        }
+        "ticketNo": "7041",
+        "revenueAmount": "10.50"
+         
       },
       {
-        "id": 6,
-        "trainTime": "00:00",
+        "id": 1,
+        "exceptionType": "*SPL*MATCHED SPOILED TICKET",
         "ticketType": "ROUND TRIP TICKET",
+        "trainTime":"12:36",
         "class": "ADULT",
         "origin": "000",
         "destination": "110",
-        "serialNo": "7041",
-        "paymentMethod": "MULTI PAY",
-        "amount": "10.50",
-          "additionalUserDetails": {
-          "station": "02/14/2024 | 00:00",
-          "agent": "02/14/2024 | 23:59",
-		      "dutyStart": "02/14/2024 | 00:00",
-          "dutyEnd": "02/14/2024 | 23:59",
-          "originStation": "0000",
-          "destinationStation": "0",
-          "paymentMethod": "$0.00",
-          "creditCardNo": "0138",
-          "secondEFtNo": "000",
-          "ticketSerialNo": "000",
-          "REVENUE": "9032"
-          
-        }
+        "ticketNo": "7041",
+        "revenueAmount": "10.50"
+         
       },
       {
-        "id": 7,
-        "trainTime": "00:00",
+        "id": 1,
+        "exceptionType": "*SPL*MATCHED SPOILED TICKET",
         "ticketType": "ROUND TRIP TICKET",
+        "trainTime":"12:36",
         "class": "ADULT",
         "origin": "000",
         "destination": "110",
-        "serialNo": "7041",
-        "paymentMethod": "MULTI PAY",
-        "amount": "10.50",
-          "additionalUserDetails": {
-          "station": "02/14/2024 | 00:00",
-          "agent": "02/14/2024 | 23:59",
-		      "dutyStart": "02/14/2024 | 00:00",
-          "dutyEnd": "02/14/2024 | 23:59",
-          "originStation": "0000",
-          "destinationStation": "0",
-          "paymentMethod": "$0.00",
-          "creditCardNo": "0138",
-          "secondEFtNo": "000",
-          "ticketSerialNo": "000",
-          "REVENUE": "9032"
-          
-        }
+        "ticketNo": "7041",
+        "revenueAmount": "10.50"
+         
       },
       {
-        "id": 8,
-        "trainTime": "00:00",
+        "id": 1,
+        "exceptionType": "*SPL*MATCHED SPOILED TICKET",
         "ticketType": "ROUND TRIP TICKET",
+        "trainTime":"12:36",
         "class": "ADULT",
         "origin": "000",
         "destination": "110",
-        "serialNo": "7041",
-        "paymentMethod": "MULTI PAY",
-        "amount": "10.50",
-          "additionalUserDetails": {
-          "station": "02/14/2024 | 00:00",
-          "agent": "02/14/2024 | 23:59",
-		      "dutyStart": "02/14/2024 | 00:00",
-          "dutyEnd": "02/14/2024 | 23:59",
-          "originStation": "0000",
-          "destinationStation": "0",
-          "paymentMethod": "$0.00",
-          "creditCardNo": "0138",
-          "secondEFtNo": "000",
-          "ticketSerialNo": "000",
-          "REVENUE": "9032"
-          
-        }
+        "ticketNo": "7041",
+        "revenueAmount": "10.50"
+         
       },
       {
-        "id": 9,
-        "trainTime": "00:00",
+        "id": 1,
+        "exceptionType": "*SPL*MATCHED SPOILED TICKET",
         "ticketType": "ROUND TRIP TICKET",
+        "trainTime":"12:36",
         "class": "ADULT",
         "origin": "000",
         "destination": "110",
-        "serialNo": "7041",
-        "paymentMethod": "MULTI PAY",
-        "amount": "10.50",
-          "additionalUserDetails": {
-          "station": "02/14/2024 | 00:00",
-          "agent": "02/14/2024 | 23:59",
-		      "dutyStart": "02/14/2024 | 00:00",
-          "dutyEnd": "02/14/2024 | 23:59",
-          "originStation": "0000",
-          "destinationStation": "0",
-          "paymentMethod": "$0.00",
-          "creditCardNo": "0138",
-          "secondEFtNo": "000",
-          "ticketSerialNo": "000",
-          "REVENUE": "9032"
-          
-        }
+        "ticketNo": "7041",
+        "revenueAmount": "10.50"
+         
       },
       {
-        "id": 10,
-        "trainTime": "00:00",
+        "id": 1,
+        "exceptionType": "*SPL*MATCHED SPOILED TICKET",
         "ticketType": "ROUND TRIP TICKET",
+        "trainTime":"12:36",
         "class": "ADULT",
         "origin": "000",
         "destination": "110",
-        "serialNo": "7041",
-        "paymentMethod": "MULTI PAY",
-        "amount": "10.50",
-          "additionalUserDetails": {
-          "station": "02/14/2024 | 00:00",
-          "agent": "02/14/2024 | 23:59",
-		      "dutyStart": "02/14/2024 | 00:00",
-          "dutyEnd": "02/14/2024 | 23:59",
-          "originStation": "0000",
-          "destinationStation": "0",
-          "paymentMethod": "$0.00",
-          "creditCardNo": "0138",
-          "secondEFtNo": "000",
-          "ticketSerialNo": "000",
-          "REVENUE": "9032"
-          
-        }
+        "ticketNo": "7041",
+        "revenueAmount": "10.50"
+         
       }
     ],
     "modals": {
@@ -696,7 +548,7 @@
         "type": null,
         "actionsList": [
           {
-            "actionType": "POPOVER",
+            "actionType": "POPOVERp",
             "tooltip": {
               "text": "Exception"
             },
@@ -717,7 +569,7 @@
         "actionsList": [
           {
             "label": "A",
-            "actionType": "POPOVERp",
+            "actionType": "POPOVER",
             "tooltip": {
               "text": "Adjustments"
             }

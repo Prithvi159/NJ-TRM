@@ -1,42 +1,111 @@
+@import "../src/assets/styles/constants.scss";
 .expanded-row-details-panel {
-  padding: 20px;
+  padding:  13px 8px;
   background-color: #e8f2fc;
 
   .top-right {
+    font-size: $font-size-12;
+    font-weight: $font-weight-600;
     display: flex;
     justify-content: flex-end;
-    margin-bottom: 20px;
+    margin-bottom: 13px;
+    @media screen and (min-width: $media-1600){
+      font-size: $font-size-18;
+  
+    }
+    @media screen and (min-width: $media-2000){
+      font-size: $font-size-25;
+    }
+    @media screen and (min-width: $media-2800){
+      font-size: $font-size-30;
+    }
+    @media screen and (min-width: $media-3400){
+      font-size: $font-size-32;
+    }
+    @media screen and (min-width: $media-4000){
+      font-size: $font-size-38;
+    }
 
     > div {
-      margin-left: 20px;
+      display: flex;
+      margin-left: 0.25rem;
+      .data-value{
+        color: $yellow-clr;
+      }
+      .hyphen{
+        padding-left:0.25rem;
+      }
     }
   }
 
   .row-details-panel-body-footer-container {
-    background-color: white;
+    background-color: $white-clr;
 
     .body {
       display: flex;
+      padding: 1.1875rem 0rem;
 
       .vertical-line {
-        border-left: 1px solid #ccc;
+        height: 10vh;
+        margin-top: 1.875rem;
+        margin-right: 2.18rem;
+        border: 1px solid $vertical-line-clr;
       }
 
       .body-column {
         flex: 1;
+        text-align: right;
       }
 
       .data-row {
         display: flex;
+        justify-content: space-between;
         margin-bottom: 10px;
 
         .data-label {
-          font-weight: bold;
-          min-width: 150px;
+          font-weight: 500;
+          text-align: right;
+          min-width: 15vw;
+          margin-right: 3.125rem;
+          @media screen and (min-width: $media-1600){
+            font-size: $font-size-18;
+        
+          }
+          @media screen and (min-width: $media-2000){
+            font-size: $font-size-25;
+          }
+          @media screen and (min-width: $media-2800){
+            font-size: $font-size-30;
+          }
+          @media screen and (min-width: $media-3400){
+            font-size: $font-size-32;
+          }
+          @media screen and (min-width: $media-4000){
+            font-size: $font-size-38;
+          }
         }
 
         .data-value {
-          margin-left: 10px;
+          color: $pagination-clr;
+          font-weight:  $font-weight-600;
+          // margin-left: 0.625rem;
+          margin-right: 35px;
+          @media screen and (min-width: $media-1600){
+            font-size: $font-size-18;
+        
+          }
+          @media screen and (min-width: $media-2000){
+            font-size:$font-size-25;
+          }
+          @media screen and (min-width: $media-2800){
+            font-size: $font-size-30;
+          }
+          @media screen and (min-width: $media-3400){
+            font-size: $font-size-32;
+          }
+          @media screen and (min-width: $media-4000){
+            font-size: $font-size-38;
+          }
         }
       }
     }
@@ -53,32 +122,72 @@
         padding-right: 10px;
 
         .footer-block {
-          padding-right: 20px;
           display: flex;
-          flex: 1;
-          gap: 20px;
-          flex-wrap: wrap;
+          justify-content:space-around ;
+          width: 47vw;
+          flex-wrap: nowrap;
 
           .footer-row {
             display: flex;
-            align-items: center;
-            margin-bottom: 10px;
+            justify-content: space-around;
+            margin-left: 2vw;
 
             .footer-label {
-              font-weight: bold;
-              min-width: 150px;
+              font-weight: 500;
+              min-width: 14vw;
+              text-align: justify;
             }
 
             .footer-value {
-              margin-left: 10px;
+              color: $pagination-clr;
+              margin-left: 3vw;
+              font-weight:  $font-weight-600;             
             }
           }
         }
       }
 
-      .footer-right {
+      .footer-right{
         display: flex;
         gap: 10px;
+        
+        .summary-btn{
+          font-size: 12px;
+          background-color: $pagination-clr;
+          color: $white-clr !important;
+          @media screen and (min-width: $media-2000){
+            font-size: $font-size-25;
+          }
+          @media screen and (min-width: $media-2800){
+            font-size: $font-size-30;
+          }
+          @media screen and (min-width: $media-3400){
+            font-size: $font-size-32;
+          }
+          @media screen and (min-width: $media-4000){
+            font-size: $font-size-38;
+          }
+        }
+        .close-btn{
+          background-color: $white-clr;
+          color: $pagination-clr;
+          font-weight: 600;
+          font-size: 12px;
+          border: 2px solid $pagination-clr;
+          @media screen and (min-width: $media-2000){
+            font-size: $font-size-25;
+          }
+          @media screen and (min-width: $media-2800){
+            font-size: $font-size-30;
+          }
+          @media screen and (min-width: $media-3400){
+            font-size: $font-size-32;
+          }
+          @media screen and (min-width: $media-4000){
+            font-size: $font-size-38;
+          }
+        }
+
       }
     }
   }

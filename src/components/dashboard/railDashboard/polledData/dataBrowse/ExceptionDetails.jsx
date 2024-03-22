@@ -2,11 +2,10 @@ import React, { useEffect } from "react";
 import { useQuery } from "@tanstack/react-query";
 import axios from "axios";
 import CustomTable from "../../../../custom/table/CustomTable";
-import transactionJson from "../../../../../json/transactionTable.json";
-import "./TransactionDetails.scss";
-import {useNavigate } from 'react-router-dom';
+import exceptionJson from "../../../../../json/exceptionTable.json";
+import "./ExceptionDetails.scss";
 const fetchTableData = async () => {
-  const response = await axios.get("http://localhost:4000/transactionTable");
+  const response = await axios.get("http://localhost:4000/exceptionTable");
   return response
 };
 
@@ -20,7 +19,7 @@ function useUserTableData() {
   return userTableData;
 }
 
-export function TransactionDetails() {
+export function ExceptionDetails() {
   const {
     isPending,
     isFetching,
@@ -29,18 +28,14 @@ export function TransactionDetails() {
     error,
     refetch,
   } = useUserTableData();
-  const navigate = useNavigate();
+
   useEffect(() => {
     refetch();
   }, []);
-  
-  const handleException = () =>{
-    console.log("exception")
-    navigate(`../data-browse/exception-details`)
+  const handleTransation = () =>{
+    navigate(`./transaction-details`)
   }
-  //console.log("data000", transactionJson.transactiontable);
-  //console.log("da45ta000", userTableData);
-  const transactionJsonData = transactionJson.transactiontable
+  const transactionJsonData = exceptionJson.exceptiontable
   return (
     <div>
       {false ? (
@@ -54,7 +49,7 @@ export function TransactionDetails() {
                 isRowExpandable={false}
                 expandedRowDetailPanelJson={null}
                 handleTableTool = {true}
-                handleException = {handleException}
+                handleTransation = {handleTransation}
       /> </div><div className="njt-transaction2-table"><CustomTable
           rows={transactionJsonData?.rows}
           columnHeaders={transactionJsonData?.columnHeaders}
