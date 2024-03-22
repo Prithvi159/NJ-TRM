@@ -1,7 +1,7 @@
 import { useEffect } from "react";
 
 const createPrintableContent = (data, columns) => {
-  const printableColumns = columns.filter((column) => column.accessorKey !== "actions");
+  const printableColumns = columns.filter((column) => column.isSortable);
 
   const tableRows = data
     .map((row) => {
