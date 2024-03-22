@@ -231,11 +231,11 @@
         "timeDetails": [
           {
             "uniqueKey": "dutyStart",
-            "label": "Duty Start"
+            "label": "DUTY START"
           },
           {
             "uniqueKey": "dutyEnd",
-            "label": "Duty End"
+            "label": "DUTY END"
           }
         ]
       },
@@ -300,14 +300,6 @@
           {
             "uniqueKey": "closeDownMethod",
             "label": "Close Down Method"
-          },
-          {
-            "uniqueKey": "currAdjNbr",
-            "label": "Curr Adj Nbr"
-          },
-          {
-            "uniqueKey": "adjusted",
-            "label": "Adjusted"
           }
         ],
         "buttons": [

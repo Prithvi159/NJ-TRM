@@ -9,10 +9,11 @@ export default function RowDetailsPanel(props) {
 
   const renderRowDetailsPanelHeader = () => {
     return expandedRowDetailPanelJson?.expandedRowDetailPanelHeader?.timeDetails?.map(
-      (detail) => (
+      (detail, index) => (
         <div key={detail.uniqueKey}>
           <div className="data-label">{detail.label}:</div>
           <div className="data-value">{data[detail.uniqueKey]}</div>
+          {index === 0 && <div className="hyphen">-</div>}
         </div>
       )
     );
