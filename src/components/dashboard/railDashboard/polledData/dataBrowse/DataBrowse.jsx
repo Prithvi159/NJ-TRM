@@ -33,8 +33,12 @@ export function DataBrowse() {
     refetch();
   }, []);
   
-const handleEdit = () =>{
+const handleTransation = () =>{
   navigate(`./transaction-details`)
+}
+const handleException = () =>{
+  console.log("exception")
+  navigate(`./exception-details`)
 }
   //console.log("data", userTableData?.data);
 
@@ -51,7 +55,8 @@ const handleEdit = () =>{
           displaySelectRowsCheckBox={false}
           isRowExpandable={userTableData?.data?.isExpandable}
           expandedRowDetailPanelJson={userTableData?.data?.expandedRowDetailPanel}
-          handleEdit = {handleEdit}
+          handleTransation = {handleTransation}
+          handleException = {handleException}
         />
       )}
     </div>

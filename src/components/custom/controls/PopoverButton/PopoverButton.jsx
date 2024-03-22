@@ -1,7 +1,7 @@
 import React, { useState } from "react";
 import { Button, Tooltip } from "@mui/material";
 
-export default function PopoverButton({ label, tooltipText }) {
+export default function PopoverButton({ label, tooltipText, onClick }) {
     const [anchorEl, setAnchorEl] = useState(null);
   
     const handleClick = (event) => {
@@ -15,7 +15,7 @@ export default function PopoverButton({ label, tooltipText }) {
     return (
       <>
         <Tooltip title={tooltipText}>
-          <Button onClick={(e) => handleClick(e)} aria-describedby={id}>
+          <Button onClick={onClick} aria-describedby={id}>
             {label}
           </Button>
         </Tooltip>
