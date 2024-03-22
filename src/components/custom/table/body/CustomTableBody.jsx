@@ -15,7 +15,9 @@ export function CustomTableBody(props) {
     displaySelectRowsCheckBox,
     handleEdit, handleDelete,
     isRowExpandable,
-    expandedRowDetailPanelJson
+    expandedRowDetailPanelJson,
+    handleTransation,
+    handleException
   } = props;
   
   const colSpan = columnHeaders.length + (displaySelectRowsCheckBox ? 1 : 0);
@@ -50,6 +52,8 @@ export function CustomTableBody(props) {
                     row={row}
                     handleEdit={handleEdit}
                     handleDelete={handleDelete}
+                    handleTransation = {handleTransation}
+                    handleException = {handleException}
                 /> 
             ))}
           </TableRow>

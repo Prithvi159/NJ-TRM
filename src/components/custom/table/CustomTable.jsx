@@ -70,7 +70,6 @@ function stableSort(array, comparator) {
 
 function EnhancedTableToolbar(props) {
   const { actionButtons, numSelected, onPrint } = props;
-  console.log("actionButtons",actionButtons)
 
   const handleActionClick = (action) => {
     switch (action) {
@@ -142,7 +141,7 @@ const getInitialOrderBy = (columnHeaders) => {
 
 export default function CustomTable(props) {
     const { rows, columnHeaders, toolBar, pagination, displaySelectRowsCheckBox, isRowExpandable, modals, 
-      expandedRowDetailPanelJson } = props;
+      expandedRowDetailPanelJson, handleTransation, handleException } = props;
 
   // Determine the maximum rows per page option based on the maximum value in rowsPerPageOptions
   const maxRowsPerPageOption = pagination && Math.max(...pagination?.rowsPerPageOptions);
@@ -322,6 +321,8 @@ export default function CustomTable(props) {
         displaySelectRowsCheckBox={displaySelectRowsCheckBox}
         handleEdit={handleEdit}
         handleDelete={handleDelete}
+        handleTransation={handleTransation}
+        handleException={handleException}
         expandedRowDetailPanelJson={isRowExpandable ? expandedRowDetailPanelJson : null}
       />
     )

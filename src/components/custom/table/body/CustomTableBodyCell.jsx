@@ -34,7 +34,7 @@ const ActionButtons = ({ actions, row, handleActionClick }) => {
             tooltipText={action?.tooltip?.text}
             onClick={(event) => {
               event.stopPropagation();
-              handleActionClick(action?.actionType, row);
+              handleActionClick(action?.actionType, row, action?.tooltip?.text);
             }}
           />
         ) : (
@@ -58,8 +58,11 @@ export default function CustomTableBodyCell({
   row,
   handleEdit,
   handleDelete,
+  handleTransation,
+  handleException
 }) {
-  const handleActionClick = (action, row) => {
+  const handleActionClick = (action, row, text) => {
+    console.log("action------66--------", action)
     switch (action) {
       case "EDIT":
         handleEdit(row);
@@ -67,7 +70,14 @@ export default function CustomTableBodyCell({
       case "DELETE":
         handleDelete(row.id);
         break;
+      case "TRANSACTION":
+        handleTransation(row.id);
+      break;
       default:
+        switch(text){
+          case "Exception":
+            handleException(row.id);
+        }
         break;
     }
   };
