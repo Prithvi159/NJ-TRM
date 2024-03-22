@@ -40,6 +40,23 @@
         ],
         "id": "1.4"
       }
+    ],
+    "buttons": [
+      {
+        "name": "searchButton",
+        "id": "search",
+        "label": "Search",
+        "variant": "contained",
+        "color": "primary",
+        "className": "search-btn-primary"
+      },
+      {
+        "name": "clearButton",
+        "id": "clear",
+        "label": "Clear",
+        "variant": "contained",
+        "className": "clear-btn-primary"
+      }
     ]
   }
 }

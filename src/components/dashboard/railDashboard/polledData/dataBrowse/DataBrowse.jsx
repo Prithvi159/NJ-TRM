@@ -2,12 +2,13 @@ import React, { useEffect } from "react";
 import { useQuery } from "@tanstack/react-query";
 import axios from "axios";
 import CustomTable from "../../../../custom/table/CustomTable";
-import {useNavigate } from 'react-router-dom';
+import { useNavigate } from "react-router-dom";
 import SearchContainer from "../../../../custom/searchContainer/SearchContainer";
+import DataBrowseJson from "../../../../../json/dataBrowse.json";
 
 const fetchTableData = async () => {
   const response = await axios.get("http://localhost:4000/table");
-  return response
+  return response;
 };
 
 function useUserTableData() {
@@ -33,14 +34,14 @@ export function DataBrowse() {
   useEffect(() => {
     refetch();
   }, []);
-  
-const handleTransation = () =>{
-  navigate(`./transaction-details`)
-}
-const handleException = () =>{
-  console.log("exception")
-  navigate(`./exception-details`)
-}
+
+  const handleTransation = () => {
+    navigate(`./transaction-details`);
+  };
+  const handleException = () => {
+    console.log("exception");
+    navigate(`./exception-details`);
+  };
   //console.log("data", userTableData?.data);
 
   return (
@@ -49,20 +50,23 @@ const handleException = () =>{
         <h2>Loading...</h2>
       ) : (
         <div className="main-table">
-        <SearchContainer/>
-        <CustomTable
-          rows={userTableData?.data?.rows}
-          toolBar={userTableData?.data?.toolBar}
-          columnHeaders={userTableData?.data?.columnHeaders}
-          pagination={userTableData?.data?.pagination}
-          modals={userTableData?.data?.modals}
-          displaySelectRowsCheckBox={false}
-          isRowExpandable={userTableData?.data?.isExpandable}
-          expandedRowDetailPanelJson={userTableData?.data?.expandedRowDetailPanel}
-          handleTransation = {handleTransation}
-          handleException = {handleException}
-        />
-        
+          <SearchContainer
+            SearchContainerJson={DataBrowseJson?.searchContainer}
+          />
+          <CustomTable
+            rows={userTableData?.data?.rows}
+            toolBar={userTableData?.data?.toolBar}
+            columnHeaders={userTableData?.data?.columnHeaders}
+            pagination={userTableData?.data?.pagination}
+            modals={userTableData?.data?.modals}
+            displaySelectRowsCheckBox={false}
+            isRowExpandable={userTableData?.data?.isExpandable}
+            expandedRowDetailPanelJson={
+              userTableData?.data?.expandedRowDetailPanel
+            }
+            handleTransation={handleTransation}
+            handleException={handleException}
+          />
         </div>
       )}
     </div>

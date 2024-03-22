@@ -4,74 +4,38 @@ import { Input } from "../fields/Input";
 import "./SearchContainer.scss";
 import { formatDate } from "../../../utils/globalMethods";
 
-const searchFields = [
-  {
-    name: "Sample Date",
-    label: "Upload Date ",
-    type: "date",
-    id: "1.1",
-    required: true,
-    validations: [],
-  },
-  {
-    name: "Station Code",
-    label: "Station Code",
-    type: "select",
-    required: false,
-    options: [
-      { label: "Option 1", value: "Option 1" },
-      { label: "Option 2", value: "Option 2" },
-      { label: "Option 3", value: "Option 3" },
-    ],
-    id: "1.2",
-    validations: [],
-  },
-  {
-    name: "Agent",
-    label: "Agent",
-    type: "text",
-    id: "1.3",
-    required: false,
-    validations: [],
-  },
-  {
-    name: "ExcludeTVM",
-    label: "Exclude TVM",
-    type: "radio",
-    required: false,
-    options: [
-      { label: "Yes", value: "Yes" },
-      { label: "No", value: "No" },
-    ],
-    id: "1.4",
-    validations: [],
-  },
-];
+export default function SearchContainer(props) {
+  const { SearchContainerJson } = props;
 
-export default function SearchContainer() {
   const [searchData, setSearchData] = useState({});
   const [isSearchEnabled, setIsSearchEnabled] = useState(false);
 
   useEffect(() => {
-    setIsSearchEnabled(
-      searchFields.every((field) => {
-        const value = searchData[field.name];
-        if (field.required) {
-          if (field.type === "date") {
-            return (
-              value instanceof Date ||
-              (typeof value === "string" && Boolean(value.trim()))
-            );
-          } else if (field.type === "checkbox" || field.type === "radio") {
-            return value != null;
-          } else if (typeof value === "string") {
-            return value.trim() !== "";
-          }
-          return false;
-        }
-        return true;
-      })
-    );
+    // setIsSearchEnabled(
+    //   SearchContainerJson.fields.every((field) => {
+    //     const value = searchData[field.name];
+    //     if (field.required) {
+    //       if (field.type === "date") {
+    //         return (
+    //           value instanceof Date ||
+    //           (typeof value === "string" && Boolean(value.trim()))
+    //         );
+    //       } else if (field.type === "checkbox" || field.type === "radio") {
+    //         return value != null;
+    //       } else if (typeof value === "string") {
+    //         return Boolean(value.trim());
+    //       }
+    //       return false;
+    //     }
+    //     return true;
+    //   })
+    // );
+
+    const isAnyFieldEmpty = SearchContainerJson.fields.some((field) => {
+      const value = searchData[field.name];
+      return field.required && (!value || value.trim() === "");
+    });
+    setIsSearchEnabled(!isAnyFieldEmpty);
   }, [searchData]);
 
   const handleInputChange = (event) => {
@@ -92,9 +56,25 @@ export default function SearchContainer() {
     setSearchData({});
   };
 
-  return (
-    <div className="search-container">
-      {searchFields.map((field) => (
+  const handleButtonClick = (buttonId) => {
+    if (buttonId === "search") {
+      handleSearch();
+    } else if (buttonId === "clear") {
+      handleClear();
+    }
+  };
+
+  const isButtonDisabled = (buttonId) => {
+    if (buttonId === "search") {
+      return !isSearchEnabled;
+    }
+    return false;
+  };
+
+  const renderFields = () => {
+    return (
+      SearchContainerJson?.fields?.length &&
+      SearchContainerJson?.fields.map((field) => (
         <div key={field.id} className="input-field">
           <Input
             type={field.type}
@@ -106,20 +86,30 @@ export default function SearchContainer() {
             options={field.options || []}
           />
         </div>
-      ))}
-      <div className="button-container">
+      ))
+    );
+  };
+
+  const renderButtons = () => {
+    return (
+      SearchContainerJson?.buttons?.length &&
+      SearchContainerJson?.buttons.map((button) => (
         <Button
-          variant="contained"
-          color="primary"
-          onClick={handleSearch}
-          disabled={!isSearchEnabled}
+          key={button.id}
+          onClick={() => handleButtonClick(button.id)}
+          disabled={isButtonDisabled(button.id)}
+          className={button.className}
         >
-          Search
+          {button.label}
         </Button>
-        <Button variant="contained" onClick={handleClear}>
-          Clear
-        </Button>
-      </div>
+      ))
+    );
+  };
+
+  return (
+    <div className="search-container">
+      {renderFields()}
+      <div className="button-container">{renderButtons()}</div>
     </div>
   );
 }
