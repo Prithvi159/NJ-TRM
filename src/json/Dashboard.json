@@ -56,6 +56,12 @@
           "icon": "Folder",
           "to": "polled-data/summary-file-browse",
           "imagePath":"/src/assets/images/Group 7421.png"
+        },
+        {
+          "label": "Open Duty Enquiry",
+          "icon": "Folder",
+          "to": "polled-data/open-duty-enquiry",
+          "imagePath":"/src/assets/icons/Group 8152.svg"
         }
       ]
     }

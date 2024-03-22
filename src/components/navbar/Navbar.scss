@@ -20,9 +20,8 @@
       border: 1px solid red;
     }
     .logo-home:hover img{
-      width: 1.7vw;
-      height: 1.9vh;
-      color: #1a2b57;
+      width: 95%;
+      height: 67%;
     }
     .logo-home,img{
       height: 3vh;
@@ -182,11 +181,24 @@
     }
   }
 }
+.back-image{
+  margin-top: 9vh;
+  height: 17vh;
+  .image{
+    height: 17vh;
+    width: 100vw;
+  }
+
+}
 }
 a.profile{
   text-decoration: none;
   font-size: $font-size-13;
   color: $border-colour;
+  display: contents;
+  img{
+    margin-right: 0.7vw;
+  }
   @media screen and (min-width: $media-1600) {
     font-size: $font-size-16;
 
@@ -210,7 +222,44 @@ a.profile{
 
   }
 }
-.MuiPaper-root.MuiPaper-elevation.MuiPaper-rounded.MuiPaper-elevation8.MuiPopover-paper.MuiMenu-paper.MuiMenu-paper.css-3dzjca-MuiPaper-root-MuiPopover-paper-MuiMenu-paper {
-  height: 14vh;
-  width: 10vw;
+.dashboard {
+  .MuiPaper-root {
+    margin-top: 3.3% !important;
+    margin-left: 0.7%;
+    height: 13vh;
+    width: 10vw;
+    .MuiMenu-list {
+      padding: 1vh;
+      li:first-child{
+        background-color: $border-clr;
+        color:$profile-clr;
+
+      }
+      .MuiMenuItem-root{
+        
+      }
+
+    }
+  }
+}
+.rail {
+  .MuiPaper-root {
+    margin-top: 6% !important;
+    margin-left: 0.7%;
+    height: 13vh;
+    width: 10vw;
+    .MuiMenu-list {
+      padding: 1vh;
+
+      li:first-child{
+        background-color: $border-clr;
+        color:$profile-clr;
+
+      }
+      .MuiMenuItem-root{
+        
+      }
+
+    }
+  }
 }

@@ -17,6 +17,7 @@ import ErrorProcessing from "../components/dashboard/railDashboard/polledData/er
 import SummaryFileBrowse from "../components/dashboard/railDashboard/polledData/summaryFileBrowse/SummaryFileBrowse";
 import {TransactionDetails} from "../components/dashboard/railDashboard/polledData/dataBrowse/TransactionDetails";
 import {ExceptionDetails} from "../components/dashboard/railDashboard/polledData/dataBrowse/ExceptionDetails";
+import OpenDutyEnquiry from "../components/dashboard/railDashboard/polledData/openDutyEnquiry/OpenDutyEnquiry";
 
 const RailDashboard = lazy(() =>
   import("../components/dashboard/railDashboard/RailDashboard")
@@ -41,6 +42,7 @@ export const AppRouter = createBrowserRouter(
               <Route path="data-browse/transaction-details" element={<TransactionDetails />} />
               <Route path="data-browse/exception-details" element={<ExceptionDetails />} />
               
+              <Route path="open-duty-enquiry" element={<OpenDutyEnquiry />} />
             </Route>
           </Route>
         </Route>

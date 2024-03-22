@@ -3,6 +3,7 @@ import { useQuery } from "@tanstack/react-query";
 import axios from "axios";
 import CustomTable from "../../../../custom/table/CustomTable";
 import {useNavigate } from 'react-router-dom';
+import SearchContainer from "../../../../custom/searchContainer/SearchContainer";
 
 const fetchTableData = async () => {
   const response = await axios.get("http://localhost:4000/table");
@@ -43,12 +44,15 @@ const handleException = () =>{
   //console.log("data", userTableData?.data);
 
   return (
-    <div>
+    <div className="main-table-div">
       {isPending ? (
         <h2>Loading...</h2>
       ) : (
+        <div className="main-table">
+        <SearchContainer/>
         <CustomTable
           rows={userTableData?.data?.rows}
+          toolBar={userTableData?.data?.toolBar}
           columnHeaders={userTableData?.data?.columnHeaders}
           pagination={userTableData?.data?.pagination}
           modals={userTableData?.data?.modals}
@@ -58,6 +62,8 @@ const handleException = () =>{
           handleTransation = {handleTransation}
           handleException = {handleException}
         />
+        
+        </div>
       )}
     </div>
   );

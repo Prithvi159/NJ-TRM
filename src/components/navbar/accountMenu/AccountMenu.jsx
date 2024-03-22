@@ -3,8 +3,10 @@ import { Link, NavLink } from "react-router-dom";
 import Avatar from "@mui/material/Avatar";
 import Menu from "@mui/material/Menu";
 import MenuItem from "@mui/material/MenuItem";
+import Profile from "../../../assets/images/Profile.png";
+import Logout from "../../../assets/images/Logout.png";
 
-export function AccountMenu() {
+export function AccountMenu(props) {
   const [anchorEl, setAnchorEl] = useState(null);
 
   const handleOpenMenu = (event) => {
@@ -40,14 +42,15 @@ export function AccountMenu() {
         open={Boolean(anchorEl)}
         onClose={handleCloseMenu}
         onMouseEnter={handleOpenMenu}
-        onMouseLeave={ handleCloseMenu}
-        sx={{marginTop: "5%", marginLeft:"-2%"}}
+        onMouseLeave={handleCloseMenu}
+        sx={{ marginLeft:"-2%"}}
+        className={props.isRailDashboard?"rail":"dashboard"}
       >
         <MenuItem className="avatar">
-          <NavLink to="/profile" className="profile">My Profile</NavLink>
+          <NavLink to="/profile" className="profile"><img src={Profile}/>My Profile</NavLink>
         </MenuItem>
         <MenuItem>
-          <NavLink to="/login" className="profile">Logout</NavLink>
+          <NavLink to="/login" className="profile"><img src={Logout}/>Logout</NavLink>
         </MenuItem>
       </Menu>
     </>
